@@ -16,17 +16,16 @@ const Navbar = () => {
         <div>
 
 
-            <div className="sm:hidden p-2 px-3 flex items-center justify-between border-b border-slate-300">
+            <div className=" h-20 py-4 px-6 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
                 <div className='w-40'>
-                    <img src={logo} alt="logo" className="w-30 bg-transparent self-center hover:w-35" />
+                    <img src={logo} alt="logo" className="w-35 bg-transparent self-center hover:w-40" />
                 </div>
                 <button className=" bg-blue-500 px-1 py-1 outline-none cursor-pointer rounded-md text-white font-bold text-sm self-center w-30"><a href="tel:+919999999999">+91 9999999999</a>
                 </button>
-                <div className=''>
+                <div className='ml-5 self-center'>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
                         {
-                            isMenu ? <img src={cross_icon} className=" text-gray-900 w-6 h-6  " /> : <img src={menu_icon} className=" w-6 h-6 " />
-
+                            isMenu ? <img src={cross_icon} className=" text-gray-900 w-8 h-8  " /> : <img src={menu_icon} className=" text-gray-900 w-8 h-8 " />
                         }
 
                     </button>
