@@ -61,10 +61,10 @@ const VehicleList = ({ Title }) => {
 
     return (
 
-        <div >
-            <h1 className="text-gray-900 font-semibold text-xl text-center mb-2 mt-2 ">{Title}</h1>
+        <div className="flex flex-col items-center ">
+            <h1 className="text-gray-900 font-semibold text-xl text-center mb-4 mt-4 ">{Title}</h1>
 
-            <div className="grid grid-cols-1 m-5 gap-2 gap-y-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 items-center m-5 ">
                 {
                     vehicleList.map((item, index) => (
                         <VehicleItem key={index} item={item} />

@@ -11,6 +11,11 @@ const Home = () => {
 
 
             <VehicleList Title={'AIRPORT TAXI'} />
+            <VehicleList Title={'INNOVA TAXI'} />
+            <VehicleList Title={'OUTSTATION'} />
+            <VehicleList Title={'LOCAL PACKAGE'} />
+            <VehicleList Title={'LOCAL TAXI'} />
+            <VehicleList Title={'MINI BUSES'} />
         </div>
     )
 }
