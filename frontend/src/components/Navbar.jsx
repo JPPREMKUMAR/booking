@@ -84,28 +84,28 @@ const Navbar = () => {
 
                 <div className=''>
 
-                    <Link to="/" className="px-4 text-md hover:text-lg w-40 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/" className="px-4 text-md hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Home
                     </Link>
-                    <Link to="/booking" className="px-4 text-md hover:text-lg w-40  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/booking" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Booking
                     </Link>
-                    <Link to="/innovataxi" className="px-4 text-md hover:text-lg w-40  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/innovataxi" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Innova Taxi
                     </Link>
-                    <Link to="/outstation" className="px-4 text-md hover:text-lg w-40  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/outstation" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Outstation
                     </Link>
-                    <Link to="/service" className="px-4 text-md  hover:text-lg w-40 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/service" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Services
                     </Link>
-                    <Link to="/about" className="px-4 text-md  hover:text-lg w-40 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/about" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         About Us
                     </Link>
-                    <Link to="/contact" className="px-4 text-md  hover:text-lg w-50 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/contact" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Contact Us
                     </Link>
-                    <Link to="/login" className="px-4 text-md  hover:text-lg w-50  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/login" className="px-4 text-md  hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                         <button className='bg-blue-500 outline-none px-7 py-2 rounded-md text-white hover:bg-blue-600'>Login</button>
                     </Link>
                 </div>
