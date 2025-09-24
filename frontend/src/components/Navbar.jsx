@@ -39,35 +39,35 @@ const Navbar = () => {
             {
 
                 isMenu && <div className='mb-5 mt-4 flex flex-col gap-3 md:hidden'>
-                    <Link to="/" className="flex items-center gap-x-3 px-4  cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/" className="flex items-center gap-x-3 px-4  cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg text-gray-600 hover:text-gray-900">Home</p>
                     </Link>
-                    <Link to="/booking" className="flex items-center gap-x-3 px-4 cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/booking" className="flex items-center gap-x-3 px-4 cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg text-gray-600 hover:text-gray-900">Booking</p>
                     </Link>
-                    <Link to="/innovastation" className="flex items-center gap-x-3 px-4  cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovastation" className="flex items-center gap-x-3 px-4  cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg text-gray-600 hover:text-gray-900">Innova Taxi</p>
                     </Link>
-                    <Link to="/outstation" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/outstation" className="flex items-center gap-x-3 px-4   cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg text-gray-600 hover:text-gray-900">Outstation</p>
                     </Link>
-                    <Link to="/services" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/services" className="flex items-center gap-x-3 px-4   cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg text-gray-600 hover:text-gray-900">Services</p>
                     </Link>
-                    <Link to="/about" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/about" className="flex items-center gap-x-3 px-4   cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg text-gray-600 hover:text-gray-900">About Us</p>
                     </Link>
-                    <Link to="/contact" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/contact" className="flex items-center gap-x-3 px-4   cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg text-gray-600 hover:text-gray-900">Contact Us</p>
                     </Link>
-                    <Link to="/login" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/login" className="flex items-center gap-x-3 px-4   cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <button className="self-center text-md outline-none bg-blue-500 px-6 py-1 text-white rounded-md  hover:bg-blue-700 ">Login</button>
                     </Link>
