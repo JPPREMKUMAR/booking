@@ -20,7 +20,7 @@ const Navbar = () => {
                 <div className='w-40'>
                     <img src={logo} alt="logo" className="w-30 bg-transparent self-center hover:w-35" />
                 </div>
-                <button className=" bg-blue-500 px-3 py-2 outline-none cursor-pointer rounded-md text-white font-bold text-md self-center"><a href="tel:+919999999999">+91 9999999999</a>
+                <button className=" bg-blue-500 px-1 py-1 outline-none cursor-pointer rounded-md text-white font-bold text-sm self-center w-30"><a href="tel:+919999999999">+91 9999999999</a>
                 </button>
                 <div className=''>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
