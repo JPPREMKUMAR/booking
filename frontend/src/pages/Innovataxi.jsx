@@ -1,11 +1,13 @@
 
+import VehicleList from "../components/VehicleList"
+
 
 const Innovataxi = () => {
 
     return (
         <div>
+            <VehicleList Title={'INNOVA TAXI'} />
 
-            <h1>Innovataxi</h1>
         </div>
     )
 }
