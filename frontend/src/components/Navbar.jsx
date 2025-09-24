@@ -13,7 +13,7 @@ const Navbar = () => {
     const [isMenu, setIsMenu] = useState(false)
 
     return (
-        <div>
+        <div className='position:fixed w-full'>
 
 
             <div className=" h-20 py-4 px-6 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
