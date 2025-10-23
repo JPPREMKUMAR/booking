@@ -5,7 +5,7 @@ import { FaRupeeSign } from "react-icons/fa";
 
 const VehicleItem = ({ item }) => {
 
-    console.log(item)
+    // console.log(item)
 
     const { vehicleName, capacity, imageUrl, price, vehicleType } = item
 
@@ -13,7 +13,7 @@ const VehicleItem = ({ item }) => {
 
     return (
 
-        <div className="bg-white pb-3 px-4 py-4 rounded-lg shadow-lg flex  flex-col items-center gap-3 sm:m-5 m-2 mb-2  transform transition-transform duration-300 ease-out hover:scale-120 ">
+        <div className="bg-white pb-3 px-4 py-4 rounded-lg shadow-lg flex  flex-col items-center gap-3 sm:m-5 m-2 mb-2  transform transition-transform duration-300 ease-out hover:scale-110 ">
             <img src={imageUrl} alt={`${vehicleName}`} className="w-2/3 h-35 sm:h-44" />
             <h1 className="text-lg text-gray-800 font-bold text-medium sm:text-2xl">{vehicleName}</h1>
             <div className="flex items-center gap-x-2 text-md sm:text-xl">
