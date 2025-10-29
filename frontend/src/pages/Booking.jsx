@@ -8,6 +8,15 @@ const Booking = () => {
     const { categoriesList, vehicleList } = useContext(MainContext)
     console.log(categoriesList)
 
+    const [name, setName] = useState('')
+    const [mobile, setMobile] = useState('')
+    const [email, setEmail] = useState('')
+    const [bookingType, setBookingType] = useState(categoriesList[0].name)
+    const [Vehicle, setVehicle] = useState(vehicleList[0].vehicleName)
+    const [pickUpPoint, setPickUpPoint] = useState('')
+    const [dropPoint, setDropPoint] = useState('')
+
+
     const onSubmitHandler = async (event) => {
 
         event.preventDefault()
