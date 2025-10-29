@@ -2,10 +2,14 @@
 
 import VehicleList from "../components/VehicleList"
 
+import CarouselTransition from "../components/CarouselTransition"
+
+
 const Home = () => {
 
     return (
-        <div>
+        <div className="px-3 py-2">
+
 
 
             <VehicleList Title={'INNOVA TAXI'} />
