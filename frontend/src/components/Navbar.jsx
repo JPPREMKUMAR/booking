@@ -16,16 +16,16 @@ const Navbar = () => {
         <div className='position:fixed w-full'>
 
 
-            <div className=" h-20 py-4 px-6 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
+            <div className=" h-20 py-4 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
                 <div className='max-w-40 '>
-                    <img src={logo} alt="logo" className="max-w-30 bg-transparent self-center hover:max-w-35" />
+                    <img src={logo} alt="logo" className="max-w-30 bg-transparent self-center " />
                 </div>
-                <button className="ml-2 bg-blue-500 px-1 py-1 outline-none cursor-pointer rounded-md text-white font-bold text-xs self-center max-w-30"><a href="tel:+919999999999">+91 9999999999</a>
+                <button className="ml-2 bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center max-w-30"><a href="tel:+919999999999" className='text-[12px] px-1 font-bold' >+91 9999999999</a>
                 </button>
-                <div className='ml-5 self-center'>
+                <div className='ml-5 self-center w-10 h-10 flex items-center'>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
                         {
-                            isMenu ? <img src={cross_icon} className=" text-gray-900 max-w-8 max-h-8  " /> : <img src={menu_icon} className=" text-gray-900 max-w-8 max-h-8 " />
+                            isMenu ? <img src={cross_icon} className=" text-gray-900 max-w-10 max-h-8  " /> : <img src={menu_icon} className=" text-gray-900 max-w-8 max-h-8 " />
                         }
 
                     </button>
@@ -37,38 +37,42 @@ const Navbar = () => {
 
             {
 
-                isMenu && <div className='mb-5 mt-4 flex flex-col gap-3 md:hidden'>
+                isMenu && <div className='mb-5 mt-4 flex flex-col gap-3 md:hidden font-bold text-gray-900 '>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/" className="flex items-center gap-x-3 px-4  cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg text-gray-600 hover:text-gray-900">Home</p>
+                        <p className="self-center text-lg">Home</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/booking" className="flex items-center gap-x-3 px-4 cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg text-gray-600 hover:text-gray-900">Booking</p>
+                        <p className="self-center text-lg">Booking</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovastation" className="flex items-center gap-x-3 px-4  cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovaStation" className="flex items-center gap-x-3 px-4  cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg text-gray-600 hover:text-gray-900">Innova Taxi</p>
+                        <p className="self-center text-lg ">Innova Taxi</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/outstation" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/svuStation" className="flex items-center gap-x-3 px-4  cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg text-gray-600 hover:text-gray-900">Outstation</p>
+                        <p className="self-center text-lg ">Svu Station</p>
+                    </Link>
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/outStation" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                        {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
+                        <p className="self-center text-lg ">Outstation</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/services" className="flex items-center gap-x-3 px-4   cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg text-gray-600 hover:text-gray-900">Services</p>
+                        <p className="self-center text-lg ">Services</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/about" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/aboutUs" className="flex items-center gap-x-3 px-4   cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg text-gray-600 hover:text-gray-900">About Us</p>
+                        <p className="self-center text-lg ">About Us</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/contact" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/contactUs" className="flex items-center gap-x-3 px-4   cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg text-gray-600 hover:text-gray-900">Contact Us</p>
+                        <p className="self-center text-lg ">Contact Us</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/login" className="flex items-center gap-x-3 px-4   cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <button className="self-center text-md outline-none bg-blue-500 px-6 py-1 text-white rounded-md  hover:bg-blue-700 ">Login</button>
+                        <button className="self-center text-md outline-none bg-blue-500 px-12 py-2 text-white rounded-md  hover:bg-blue-700 ">Login</button>
                     </Link>
 
 
@@ -90,19 +94,22 @@ const Navbar = () => {
                     <Link to="/booking" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Booking
                     </Link>
-                    <Link to="/innovataxi" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/innovaTaxi" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Innova Taxi
                     </Link>
-                    <Link to="/outstation" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/svuTaxi" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                        Innova Taxi
+                    </Link>
+                    <Link to="/outStation" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Outstation
                     </Link>
-                    <Link to="/service" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/services" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Services
                     </Link>
-                    <Link to="/about" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/aboutUs" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         About Us
                     </Link>
-                    <Link to="/contact" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/contactUs" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Contact Us
                     </Link>
                     <Link to="/login" className="px-4 text-md  hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">

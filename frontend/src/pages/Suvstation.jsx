@@ -1,6 +1,6 @@
 import VehicleList from "../components/VehicleList"
 
-const Suvstation = () => {
+const SuvStation = () => {
 
     return (
         <div>
@@ -11,4 +11,4 @@ const Suvstation = () => {
 }
 
 
-export default Suvstation
+export default SuvStation
