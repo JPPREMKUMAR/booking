@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
-
-
+import { Link, useNavigate } from 'react-router-dom'
+import { useState, useContext, useEffect } from 'react'
+import { MainContext } from '../context/MainContext'
+import Cookies from "js-cookie"
 import { logo, menu_icon, cross_icon } from "../assets/assets"
 
 
@@ -11,6 +11,21 @@ const Navbar = () => {
 
 
     const [isMenu, setIsMenu] = useState(false)
+
+    const { token, setToken } = useContext(MainContext)
+
+
+    const navigate = useNavigate()
+
+    const onClickLogout = () => {
+        Cookies.remove("token")
+        setToken('')
+        navigate('/')
+    }
+    useEffect(() => {
+        console.log(token)
+
+    }, [])
 
     return (
         <div className='position:fixed w-full'>
@@ -67,10 +82,15 @@ const Navbar = () => {
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">Contact Us</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/login" className="flex items-center gap-x-3 px-4   cursor-pointer ">
-                        {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <button className="self-center text-md outline-none bg-blue-500 px-12 py-2 text-white rounded-md  hover:bg-blue-700 ">Login</button>
-                    </Link>
+                    <div>
+                        {
+                            token === '' ? <Link onClick={() => setIsMenu((prev) => !prev)} to="/login" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                                {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
+                                <button className="self-center text-md outline-none bg-blue-500 px-12 py-2 text-white rounded-md  hover:bg-blue-700 ">Login</button>
+                            </Link>
+                                : <button onClick={onClickLogout} className="self-center text-md outline-none bg-red-500 px-12 py-2 text-white rounded-md  hover:bg-red-700 ">Logout</button>
+                        }
+                    </div>
 
 
                 </div>
@@ -107,9 +127,11 @@ const Navbar = () => {
                     <Link to="/contactUs" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Contact Us
                     </Link>
-                    <Link to="/login" className="px-4 text-md  hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
-                        <button className='bg-blue-500 outline-none px-7 py-2 rounded-md text-white hover:bg-blue-600'>Login</button>
-                    </Link>
+                    {
+                        token === '' ? <Link to="/login" className="px-4 text-md  hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                            <button className='bg-blue-500 outline-none px-7 py-2 rounded-md text-white hover:bg-blue-600'>Login</button>
+                        </Link> : <button onClick={onClickLogout} className='bg-red-500 outline-none px-7 py-2 rounded-md text-white hover:bg-red-600'>Logout</button>
+                    }
                 </div>
             </div>
 

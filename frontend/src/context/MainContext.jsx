@@ -1,7 +1,13 @@
-import { createContext } from "react";
-import { useNavigate } from "react-router-dom"
+import { createContext, useState, useEffect } from "react";
+
 import { v4 as uuid } from "uuid"
 import { image1, image2, image3, image4, image5, image6 } from "../assets/assets"
+import Cookies from "js-cookie"
+
+
+
+
+
 
 export const MainContext = createContext();
 
@@ -11,7 +17,9 @@ export const MainContext = createContext();
 export const MainContextProvider = (props) => {
     const rupees = 10
 
+    const backendUrl = import.meta.env.VITE_BACK_END_URL
 
+    // console.log(backendUrl)
     const categoriesList = [
         { id: uuid(), name: "AIRPORT TAXI" },
         { id: uuid(), name: "INNOVA TAXI" },
@@ -73,13 +81,20 @@ export const MainContextProvider = (props) => {
 
         },
     ]
+    const getToken = Cookies.get("token")
 
+
+    const [token, setToken] = useState(getToken === undefined ? '' : getToken)
+
+
+    //console.log(token)
 
     const value = {
 
         rupees,
         categoriesList,
-        vehicleList
+        vehicleList,
+        backendUrl, token, setToken
 
     }
 

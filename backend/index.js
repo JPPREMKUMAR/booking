@@ -1,0 +1,32 @@
+import dotenv from "dotenv"
+import express from "express"
+import cors from "cors"
+import connectDB from "./config/db.js"
+import userRouter from "./routes/userRoutes.js"
+
+dotenv.config()
+
+const app = express()
+// Middleware 
+app.use(express.json())
+app.use(cors())
+
+// Connect To Db 
+await connectDB()
+
+
+// Routes 
+app.get("/", (req, res) => {
+    res.json({ success: true, message: "Api Working" }).status(200)
+})
+
+app.use("/api/user", userRouter)
+
+
+// PORT Number
+
+const PORT = process.env.PORT || 8000
+
+app.listen((PORT), () => {
+    console.log(`Server Working on PORT ${PORT}`)
+})
