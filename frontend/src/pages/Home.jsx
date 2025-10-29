@@ -14,19 +14,12 @@ const Home = () => {
     return (
         <div>
 
-            {
-            /*
- 
+
             <VehicleList Title={'INNOVA TAXI'} />
             <VehicleList Title={'OUTSTATION'} />
             <VehicleList Title={'LOCAL TAXI'} />
-            <VehicleList Title={'MINI BUSES'} /> 
-           
-            <TypeOfVehicle />
-            <VehicleList Title={'AIRPORT TAXI'} />
- */}
+            <VehicleList Title={'MINI BUSES'} />
 
-            <PickupDropoffMap />
 
 
         </div>
