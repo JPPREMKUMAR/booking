@@ -50,7 +50,7 @@ const Navbar = () => {
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">Innova Taxi</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/svuStation" className="flex items-center gap-x-3 px-4  cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/suvStation" className="flex items-center gap-x-3 px-4  cursor-pointer ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">Svu Station</p>
                     </Link>
@@ -97,8 +97,8 @@ const Navbar = () => {
                     <Link to="/innovaTaxi" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Innova Taxi
                     </Link>
-                    <Link to="/svuTaxi" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
-                        Innova Taxi
+                    <Link to="/svuStation" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                        Suv Station
                     </Link>
                     <Link to="/outStation" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Outstation
