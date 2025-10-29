@@ -11,7 +11,7 @@ import AboutUs from "./pages/AboutUs"
 import ContactUs from "./pages/ContactUs"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
-import SuvStation from "./pages/SuvStation"
+
 const App = () => {
 
   return (
@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/booking" element={<Booking />} />
             <Route path="/innovaStation" element={<Innovataxi />} />
             <Route path="/outStation" element={<Outstation />} />
-            <Route path="/suvStation" element={<SuvStation />} />
+
             <Route path="/service" element={<Services />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/contactUs" element={<ContactUs />} />
