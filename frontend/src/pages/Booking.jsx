@@ -74,7 +74,7 @@ const Booking = () => {
     return (
         <div className='px-5 py-2 sm:flex sm:items-center sm:justify-center w-full'>
 
-            <div>
+            <div className='w-full sm:flex sm:justify-center '>
 
                 {
                     isLoader ? <div className='flex items-center justify-center'>
