@@ -1,9 +1,9 @@
 import { createContext, useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom"
 import { v4 as uuid } from "uuid"
 import { image1, image2, image3, image4, image5, image6 } from "../assets/assets"
 import Cookies from "js-cookie"
-
+import axios from "axios"
 
 
 
@@ -16,6 +16,7 @@ export const MainContext = createContext();
 
 export const MainContextProvider = (props) => {
     const rupees = 10
+    const navigate = useNavigate()
 
     const backendUrl = import.meta.env.VITE_BACK_END_URL
 
@@ -89,12 +90,32 @@ export const MainContextProvider = (props) => {
 
     //console.log(token)
 
+    // Get User Profile 
+
+    const [userDetails, setUserDetails] = useState({})
+
+    const getUserProfile = async () => {
+
+        const response = await axios.post(backendUrl + "/api/user/userProfile", {}, { headers: { token: token } })
+        //console.log(response.data)
+        const responseData = response.data.userDetails
+        //console.log(responseData)
+        setUserDetails(responseData)
+    }
+
+    useEffect(() => {
+
+        getUserProfile()
+    }, [])
+
+
     const value = {
 
         rupees,
         categoriesList,
         vehicleList,
-        backendUrl, token, setToken
+        backendUrl, token, setToken,
+        userDetails, navigate, getUserProfile
 
     }
 

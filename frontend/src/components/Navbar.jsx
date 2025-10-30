@@ -82,6 +82,13 @@ const Navbar = () => {
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">Contact Us</p>
                     </Link>
+
+                    {
+                        token !== '' && <Link onClick={() => setIsMenu((prev) => !prev)} to="/myProfile" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                            {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
+                            <p className="self-center text-lg ">My Profile</p>
+                        </Link>
+                    }
                     <div>
                         {
                             token === '' ? <Link onClick={() => setIsMenu((prev) => !prev)} to="/login" className="flex items-center gap-x-3 px-4   cursor-pointer ">

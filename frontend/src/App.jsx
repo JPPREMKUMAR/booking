@@ -11,13 +11,14 @@ import AboutUs from "./pages/AboutUs"
 import ContactUs from "./pages/ContactUs"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import MyProfile from "./pages/MyProfile"
 
 const App = () => {
 
   return (
     <div className="bg-gray-200 min-h-screen">
       <MainContextProvider>
-        <BrowserRouter>
+        <>
           <Navbar />
 
           <Routes>
@@ -26,14 +27,14 @@ const App = () => {
             <Route exact path="/booking" element={<Booking />} />
             <Route path="/innovaStation" element={<Innovataxi />} />
             <Route path="/outStation" element={<Outstation />} />
-
             <Route path="/services" element={<Services />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/contactUs" element={<ContactUs />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/myProfile" element={<MyProfile />} />
           </Routes>
-        </BrowserRouter>
+        </>
       </MainContextProvider>
     </div>
   )
