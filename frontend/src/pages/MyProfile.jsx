@@ -1,18 +1,31 @@
 import { useState, useEffect, useContext } from "react"
 import { Link } from "react-router-dom"
-
+import { TailSpin } from "react-loader-spinner"
 import { MainContext } from "../context/MainContext"
-
+import axios from "axios"
 
 const MyProfile = () => {
-    const { userDetails, getUserProfile } = useContext(MainContext)
-
+    const { backendUrl, token } = useContext(MainContext)
+    const [userDetails, setUserDetails] = useState({})
+    const [isLoader, setIsLoader] = useState(true)
     console.log(userDetails)
     const { name, mobile, email } = userDetails
+    const getUserProfile = async () => {
+
+        const response = await axios.post(backendUrl + "/api/user/userProfile", {}, { headers: { token: token } })
+        //console.log(response.data)
+        const responseData = response.data.userDetails
+        console.log(responseData)
+        setUserDetails(responseData)
+        setIsLoader(false)
+
+    }
 
     useEffect(() => {
+
         getUserProfile()
     }, [])
+
 
     return (
         <div className="px-3">
@@ -24,20 +37,28 @@ const MyProfile = () => {
                         My Profile</h1>
                 </div>
             </div>
-            <div className="bg-white shadow-md px-5 py-5 mx-4 ">
-                <div className="flex flex-col gap-y-2 my-2">
-                    <h1 className="text-xl font-semibold">Name</h1>
-                    <p className="text-sm text-gray-600 font-bold">{name}</p>
-                </div>
-                <div className="flex flex-col gap-y-2 my-2">
-                    <h1 className="text-xl font-semibold">Mobile</h1>
-                    <p className="text-sm text-gray-600 font-bold">{mobile}</p>
-                </div>
-                <div className="flex flex-col gap-y-2 my-2">
-                    <h1 className="text-xl font-semibold">Email</h1>
-                    <p className="text-sm text-gray-600 font-bold">{email}</p>
-                </div>
+            <div>
+                {
+                    isLoader ? <div className="flex justify-center">
+                        <TailSpin width={50} heigth={50} color="blue" />
+
+                    </div> : <div className="bg-white shadow-md px-5 py-5 mx-4 ">
+                        <div className="flex flex-col gap-y-2 my-2">
+                            <h1 className="text-xl font-semibold">Name</h1>
+                            <p className="text-sm text-gray-600 font-bold">{name}</p>
+                        </div>
+                        <div className="flex flex-col gap-y-2 my-2">
+                            <h1 className="text-xl font-semibold">Mobile</h1>
+                            <p className="text-sm text-gray-600 font-bold">{mobile}</p>
+                        </div>
+                        <div className="flex flex-col gap-y-2 my-2">
+                            <h1 className="text-xl font-semibold">Email</h1>
+                            <p className="text-sm text-gray-600 font-bold">{email}</p>
+                        </div>
+                    </div>
+                }
             </div>
+
         </div>
     )
 }
