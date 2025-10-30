@@ -46,6 +46,13 @@ const Login = () => {
         console.log("Token Updated.")
     }, [token])
 
+
+    useEffect(() => {
+        if (token !== '') {
+            navigate('/')
+        }
+    }, [])
+
     return (
         <div className="px-5 py-2">
 

@@ -12,6 +12,9 @@ import ContactUs from "./pages/ContactUs"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import MyProfile from "./pages/MyProfile"
+import Thankyou from './pages/Thankyou'
+
+
 
 const App = () => {
 
@@ -33,6 +36,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/myProfile" element={<MyProfile />} />
+            <Route path="/thankyou/:bookingId" element={<Thankyou />} />
           </Routes>
         </>
       </MainContextProvider>

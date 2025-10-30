@@ -105,7 +105,7 @@ const Navbar = () => {
 
             {/* Medium Screen  */}
 
-            <div className="h-18 hidden sm:block sm:flex flex-row items-center justify-around px-6 py-4 border-b border-slate-300">
+            <div className="h-18 hidden sm:block sm:flex flex-row items-center justify-around px-6 py-4 border-b border-slate-300 font-bold">
                 <Link to="/" className='w-60 h-7'>
                     <img src={logo} alt="logo" className="w-35 bg-transparent self-center hover:w-50" />
                 </Link>
@@ -134,6 +134,11 @@ const Navbar = () => {
                     <Link to="/contactUs" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Contact Us
                     </Link>
+                    {
+                        token !== '' && <Link to="/myProfile" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                            My Profile
+                        </Link>
+                    }
                     {
                         token === '' ? <Link to="/login" className="px-4 text-md  hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                             <button className='bg-blue-500 outline-none px-7 py-2 rounded-md text-white hover:bg-blue-600'>Login</button>

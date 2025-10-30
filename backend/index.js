@@ -3,6 +3,8 @@ import express from "express"
 import cors from "cors"
 import connectDB from "./config/db.js"
 import userRouter from "./routes/userRoutes.js"
+import bookingsRouter from "./routes/bookingsRoutes.js"
+
 
 dotenv.config()
 
@@ -21,6 +23,8 @@ app.get("/", (req, res) => {
 })
 
 app.use("/api/user", userRouter)
+
+app.use("/api/book", bookingsRouter)
 
 
 // PORT Number

@@ -92,7 +92,30 @@ export const MainContextProvider = (props) => {
 
     // Get User Profile 
 
+
+
+
+
+
     const [userDetails, setUserDetails] = useState({})
+
+
+    const getUserProfile = async () => {
+
+        const response = await axios.post(backendUrl + "/api/user/userProfile", {}, { headers: { token: token } })
+        //console.log(response.data)
+        const responseData = response.data.userDetails
+        //console.log(responseData)
+        setUserDetails(responseData)
+
+
+    }
+
+    useEffect(() => {
+
+        getUserProfile()
+    }, [])
+
 
 
 
@@ -102,7 +125,7 @@ export const MainContextProvider = (props) => {
         categoriesList,
         vehicleList,
         backendUrl, token, setToken,
-        userDetails, navigate
+        userDetails, navigate, getUserProfile
 
     }
 

@@ -69,6 +69,14 @@ const Register = () => {
     useEffect(() => {
         console.log('token Set')
     }, [token])
+
+
+    useEffect(() => {
+        if (token !== '') {
+            navigate('/')
+        }
+    })
+
     return (
         <div className="px-5 py-2">
 

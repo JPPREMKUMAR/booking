@@ -62,7 +62,7 @@ const VehicleList = ({ Title }) => {
     return (
 
         <div className="flex flex-col items-center ">
-            <h1 className="text-gray-900 font-semibold text-xl text-center mb-4 mt-4 ">{Title}</h1>
+            <h1 className="text-gray-900 font-semibold text-xl text-center mb-4 mt-4 sm:text-4xl">{Title}</h1>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 items-center m-5 ">
                 {
