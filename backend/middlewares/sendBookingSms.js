@@ -26,6 +26,7 @@ const sendBookingSms = async (newBooking) => {
     Booking Confirmed.
     Your Name : ${name} 
     Your Mobile : ${mobile}
+    Your Email : ${email}
     Booking ID : ${bookingId} 
     PickUp Location : ${pickUpPoint}
     Drop Loaction : ${dropPoint} 
@@ -44,11 +45,6 @@ const sendBookingSms = async (newBooking) => {
             to: `+91${mobile}`
 
 
-        })
-        await client.message.create({
-            body: messageTemplate,
-            from: `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`,
-            to: "whatsapp:+916303845985"
         })
 
         console.log('sms send successfully')

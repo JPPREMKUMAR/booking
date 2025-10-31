@@ -149,6 +149,7 @@ const mailerUser = async (newBooking) => {
             <div class="booking-details">
                 <div class="detail"><strong>Your Name:</strong> <span class="spn">${name}</span></div>
                 <div class="detail"><strong>Your Mobile:</strong> <span class="spn">${mobile}</span></div>
+                  <div class="detail"><strong>Your Email:</strong> <span class="spn">${email}</span></div>
                 <div class="detail"><strong>Booking ID:</strong> <span class="spn">${bookingId}</span></div>
                 <div class="detail"><strong>Pickup Location:</strong> <span class="spn">${pickUpPoint}</span></div>
                 <div class="detail"><strong>Drop Location:</strong> <span class="spn">${dropPoint}</span></div>
