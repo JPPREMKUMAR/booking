@@ -5,7 +5,7 @@ import { TailSpin } from "react-loader-spinner"
 
 const Booking = () => {
 
-    const { categoriesList, vehicleList, userDetails, getUserProfile, backendUrl, navigate, pickupTimeList, monthsList } = useContext(MainContext)
+    const { categoriesList, vehicleList, userDetails, getUserProfile, backendUrl, navigate, pickupTimeList, monthsList, token } = useContext(MainContext)
     //console.log(categoriesList)
 
     const [name, setName] = useState('')
@@ -47,6 +47,10 @@ const Booking = () => {
         const pickUpTimeString = pickUpTime['time']
         //console.log(pickUpTimeString)
 
+        if (token === undefined || token === '') {
+            navigate("/login")
+        }
+
 
         const response = await axios.post(backendUrl + "/api/book/booking", {
             name,
@@ -58,7 +62,7 @@ const Booking = () => {
             dropPoint,
             pickUpTime: pickUpTimeString,
             pickUpDate: newPresentDateString
-        })
+        }, { headers: { token: token } })
         console.log(response.data)
         if (response.data.success === true) {
             const { bookingId } = response.data.bookingDetails
