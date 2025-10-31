@@ -1,4 +1,31 @@
 import nodemailer from 'nodemailer';
+import { Resend } from "resend"
+
+
+
+
+
+
+
+
+export const sendBookingMail = async (email, htmlTemplate) => {
+    // Initialize Resend with API key
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    try {
+        // Send email using Resend
+        const data = await resend.emails.send({
+            from: 'onboarding@resend.dev', // must be verified sender domain or use resend.dev
+            to: email, // recipient
+            subject: 'Your Cab Booking Confirmation',
+            html: htmlTemplate
+        });
+
+        console.log('✅ Email sent successfully:', data);
+    } catch (error) {
+        console.error('❌ Error sending email:', error);
+    }
+};
 
 
 
@@ -176,34 +203,7 @@ const mailerUser = async (newBooking) => {
     
     `
 
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail', // You can use Gmail, Outlook, Yahoo, etc.
-        auth: {
-            user: process.env.EMAIL,      // your email
-            pass: process.env.EMAIL_PASS,         // use App Password (not your real password)
-        },
-    });
-
-
-
-
-
-    const mailOptions = {
-        from: process.env.EMAIL,
-        to: email,
-        subject: 'Your Cab Booking Confirmation',
-        html: htmlTemplate
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log('Error:', error);
-        } else {
-            console.log('Email sent successfully:', info.response);
-        }
-    });
-
+    await sendBookingMail(htmlTemplate, email)
 }
 
 

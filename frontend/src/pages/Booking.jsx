@@ -28,8 +28,8 @@ const Booking = () => {
     const onSubmitHandler = async (event) => {
         setIsLoader(true)
         event.preventDefault()
-        console.log("Book Now Button Clicked")
-        console.log(name, mobile, email, bookingType, vehicle, pickUpPoint, dropPoint, pickUpTime, pickUpDate)
+        //console.log("Book Now Button Clicked")
+        //console.log(name, mobile, email, bookingType, vehicle, pickUpPoint, dropPoint, pickUpTime, pickUpDate)
         const convertPickUpdate = new Date(pickUpDate)
 
 
@@ -45,7 +45,7 @@ const Booking = () => {
 
         //console.log(pickUpTime)
         const pickUpTimeString = pickUpTime['time']
-        console.log(pickUpTimeString)
+        //console.log(pickUpTimeString)
 
 
         const response = await axios.post(backendUrl + "/api/book/booking", {
