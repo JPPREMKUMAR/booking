@@ -5,7 +5,7 @@ import { TailSpin } from "react-loader-spinner"
 
 const Booking = () => {
 
-    const { categoriesList, vehicleList, userDetails, getUserProfile, backendUrl, navigate } = useContext(MainContext)
+    const { categoriesList, vehicleList, userDetails, getUserProfile, backendUrl, navigate, pickupTimeList, monthsList } = useContext(MainContext)
     //console.log(categoriesList)
 
     const [name, setName] = useState('')
@@ -15,12 +15,13 @@ const Booking = () => {
     const [vehicle, setVehicle] = useState(vehicleList[0].vehicleName)
     const [pickUpPoint, setPickUpPoint] = useState('')
     const [dropPoint, setDropPoint] = useState('')
-
     const [cityActive, setCityActive] = useState('City To Airport')
-    const [isChecked, setIsChecked] = useState(true)
-
+    const [pickUpTime, setpickUpTime] = useState(pickupTimeList[0])
+    const [minDate, setMinDate] = useState('')
+    const [pickUpDate, setPickUpDate] = useState('')
 
     const [isLoader, setIsLoader] = useState(false)
+
 
 
 
@@ -28,9 +29,33 @@ const Booking = () => {
         setIsLoader(true)
         event.preventDefault()
         console.log("Book Now Button Clicked")
-        console.log(name, mobile, email, bookingType, vehicle, pickUpPoint, dropPoint)
+        console.log(name, mobile, email, bookingType, vehicle, pickUpPoint, dropPoint, pickUpTime, pickUpDate)
+        const convertPickUpdate = new Date(pickUpDate)
 
-        const response = await axios.post(backendUrl + "/api/book/booking", { name, mobile, email, bookingType, vehicle, pickUpLocation: pickUpPoint, dropLocation: dropPoint })
+
+        const day = convertPickUpdate.getDate()
+        const month = convertPickUpdate.getMonth()
+        const year = convertPickUpdate.getFullYear()
+        const monthName = monthsList[month]
+        //console.log(monthName)
+        //console.log(day, month, year)
+        // console.log(day)
+        const newPresentDateString = `${day}-${monthName}-${year}`
+        console.log(newPresentDateString)
+
+
+
+        const response = await axios.post(backendUrl + "/api/book/booking", {
+            name,
+            mobile,
+            email,
+            bookingType,
+            vehicle,
+            pickUpPoint,
+            dropPoint,
+            pickUpTime,
+            pickUpDate: newPresentDateString
+        })
         console.log(response.data)
         if (response.data.success === true) {
             const { bookingId } = response.data.bookingDetails
@@ -70,6 +95,61 @@ const Booking = () => {
             setDropPoint("")
         }
     }, [cityActive])
+
+    useEffect(() => {
+
+        const todayDate = new Date()
+        // console.log(todayDate)
+        //Date Month Year
+        const day = todayDate.getDate()
+        const month = todayDate.getMonth()
+        const year = todayDate.getFullYear()
+        const monthName = monthsList[month]
+        //console.log(monthName)
+        //console.log(day, month, year)
+        // console.log(day)
+        // const newPresentDateString = `${day}-${monthName}-${year}`
+        //console.log(newPresentDateString)
+        if (month + 1 < 9) {
+            if (day < 9) {
+                const presentDateValue = `${year}-0${month + 1}-0${day}`
+                console.log(presentDateValue)
+                setPickUpDate(presentDateValue)
+                setMinDate(presentDateValue)
+
+            } else {
+                const presentDateValue = `${year}-${month + 1}-${day}`
+                console.log(presentDateValue)
+                setPickUpDate(presentDateValue)
+                setMinDate(presentDateValue)
+
+            }
+
+
+        } else {
+            if (day < 9) {
+                const presentDateValue = `${year}-${month + 1}-0${day}`
+                console.log(presentDateValue)
+                setPickUpDate(presentDateValue)
+                setMinDate(presentDateValue)
+
+            } else {
+                const presentDateValue = `${year}-${month + 1}-${day}`
+                console.log(presentDateValue)
+                setPickUpDate(presentDateValue)
+                setMinDate(presentDateValue)
+
+            }
+
+
+        }
+
+
+
+    }, [])
+
+
+
 
     return (
         <div className='px-5 py-2 sm:flex sm:items-center sm:justify-center w-full'>
@@ -155,6 +235,32 @@ const Booking = () => {
                                         }
                                     </div>
                                 </div>
+
+
+                                <div className='my-1'>
+                                    <label htmlFor="date" className='text-xl font-semibold'>Pickup Date</label>
+                                    <div className='border px-3 py-2 bg-white rounded-sm my-2'>
+
+                                        <input type="date" id="date" className='w-full  outline-none font-bold ' min={minDate} value={pickUpDate} onChange={(event) => setPickUpDate(event.target.value)} required />
+                                    </div>
+                                </div>
+
+
+
+                                <div className='my-1'>
+                                    <label htmlFor="vehicleType" className='text-xl font-semibold'>Pickup Time</label>
+                                    <div className='border px-3 py-2 bg-white rounded-sm my-2 overflow-y-scrool'>
+                                        <select className='w-full outline-none overflow-auto' id="vehicleType" defaultValue={pickUpTime} onChange={(event) => setpickUpTime(event.target.value)}>
+                                            {
+                                                pickupTimeList.map((item) => (
+
+                                                    <option key={item.id}>{item.time}</option>
+                                                ))
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div className='flex justify-center my-5'>
 
                                     <button type="submit" className='bg-blue-600 px-7 py-2 outline-none rounded-md text-white font-semibold'>Book Now</button>

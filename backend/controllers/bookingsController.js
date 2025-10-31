@@ -1,5 +1,5 @@
 import Bookings from "../models/Bookings.js"
-import mailer from "../middlewares/mailer.js"
+
 
 
 
@@ -21,7 +21,7 @@ export const bookingUser = async (req, res) => {
 
     try {
 
-        const { name, email, mobile, bookingType, vehicle, pickUpLocation, dropLocation } = req.body
+        const { name, mobile, email, bookingType, vehicle, pickUpPoint, dropPoint, pickUpTime, pickUpDate } = req.body
 
         const bookingId = await generateBookingId()
 
@@ -32,12 +32,14 @@ export const bookingUser = async (req, res) => {
             email,
             bookingType,
             vehicle,
-            pickUpLocation,
-            dropLocation,
+            pickUpPoint,
+            dropPoint,
+            pickUpTime,
+            pickUpDate,
             bookingId
         })
         await newBooking.save()
-        await mailer(newBooking)
+
         res.json({ success: true, message: "Booking Successful.", bookingDetails: newBooking })
 
 

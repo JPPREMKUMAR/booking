@@ -82,6 +82,127 @@ export const MainContextProvider = (props) => {
 
         },
     ]
+
+
+
+    // PICKUP TIME LIST
+    const pickupTimeList = [
+        { time: "01:00 AM", id: uuid() },
+        { time: "01:15 AM", id: uuid() },
+        { time: "01:30 AM", id: uuid() },
+        { time: "01:45 AM", id: uuid() },
+        { time: "02:00 AM", id: uuid() },
+        { time: "02:15 AM", id: uuid() },
+        { time: "02:30 AM", id: uuid() },
+        { time: "02:45 AM", id: uuid() },
+        { time: "03:00 AM", id: uuid() },
+        { time: "03:15 AM", id: uuid() },
+        { time: "03:30 AM", id: uuid() },
+        { time: "03:45 AM", id: uuid() },
+        { time: "04:00 AM", id: uuid() },
+        { time: "04:15 AM", id: uuid() },
+        { time: "04:30 AM", id: uuid() },
+        { time: "04:45 AM", id: uuid() },
+        { time: "05:00 AM", id: uuid() },
+        { time: "05:15 AM", id: uuid() },
+        { time: "05:30 AM", id: uuid() },
+        { time: "05:45 AM", id: uuid() },
+        { time: "06:00 AM", id: uuid() },
+        { time: "06:15 AM", id: uuid() },
+        { time: "06:30 AM", id: uuid() },
+        { time: "06:45 AM", id: uuid() },
+        { time: "07:00 AM", id: uuid() },
+        { time: "07:15 AM", id: uuid() },
+        { time: "07:30 AM", id: uuid() },
+        { time: "07:45 AM", id: uuid() },
+        { time: "08:00 AM", id: uuid() },
+        { time: "08:15 AM", id: uuid() },
+        { time: "08:30 AM", id: uuid() },
+        { time: "08:45 AM", id: uuid() },
+        { time: "09:00 AM", id: uuid() },
+        { time: "09:15 AM", id: uuid() },
+        { time: "09:30 AM", id: uuid() },
+        { time: "09:45 AM", id: uuid() },
+        { time: "10:00 AM", id: uuid() },
+        { time: "10:15 AM", id: uuid() },
+        { time: "10:30 AM", id: uuid() },
+        { time: "10:45 AM", id: uuid() },
+        { time: "11:00 AM", id: uuid() },
+        { time: "11:15 AM", id: uuid() },
+        { time: "11:30 AM", id: uuid() },
+        { time: "11:45 AM", id: uuid() },
+        { time: "12:00 PM", id: uuid() },
+        { time: "12:15 PM", id: uuid() },
+        { time: "12:30 PM", id: uuid() },
+        { time: "12:45 PM", id: uuid() },
+        { time: "01:00 PM", id: uuid() },
+        { time: "01:15 PM", id: uuid() },
+        { time: "01:30 PM", id: uuid() },
+        { time: "01:45 PM", id: uuid() },
+        { time: "02:00 PM", id: uuid() },
+        { time: "02:15 PM", id: uuid() },
+        { time: "02:30 PM", id: uuid() },
+        { time: "02:45 PM", id: uuid() },
+        { time: "03:00 PM", id: uuid() },
+        { time: "03:15 PM", id: uuid() },
+        { time: "03:30 PM", id: uuid() },
+        { time: "03:45 PM", id: uuid() },
+        { time: "04:00 PM", id: uuid() },
+        { time: "04:15 PM", id: uuid() },
+        { time: "04:30 PM", id: uuid() },
+        { time: "04:45 PM", id: uuid() },
+        { time: "05:00 PM", id: uuid() },
+        { time: "05:15 PM", id: uuid() },
+        { time: "05:30 PM", id: uuid() },
+        { time: "05:45 PM", id: uuid() },
+        { time: "06:00 PM", id: uuid() },
+        { time: "06:15 PM", id: uuid() },
+        { time: "06:30 PM", id: uuid() },
+        { time: "06:45 PM", id: uuid() },
+        { time: "07:00 PM", id: uuid() },
+        { time: "07:15 PM", id: uuid() },
+        { time: "07:30 PM", id: uuid() },
+        { time: "07:45 PM", id: uuid() },
+        { time: "08:00 PM", id: uuid() },
+        { time: "08:15 PM", id: uuid() },
+        { time: "08:30 PM", id: uuid() },
+        { time: "08:45 PM", id: uuid() },
+        { time: "09:00 PM", id: uuid() },
+        { time: "09:15 PM", id: uuid() },
+        { time: "09:30 PM", id: uuid() },
+        { time: "09:45 PM", id: uuid() },
+        { time: "10:00 PM", id: uuid() },
+        { time: "10:15 PM", id: uuid() },
+        { time: "10:30 PM", id: uuid() },
+        { time: "10:45 PM", id: uuid() },
+        { time: "11:00 PM", id: uuid() },
+        { time: "11:15 PM", id: uuid() },
+        { time: "11:30 PM", id: uuid() },
+        { time: "11:45 PM", id: uuid() }
+    ]
+
+
+
+    const monthsList = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+    ]
+
+
+
+
+
+
     const getToken = Cookies.get("token")
 
 
@@ -125,7 +246,8 @@ export const MainContextProvider = (props) => {
         categoriesList,
         vehicleList,
         backendUrl, token, setToken,
-        userDetails, navigate, getUserProfile
+        userDetails, navigate, getUserProfile,
+        pickupTimeList, monthsList
 
     }
 

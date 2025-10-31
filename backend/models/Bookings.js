@@ -11,8 +11,10 @@ const BookingsSchema = mongoose.Schema({
     email: { type: String, required: true },
     bookingType: { type: String, required: true },
     vehicle: { type: String, required: true },
-    pickUpLocation: { type: String, required: true },
-    dropLocation: { type: String, required: true },
+    pickUpPoint: { type: String, required: true },
+    dropPoint: { type: String, required: true },
+    pickUpTime: { type: String, required: true },
+    pickUpDate: { type: String, required: true },
     bookingId: { type: String, required: true }
 }, { timestamps: true })
 
