@@ -13,8 +13,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-// Connect To Db 
-await connectDB()
+
 
 
 // Routes 
@@ -31,6 +30,20 @@ app.use("/api/book", bookingsRouter)
 
 const PORT = process.env.PORT || 8000
 
-app.listen((PORT), () => {
-    console.log(`Server Working on PORT ${PORT}`)
-})
+
+// Start Server 
+
+const startServer = async () => {
+    try {
+        // Connect To Db 
+        await connectDB()
+        app.listen((PORT), () => {
+            console.log(`Server Working on PORT ${PORT}`)
+        })
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+startServer()
