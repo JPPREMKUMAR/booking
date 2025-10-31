@@ -194,7 +194,8 @@ const mailerUser = async (newBooking) => {
         from: process.env.EMAIL,
         to: email,
         subject: 'Your Cab Booking Confirmation',
-        html: htmlTemplate
+        //html: htmlTemplate
+        body: "You Cab is Confirmed."
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
