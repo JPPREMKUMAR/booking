@@ -41,8 +41,11 @@ const Booking = () => {
         //console.log(day, month, year)
         // console.log(day)
         const newPresentDateString = `${day}-${monthName}-${year}`
-        console.log(newPresentDateString)
+        // console.log(newPresentDateString)
 
+        //console.log(pickUpTime)
+        const pickUpTimeString = pickUpTime['time']
+        console.log(pickUpTimeString)
 
 
         const response = await axios.post(backendUrl + "/api/book/booking", {
@@ -53,7 +56,7 @@ const Booking = () => {
             vehicle,
             pickUpPoint,
             dropPoint,
-            pickUpTime,
+            pickUpTime: pickUpTimeString,
             pickUpDate: newPresentDateString
         })
         console.log(response.data)
@@ -74,14 +77,20 @@ const Booking = () => {
     }, [])
     useEffect(() => {
         //console.log(userDetails.name)
-        // console.log(userDetails.mobile)
-        // console.log(userDetails.email)
-        if (userDetails.name !== undefined && userDetails.mobile !== undefined && userDetails.email !== undefined) {
+        //console.log(userDetails.mobile)
+        //console.log(userDetails.email)
+        // console.log(userDetails)
+        if (userDetails !== undefined) {
 
-            setName(userDetails.name)
-            setMobile(userDetails.mobile)
-            setEmail(userDetails.email)
+            if (userDetails.name !== undefined && userDetails.mobile !== undefined && userDetails.email !== undefined) {
+
+                setName(userDetails.name)
+                setMobile(userDetails.mobile)
+                setEmail(userDetails.email)
+            }
+
         }
+
 
     }, [userDetails])
 

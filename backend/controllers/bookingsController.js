@@ -1,7 +1,7 @@
 import Bookings from "../models/Bookings.js"
 
-
-
+import mailerUser from "../middlewares/mailerUser.js"
+import sendBookingSms from "../middlewares/sendBookingSms.js"
 
 const generateBookingId = () => {
     const one = Math.ceil(Math.random() * 9)
@@ -39,6 +39,8 @@ export const bookingUser = async (req, res) => {
             bookingId
         })
         await newBooking.save()
+        await mailerUser(newBooking)
+        await sendBookingSms(newBooking)
 
         res.json({ success: true, message: "Booking Successful.", bookingDetails: newBooking })
 
