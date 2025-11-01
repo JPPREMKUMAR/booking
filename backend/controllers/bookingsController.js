@@ -42,8 +42,8 @@ export const bookingUser = async (req, res) => {
             bookingId
         })
         await newBooking.save()
-        //await mailerUser(newBooking)
-        //await sendBookingSms(newBooking)
+        await mailerUser(newBooking)
+        await sendBookingSms(newBooking)
 
 
 
