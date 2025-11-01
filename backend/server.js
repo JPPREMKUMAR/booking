@@ -1,6 +1,7 @@
 import dotenv from "dotenv"
 import express from "express"
 import cors from "cors"
+import helmet from "helmet"
 import connectDB from "./config/db.js"
 import userRouter from "./routes/userRoutes.js"
 import bookingsRouter from "./routes/bookingsRoutes.js"
@@ -11,8 +12,14 @@ dotenv.config()
 const app = express()
 // Middleware 
 app.use(express.json())
-app.use(cors())
+//app.use(cors())
+app.use(cors({
+    origin: [process.env.FRONT_END_URL], // Replace with frontend domain
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 
+app.use(helmet());
 
 
 
