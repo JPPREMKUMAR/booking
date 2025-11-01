@@ -179,13 +179,13 @@ const mailerUser = async (newBooking) => {
 
 
     const transporter = nodemailer.createTransport({
-        service: 'gmail', // You can use Gmail, Outlook, Yahoo, etc.
+        service: "gmail",
         auth: {
-            user: process.env.EMAIL,      // your email
-            pass: process.env.EMAIL_PASS,         // use App Password (not your real password)
-        },
-    });
+            user: process.env.EMAIL,
+            pass: process.env.EMAIL_PASS
+        }
 
+    });
 
 
 
@@ -194,8 +194,8 @@ const mailerUser = async (newBooking) => {
         from: process.env.EMAIL,
         to: email,
         subject: 'Your Cab Booking Confirmation',
-        //html: htmlTemplate
-        body: "You Cab is Confirmed."
+        html: htmlTemplate
+        //body: "You Cab is Confirmed."
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
