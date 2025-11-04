@@ -5,6 +5,8 @@ import helmet from "helmet"
 import connectDB from "./config/db.js"
 import userRouter from "./routes/userRoutes.js"
 import bookingsRouter from "./routes/bookingsRoutes.js"
+import sendEmail from "./middlewares/sendEmail.js"
+import adminRouter from "./routes/adminRoutes.js"
 
 
 dotenv.config()
@@ -15,7 +17,7 @@ app.use(express.json())
 app.use(cors())
 
 
-app.use(helmet());
+
 
 
 
@@ -27,6 +29,10 @@ app.get("/", (req, res) => {
 app.use("/api/user", userRouter)
 
 app.use("/api/book", bookingsRouter)
+
+//Admin User 
+
+app.use("/api/admin", adminRouter)
 
 
 // PORT Number
@@ -50,3 +56,6 @@ const startServer = async () => {
 }
 
 startServer()
+
+
+//sendEmail()

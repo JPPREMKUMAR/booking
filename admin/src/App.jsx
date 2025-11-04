@@ -1,32 +1,30 @@
-import { Routes, Route } from "react-router-dom"
+
+
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from "./components/Navbar"
-import AdminLogin from "./pages/AdminLogin"
-import AdminHomePage from "./pages/AdminHomePage"
-import AddItem from "./pages/AddItem"
-import Bookings from "./pages/Bookings"
+import Login from "./pages/Login"
 
-
-
-
-
-
-
-
-
-function App() {
+const App = () => {
 
 
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/admin/login" element={<AdminHomePage />} />
-        <Route path="/" element={<AdminHomePage />} />
-        <Route path="/admin/bookings" element={<Bookings />} />
-        <Route path="/admin/addItem" element={<AddItem />} />
-      </Routes>
-    </>
+    <div>
+      <BrowserRouter>
+
+        <Navbar />
+        <Routes>
+
+          <Route path="/login" element={<Login />} />
+        </Routes>
+
+      </BrowserRouter>
+
+
+
+    </div>
   )
 }
+
+
 
 export default App

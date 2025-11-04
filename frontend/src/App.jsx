@@ -15,7 +15,6 @@ import MyProfile from "./pages/MyProfile"
 import Thankyou from './pages/Thankyou'
 
 
-
 const App = () => {
 
   return (
@@ -37,6 +36,7 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/myProfile" element={<MyProfile />} />
             <Route path="/thankyou/:bookingId" element={<Thankyou />} />
+
           </Routes>
         </>
       </MainContextProvider>
