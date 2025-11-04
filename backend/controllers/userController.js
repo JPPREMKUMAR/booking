@@ -4,7 +4,7 @@ import User from "../models/User.js"
 
 
 
-const jwtToken = (payload) => {
+export const jwtToken = (payload) => {
 
     return jwt.sign(payload, process.env.JWT_SECRET_KEY)
 }

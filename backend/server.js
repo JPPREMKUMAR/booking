@@ -5,7 +5,6 @@ import helmet from "helmet"
 import connectDB from "./config/db.js"
 import userRouter from "./routes/userRoutes.js"
 import bookingsRouter from "./routes/bookingsRoutes.js"
-import sendEmail from "./middlewares/sendEmail.js"
 import adminRouter from "./routes/adminRoutes.js"
 
 
@@ -57,5 +56,3 @@ const startServer = async () => {
 
 startServer()
 
-
-//sendEmail()
