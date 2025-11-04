@@ -1,19 +1,56 @@
 
-import { useState } from "react"
+import { useState, useContext, useEffect } from "react"
+import axios from "axios"
+import { MainContext } from "../context/MainContext"
+import Cookies from "js-cookie"
+import { TailSpin } from "react-loader-spinner"
 
 const Login = () => {
 
-
+    const { backendUrl, token, setToken, navigate } = useContext(MainContext)
     const [adminEmail, setAdminEmail] = useState('')
     const [adminPassword, setAdminPassword] = useState('')
-
+    const [error, setError] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
 
     const onSubmitHandler = async (event) => {
-
+        setIsLoading(true)
         event.preventDefault()
 
         console.log(adminEmail, adminPassword)
+
+
+        const response = await axios.post(backendUrl + "/api/admin/login", { adminEmail, adminPassword })
+
+
+        if (response.data.success === true) {
+            //console.log(response.data)
+            const getToken = response.data.token
+            navigate("/")
+            //console.log(getToken)
+            setToken(getToken)
+            Cookies.set("token", getToken, { expires: 30 })
+            setError('')
+            setIsLoading(false)
+
+
+
+        } else {
+            console.log(response.data)
+            setError(response.data.message)
+            setIsLoading(false)
+
+        }
     }
+
+    console.log(error)
+
+    useEffect(() => {
+        console.log(token)
+        if (token !== '' && token !== undefined) {
+            navigate("/")
+        }
+    }, [token])
 
     return (
 
@@ -41,8 +78,19 @@ const Login = () => {
                         </div>
                     </div>
                     <div className="flex justify-center my-10">
+                        {
+                            isLoading ? <div>
+                                <TailSpin width={50} height={50} color="blue" />
 
-                        <button type="submit" className="bg-blue-500 text-white outline-none rounded-md px-10 py-2 text-md font-semibold">Login</button>
+                            </div> : <button type="submit" className="bg-blue-500 text-white outline-none rounded-md px-10 py-2 text-md font-semibold">Login</button>
+                        }
+
+
+                    </div>
+                    <div>
+                        {
+                            error !== '' && <p className="text-md font-semibold text-red-500 ">{error}</p>
+                        }
                     </div>
                 </form>
             </div>

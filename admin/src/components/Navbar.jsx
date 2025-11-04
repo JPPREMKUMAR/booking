@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useState, useEffect, useContext } from "react"
 import { Link } from 'react-router-dom'
-
+import { MainContext } from "../context/MainContext"
 import { logo, menu_icon, cross_icon } from "../assets/assets"
-
+import Cookies from "js-cookie"
 const Navbar = () => {
+
+    const { token, navigate, setToken } = useContext(MainContext)
 
     const [isMenu, setIsMenu] = useState(false)
 
@@ -12,13 +14,25 @@ const Navbar = () => {
         setIsMenu((prev) => !prev)
     }
 
+
+    const onClickLogout = () => {
+        navigate("/login")
+        Cookies.remove("token")
+        setToken("")
+        setIsMenu(false)
+
+
+    }
+
+
+
     return (
 
 
         <div className="bg-gray-200 px-5 py-5 w-full">
             <div className="flex justify-between  items-center sm:w-full sm:justify-between ">
 
-                <div className="sm:w-1/3">
+                <div className="sm:w-1/3" onClick={() => navigate("/")} >
                     <img src={logo} alt="Logo" width={130} height={100} />
                 </div>
 
@@ -28,12 +42,19 @@ const Navbar = () => {
                     }
                 </button>
 
-                <div className="hidden  sm:block flex justify-between gap-x-15  items-center w-2/3">
-                    <Link to="/home" className="text-xl font-semibold mx-7">Home</Link>
-                    <Link to="/addItem" className="text-xl font-semibold mx-7">Add Item</Link>
-                    <Link to="/pendingBookings" className="text-xl font-semibold mx-7">Pending Bookings</Link>
-                    <Link to="/completedBookings" className="text-xl font-semibold mx-7">Completed Bookings</Link>
-                    <Link to="/login" className="text-xl font-semibold mx-7">Login</Link>
+                <div className="hidden  sm:block sm:flex justify-around gap-x-15  items-center w-2/3">
+                    <Link to="/" className="text-md font-semibold " ><p>Home</p></Link>
+                    <Link to="/addItem" className="text-md font-semibold "><p>Add Item</p></Link>
+                    <Link to="/pendingBookings" className="text-md font-semibold "><p>Pending Bookings</p></Link>
+                    <Link to="/completedBookings" className="text-md font-semibold "><p>Completed Bookings</p></Link>
+                    {
+                        token === undefined || token === "" ? <Link to="/login" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}>
+                            <button className="bg-blue-500 text-white rounded-md px-8 py-2 ">Login</button>
+
+                        </Link> :
+                            <button onClick={onClickLogout} className="text-white bg-red-500 rounded-md px-2 py-2 outline-none w-30 font-semibold cursor-pointer">Logout</button>
+                    }
+
 
                 </div>
 
@@ -42,11 +63,19 @@ const Navbar = () => {
             {
                 isMenu && <div className="sm:hidden flex flex-col gap-y-2 my-5">
 
-                    <Link to="/home" className="text-md font-semibold">Home</Link>
-                    <Link to="/addItem" className="text-md font-semibold">Add Item</Link>
-                    <Link to="/pendingBookings" className="text-md font-semibold">Pending Bookings</Link>
-                    <Link to="/completedBookings" className="text-md font-semibold">Completed Bookings</Link>
-                    <Link to="/login" className="text-md font-semibold">Login</Link>
+                    <Link to="/" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>Home</p></Link>
+                    <Link to="/addItem" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)} ><p>Add Item</p></Link>
+                    <Link to="/pendingBookings" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>Pending Bookings</p></Link>
+                    <Link to="/completedBookings" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>Completed Bookings</p></Link>
+                    {
+                        token === undefined || token === "" ? <Link to="/login" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}>
+
+                            <button className="bg-blue-500 text-white rounded-md px-8 py-2 ">
+                                Login
+                            </button>
+                        </Link> :
+                            <button onClick={onClickLogout} className="text-white bg-red-500 rounded-md px-2 py-2 outline-none w-30 font-semibold cursor-pointer">Logout</button>
+                    }
 
                 </div>
             }

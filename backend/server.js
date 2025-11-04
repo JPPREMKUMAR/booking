@@ -6,6 +6,8 @@ import connectDB from "./config/db.js"
 import userRouter from "./routes/userRoutes.js"
 import bookingsRouter from "./routes/bookingsRoutes.js"
 import adminRouter from "./routes/adminRoutes.js"
+import vehicleRouter from "./routes/vehicleRoutes.js"
+import connectCloudinary from "./config/connectCloudinary.js"
 
 
 dotenv.config()
@@ -33,6 +35,10 @@ app.use("/api/book", bookingsRouter)
 
 app.use("/api/admin", adminRouter)
 
+//Vehicle
+app.use("/api/vehicle", vehicleRouter)
+
+
 
 // PORT Number
 
@@ -45,6 +51,7 @@ const startServer = async () => {
     try {
         // Connect To Db 
         await connectDB()
+        await connectCloudinary()
         app.listen((PORT), () => {
             console.log(`Server Working on PORT ${PORT}`)
         })

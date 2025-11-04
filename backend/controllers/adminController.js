@@ -62,7 +62,7 @@ export const adminAddItem = async (req, res) => {
 export const adminAllBookings = async (req, res) => {
     try {
 
-        const allBookings = await Bookings.find({}).sort({ createdAt: 1 })
+        const allBookings = await Bookings.find({}).sort({ createdAt: -1 })
 
         res.json({ success: true, message: "All Bookings.", Bookings: allBookings })
 
