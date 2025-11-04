@@ -1,13 +1,13 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { MainContext } from "../context/MainContext"
 import axios from "axios"
-
+import { TailSpin } from "react-loader-spinner"
 
 
 const AddItem = () => {
 
 
-    const { categoriesList, backendUrl, token } = useContext(MainContext)
+    const { categoriesList, backendUrl, token, navigate } = useContext(MainContext)
     // console.log(categoriesList)
 
     const [vehicle, setVahicle] = useState('')
@@ -16,7 +16,9 @@ const AddItem = () => {
     const [capacity, setCapacity] = useState('')
     const [image, setImage] = useState(null)
     const [preview, setPreview] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
 
+    const [message, setMessage] = useState('')
 
 
     const handleImageChange = (e) => {
@@ -35,6 +37,7 @@ const AddItem = () => {
 
 
     const onSubmitHandler = async (event) => {
+        setIsLoading(true)
         event.preventDefault()
 
         console.log(vehicle, bookingType, price, capacity, image)
@@ -49,8 +52,27 @@ const AddItem = () => {
 
         const response = await axios.post(backendUrl + "/api/vehicle/addItem", formData, { headers: { token } })
         console.log(response)
+        if (response.data.success === true) {
+            setIsLoading(false)
+            setMessage(response.data.message)
+            setVahicle('')
+            setBookingType(categoriesList[0].name)
+            setPrice('')
+            setCapacity('')
+            setImage(null)
+            setPreview('')
+        } else {
+            setIsLoading(false)
+            setMessage("Please Try Again.")
+        }
     }
 
+    useEffect(() => {
+        if (token === undefined || token === '') {
+            navigate("/login")
+        }
+
+    }, [])
 
     return (
         <div className='bg-gray-300 px-5 py-5 min-h-screen w-full sm:px-20 sm:py-20'>
@@ -105,10 +127,20 @@ const AddItem = () => {
 
                     <div className='flex justify-center my-3'>
 
-                        <button type="submit" className="text-white bg-blue-600 rounded-md px-5 py-2 font-semibold ">
-                            Add New Vehicle
-                        </button>
+                        {
+                            isLoading ? <div>
+                                <TailSpin width={50} height={50} color="blue" />
+
+                            </div>
+                                : <button type="submit" className="text-white bg-blue-600 rounded-md px-5 py-2 font-semibold ">
+                                    Add New Vehicle
+                                </button>
+                        }
                     </div>
+
+                    {
+                        message !== '' && <p className='text-md text-center font-bold text-red-600'>{message}</p>
+                    }
                 </form>
 
             </div>

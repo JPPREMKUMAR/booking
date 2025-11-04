@@ -44,8 +44,8 @@ const Navbar = () => {
 
                 <div className="hidden  sm:block sm:flex justify-around gap-x-15  items-center w-2/3">
                     <Link to="/" className="text-md font-semibold " ><p>Home</p></Link>
-                    <Link to="/addItem" className="text-md font-semibold "><p>Add Item</p></Link>
-                    <Link to="/pendingBookings" className="text-md font-semibold "><p>Pending Bookings</p></Link>
+                    <Link to="/addItem" className="text-md font-semibold "><p>Add Vehicle</p></Link>
+                    <Link to="/allVehicles" className="text-md font-semibold "><p>All Vehicles</p></Link>
                     <Link to="/completedBookings" className="text-md font-semibold "><p>Completed Bookings</p></Link>
                     {
                         token === undefined || token === "" ? <Link to="/login" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}>
@@ -64,8 +64,8 @@ const Navbar = () => {
                 isMenu && <div className="sm:hidden flex flex-col gap-y-2 my-5">
 
                     <Link to="/" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>Home</p></Link>
-                    <Link to="/addItem" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)} ><p>Add Item</p></Link>
-                    <Link to="/pendingBookings" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>Pending Bookings</p></Link>
+                    <Link to="/addItem" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)} ><p>Add Vehicle</p></Link>
+                    <Link to="/allVehicles" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>All Vehicles</p></Link>
                     <Link to="/completedBookings" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>Completed Bookings</p></Link>
                     {
                         token === undefined || token === "" ? <Link to="/login" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}>

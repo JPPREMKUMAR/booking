@@ -35,3 +35,27 @@ export const addVehicle = async (req, res) => {
         return res.json({ success: false, e })
     }
 }
+
+
+
+export const allVehicles = async (req, res) => {
+
+    try {
+
+
+        const getAllVehicles = await Vehicles.find({}).sort({ createdAt: -1 })
+
+
+        res.json({
+            success: true,
+            vehicles: getAllVehicles
+        })
+
+
+    } catch (e) {
+
+        console.log(e)
+        return res.json({ success: false, e })
+
+    }
+}

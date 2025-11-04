@@ -2,8 +2,8 @@
 const BookingItem = ({ item }) => {
 
     const { name, mobile, email, bookingType, vehicle, pickUpPoint, dropPoint, pickUpTime, pickUpDate } = item
-    console.log(item)
-    const status = true
+    // console.log(item)
+    //const status = true  <p className="text-md font-semibold text-gray-600">Status : <span className={status ? "text-red-600 font-semibold" : "font-semibold text-yellow-600"}>{status ? "Completed" : "Pending"}</span> </p>
 
     return (
 
@@ -17,7 +17,7 @@ const BookingItem = ({ item }) => {
             <p className="text-md font-semibold text-gray-600">Drop Point : <span className="text-gray-900">{dropPoint}</span> </p>
             <p className="text-md font-semibold text-gray-600">PickUp Time : <span className="text-gray-900">{pickUpTime}</span> </p>
             <p className="text-md font-semibold text-gray-600">PickUp Date : <span className="text-gray-900">{pickUpDate}</span> </p>
-            <p className="text-md font-semibold text-gray-600">Status : <span className={status ? "text-red-600 font-semibold" : "font-semibold text-yellow-600"}>{status ? "Completed" : "Pending"}</span> </p>
+
 
         </div>
     )
