@@ -1,12 +1,16 @@
+import { useContext } from "react"
 import { image1, image2, image3, image4, image5, image6 } from "../assets/assets"
 
 import { IoPeopleSharp } from "react-icons/io5";
 import { FaRupeeSign } from "react-icons/fa";
 import { Link } from "react-router-dom"
+import { MainContext } from "../context/MainContext";
 
 const VehicleItem = ({ item }) => {
 
     // console.log(item)
+
+    const { adminPhoneNumber } = useContext(MainContext)
 
     const { vehicleName, capacity, imageUrl, price, vehicleType } = item
 
@@ -34,12 +38,20 @@ const VehicleItem = ({ item }) => {
                 <p className="text-gray-600 text-md  sm:text-xl font-semibold">₹</p>
                 <p className="text-gray-600 text-md  sm:text-xl font-semibold">{price}</p>
             </div>
-            <button type="button" className="sm:bg-blue-400 bg-blue-600 text-white px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 sm:text-slate-200 hover:bg-blue-600 hover:text-white mb-5 mt-2 cursor-pointer">
-                <Link to="/booking" >
-                    Book Now
+            <div className="flex items-center gap-x-3">
 
-                </Link>
-            </button>
+                <a href={`https://wa.me/91${adminPhoneNumber}?text=Hello!%20Sir%20I%20want%20to%20book%20a%20cab.%0APickup%20Location:%20[Enter%20Pickup%20Location]%0ADrop%20Location:%20[Enter%20Drop%20Location]%0ADate%20&%20Time:%20[Preferred%20Time]`}>
+                    <button className="bg-yellow-400  text-black px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 font-semibold mb-5 mt-2 cursor-pointer">
+                        Whatsapp
+                    </button>
+                </a>
+
+                <button type="button" className="sm:bg-blue-400 bg-blue-600 text-white px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 font-semibold  mb-5 mt-2 cursor-pointer">
+                    <Link to="/booking" >
+                        Book Now
+                    </Link>
+                </button>
+            </div>
         </div>
     )
 }

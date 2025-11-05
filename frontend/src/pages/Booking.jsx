@@ -68,7 +68,7 @@ const Booking = () => {
             const { bookingId } = response.data.bookingDetails
 
             const thankyouUrl = `/thankyou/${bookingId}`
-            navigate(thankyouUrl)
+            //  navigate(thankyouUrl)
             setIsLoader(false)
         }
         setIsLoader(false)
