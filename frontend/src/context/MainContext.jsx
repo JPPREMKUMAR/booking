@@ -20,7 +20,10 @@ export const MainContextProvider = (props) => {
 
     const backendUrl = import.meta.env.VITE_BACK_END_URL
 
-    // console.log(backendUrl)
+    const adminPhoneNumber = import.meta.env.VITE_PHONE_NUMBER
+
+
+    console.log(backendUrl)
     const categoriesList = [
         { id: uuid(), name: "AIRPORT TAXI" },
         { id: uuid(), name: "INNOVA TAXI" },
@@ -247,7 +250,7 @@ export const MainContextProvider = (props) => {
         vehicleList,
         backendUrl, token, setToken,
         userDetails, navigate, getUserProfile,
-        pickupTimeList, monthsList
+        pickupTimeList, monthsList, adminPhoneNumber
 
     }
 

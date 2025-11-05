@@ -13,12 +13,12 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import MyProfile from "./pages/MyProfile"
 import Thankyou from './pages/Thankyou'
-
+import Footer from './components/Footer'
 
 const App = () => {
 
   return (
-    <div className="bg-gray-200 min-h-screen">
+    <div className="bg-gray-200 min-h-screen ">
       <MainContextProvider>
         <>
           <Navbar />
@@ -38,6 +38,7 @@ const App = () => {
             <Route path="/thankyou/:bookingId" element={<Thankyou />} />
 
           </Routes>
+          <Footer />
         </>
       </MainContextProvider>
     </div>

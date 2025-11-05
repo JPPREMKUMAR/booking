@@ -10,6 +10,10 @@ import image5 from "./5.png"
 import image6 from "./6.png"
 
 
+import whatsapp from "./whatsapp.png"
+import telephone from "./telephone.png"
 
 
-export { menu_icon, cross_icon, logo, image1, image2, image3, image4, image5, image6 }
+
+
+export { menu_icon, cross_icon, logo, image1, image2, image3, image4, image5, image6, whatsapp, telephone }
