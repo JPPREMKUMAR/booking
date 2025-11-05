@@ -21,7 +21,7 @@ const HelmetSeo = () => {
                 <meta name="geo.position" content="12.9716;77.5946" />
                 <meta name="ICBM" content="12.9716, 77.5946" />
 
-                {/* Local Business Schema for Google */}
+                {/* ✅ Updated Local Business Schema */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
@@ -30,8 +30,10 @@ const HelmetSeo = () => {
                         image: "https://booking-one-sage.vercel.app/logo.png",
                         address: {
                             "@type": "PostalAddress",
+                            streetAddress: "MG Road, Shivaji Nagar",
                             addressLocality: "Bengaluru",
                             addressRegion: "Karnataka",
+                            postalCode: "560001",
                             addressCountry: "IN",
                         },
                         url: "https://booking-one-sage.vercel.app/",
