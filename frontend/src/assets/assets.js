@@ -17,14 +17,14 @@ import instagram from "./instagram.svg"
 import facebook from "./facebook.svg"
 import twitter from "./twitter-circle.svg"
 import linkedIn from "./linkedin-circle.svg"
-
+import gmail from './gmail.svg'
 
 
 
 export {
     menu_icon, cross_icon,
 
-    instagram, facebook, twitter, linkedIn
+    instagram, facebook, twitter, linkedIn, gmail
     ,
 
     logo, image1, image2, image3, image4, image5, image6, whatsapp, telephone

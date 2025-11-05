@@ -7,7 +7,7 @@ const WhyBookWithUs = () => {
         <div className="px-5 py-5 w-full">
 
             <h1 className="text-xl font-bold">🚗 WHY BOOK WITH US?</h1>
-            <div className="my-3 sm:w-1/2">
+            <div className="my-3">
 
                 <div className="my-2">
                     <h1 className="text-xl font-bold text-black my-1">🕒 1. 24/7 Reliable Service</h1>

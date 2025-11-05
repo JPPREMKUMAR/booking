@@ -2,7 +2,8 @@
 import { useContext } from "react"
 import { MainContext } from "../context/MainContext"
 import {
-    instagram, facebook, twitter, linkedIn
+    instagram, facebook, twitter, linkedIn,
+    gmail
 } from "../assets/assets"
 
 const ContactWithUs = () => {
@@ -94,6 +95,19 @@ const ContactWithUs = () => {
                         </div>
 
 
+                        <div className="my-3 flex items-center gap-x-3">
+                            <a className="text-md font-semibold text-gray-700 my-1 flex gap-1 items-center" href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLWmpSQnWFhtzSWVxBBfxNfNjxkHBQXPjrHvxNnbMmtGmjLMtNgGrMBrbGtngcXwZDz" target="_blank">
+                                <img src={gmail} alt="Gmail" className="w-5 h-5" />
+                                {/*/ 
+                            <p>Facebook</p>
+                            /*/
+                                }
+
+                            </a>
+
+                        </div>
+
+
                     </div>
 
                 </div>
@@ -101,6 +115,13 @@ const ContactWithUs = () => {
 
 
             </div>
+
+            <footer className="text-center py-4 ">
+                <p>
+                    © {new Date().getFullYear()} CabBooking. All Rights Reserved.
+                </p>
+            </footer>
+
 
         </section>
     )

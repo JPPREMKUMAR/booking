@@ -15,6 +15,7 @@ import MyProfile from "./pages/MyProfile"
 import Thankyou from './pages/Thankyou'
 import Footer from './components/Footer'
 import HelmetSeo from "./components/HelmetSeo"
+import ContactWithUs from "./components/ContactWithUs"
 const App = () => {
 
   return (
@@ -40,6 +41,7 @@ const App = () => {
 
           </Routes>
           <Footer />
+          <ContactWithUs />
         </>
       </MainContextProvider>
     </div>
