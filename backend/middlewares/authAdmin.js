@@ -17,7 +17,7 @@ const authAdmin = (req, res, next) => {
         //console.log(token)
         const payload = getPayload(token)
 
-        console.log(payload)
+        // console.log(payload)
         if (payload.adminEmail === process.env.ADMIN_EMAIL && payload.adminPassword === process.env.ADMIN_PASSWORD) {
 
             next()

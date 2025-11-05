@@ -59,3 +59,87 @@ export const allVehicles = async (req, res) => {
 
     }
 }
+
+export const getVehicle = async (req, res) => {
+
+    try {
+
+        const { id } = req.params
+        console.log(id)
+
+        const getVehicle = await Vehicles.findOne({ _id: id })
+        console.log(getVehicle)
+
+        if (getVehicle !== undefined || getVehicle !== null) {
+            return res.json({
+                success: true,
+                vehicleDetails: getVehicle
+            })
+
+        } else {
+            res.json({
+                success: false,
+                message: "Invalid Vehicle Id "
+            })
+        }
+
+
+
+
+
+    } catch (e) {
+
+        console.log(e)
+        return res.json({ success: false, message: "Invalid Vehicle Id" })
+
+    }
+}
+
+
+
+
+export const updateVehicle = async (req, res) => {
+
+    try {
+
+        const { vehicle, bookingType, price, capacity } = req.body
+        //console.log(req.body)
+        const { id } = req.params
+        // console.log(id)
+        const isVehicle = await Vehicles.findOne({ _id: id })
+        //console.log(isVehicle)
+        if (isVehicle === null) {
+            return res.json({
+                success: false,
+                message: "Invalid Vehicle Id "
+            })
+        }
+
+        const getVehicle = await Vehicles.updateOne({ _id: id }, { vehicle, bookingType, price, capacity })
+        //console.log(getVehicle)
+
+        if (getVehicle !== undefined || getVehicle !== null) {
+            return res.json({
+                success: true,
+
+                message: "Vehicle Details Updated."
+            })
+
+        } else {
+            res.json({
+                success: false,
+                message: "Invalid Vehicle Id "
+            })
+        }
+
+
+
+
+
+    } catch (e) {
+
+        console.log(e)
+        return res.json({ success: false, message: "Invalid Vehicle Id" })
+
+    }
+}

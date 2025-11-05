@@ -3,13 +3,14 @@ import axios from "axios"
 import { TailSpin } from "react-loader-spinner"
 import VehicleItem from "../components/VehicleItem"
 import { MainContext } from "../context/MainContext"
+import { Navigate } from "react-router-dom"
 
 
 
 const AllVehicles = () => {
 
 
-    const { backendUrl, token } = useContext(MainContext)
+    const { backendUrl, token, navigate } = useContext(MainContext)
 
     const [isLoading, setIsLoading] = useState(true)
     const [vehicles, setVehicles] = useState([])
@@ -28,6 +29,9 @@ const AllVehicles = () => {
     }
 
     useEffect(() => {
+        if (token === undefined || token === '') {
+            navigate("/login")
+        }
         getAllVehicles()
         //console.log(vehicles)
     }, [])
