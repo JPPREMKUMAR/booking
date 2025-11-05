@@ -13,7 +13,19 @@ import image6 from "./6.png"
 import whatsapp from "./whatsapp.png"
 import telephone from "./telephone.png"
 
+import instagram from "./instagram.svg"
+import facebook from "./facebook.svg"
+import twitter from "./twitter-circle.svg"
+import linkedIn from "./linkedin-circle.svg"
 
 
 
-export { menu_icon, cross_icon, logo, image1, image2, image3, image4, image5, image6, whatsapp, telephone }
+
+export {
+    menu_icon, cross_icon,
+
+    instagram, facebook, twitter, linkedIn
+    ,
+
+    logo, image1, image2, image3, image4, image5, image6, whatsapp, telephone
+}
