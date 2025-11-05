@@ -37,7 +37,7 @@ const Home = () => {
 
     return (
 
-        <div className="min-h-screen bg-gray-200">
+        <div className="min-h-screen m-0 bg-gray-200">
             <h1 className="text-center text-2xl font-semibold sm:text-4xl ">Latest Bookings</h1>
 
             <div className="my-5 p-5 sm:my-8">

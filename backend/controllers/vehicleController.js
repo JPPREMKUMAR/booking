@@ -143,3 +143,48 @@ export const updateVehicle = async (req, res) => {
 
     }
 }
+
+
+
+
+
+
+export const deleteVehicle = async (req, res) => {
+
+    try {
+
+
+        const { id } = req.body
+        // console.log(id)
+        const isVehicle = await Vehicles.deleteOne({ _id: id })
+        //console.log(isVehicle)
+        if (isVehicle === null) {
+            return res.json({
+                success: false,
+                message: "Invalid Vehicle Id "
+            })
+        }
+
+
+
+
+        return res.json({
+            success: true,
+
+            message: "Vehicle Deleted."
+        })
+
+
+
+
+
+
+
+
+    } catch (e) {
+
+        console.log(e)
+        return res.json({ success: false, message: "Invalid Vehicle Id" })
+
+    }
+}

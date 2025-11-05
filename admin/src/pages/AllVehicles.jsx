@@ -17,6 +17,7 @@ const AllVehicles = () => {
 
 
     const getAllVehicles = async () => {
+        setIsLoading(true)
 
         const response = await axios.post(backendUrl + "/api/vehicle/allVehicles", {}, { headers: { token } })
         // console.log(response)
@@ -53,7 +54,7 @@ const AllVehicles = () => {
                             vehicles.length !== 0 ? <div className="grid grid-cols-1 sm:grid-cols-4   gap-4 sm:gap-7">
                                 {
                                     vehicles.map((item, index) => (
-                                        <VehicleItem item={item} key={index} />
+                                        <VehicleItem item={item} key={index} getAllVehicles={getAllVehicles} />
                                     ))
                                 }
 

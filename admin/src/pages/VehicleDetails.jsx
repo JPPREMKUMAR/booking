@@ -42,6 +42,7 @@ const VehicleDetails = () => {
             setCapacity('')
             setPrice('')
             setIsLoading(false)
+            navigate("/allVehicles")
         } else {
             setMessage(response.data.message)
 
