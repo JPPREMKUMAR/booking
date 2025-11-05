@@ -40,7 +40,7 @@ const VehicleItem = ({ item }) => {
             </div>
             <div className="flex items-center gap-x-3">
 
-                <a href={`https://wa.me/91${adminPhoneNumber}?text=Hello!%20Sir%20I%20want%20to%20book%20a%20cab.%0APickup%20Location:%20[Enter%20Pickup%20Location]%0ADrop%20Location:%20[Enter%20Drop%20Location]%0ADate%20&%20Time:%20[Preferred%20Time]`}>
+                <a href={`https://wa.me/91${adminPhoneNumber}?text=Hello!%20Sir%20I%20want%20to%20book%20a%20cab.%0APickup%20Location:%20[Enter%20Pickup%20Location]%0ADrop%20Location:%20[Enter%20Drop%20Location]%0ADate%20&%20Time:%20[Preferred%20Time]`} target="_blank">
                     <button className="bg-yellow-400  text-black px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 font-semibold mb-5 mt-2 cursor-pointer">
                         Whatsapp
                     </button>
