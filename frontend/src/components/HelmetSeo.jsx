@@ -4,45 +4,64 @@ const HelmetSeo = () => {
     return (
         <>
             <Helmet>
-                <title>Cab Booking in Bengaluru | Airport Taxi | Outstation Rides</title>
+                {/* Basic SEO */}
+                <title>Book Cabs in Bengaluru | Airport Pickup & Drop Service</title>
                 <meta
                     name="description"
-                    content="Book cabs in Bengaluru for airport pickup, drop, and outstation rides. Affordable, safe, and 24x7 cab booking service in Bengaluru."
+                    content="Book affordable cabs in Bengaluru for airport pickup and drop. Fast, reliable, and safe cab booking services near you."
                 />
                 <meta
                     name="keywords"
-                    content="cab booking bengaluru, taxi service bangalore, airport taxi bengaluru, local cab bengaluru, outstation taxi bengaluru, bengaluru cab service, ride booking, book cab online bengaluru, cab for airport, taxi for outstation"
+                    content="cab booking Bengaluru, airport taxi Bengaluru, pickup and drop cab, taxi near me, Bengaluru airport cab, book cab online Bengaluru"
                 />
-                <meta name="author" content="Cab Booking Team" />
-                <meta name="robots" content="index, follow" />
-                <meta name="language" content="English" />
-                <meta name="geo.region" content="IN-KA" />
-                <meta name="geo.placename" content="Bengaluru" />
-                <meta name="geo.position" content="12.9716;77.5946" />
-                <meta name="ICBM" content="12.9716, 77.5946" />
 
-                {/* ✅ Updated Local Business Schema */}
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Cab Booking in Bengaluru - Fast Airport Rides" />
+                <meta
+                    property="og:description"
+                    content="Instant cab booking for Bengaluru Airport. Hassle-free pickups and drops with live tracking and verified drivers."
+                />
+                <meta property="og:url" content="https://yourfrontenddomain.com" />
+                <meta property="og:image" content="https://yourfrontenddomain.com/preview.jpg" />
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Cab Booking in Bengaluru | Safe Airport Transfers" />
+                <meta
+                    name="twitter:description"
+                    content="Bengaluru’s reliable cab booking app for airport pickups and drops. Easy booking, fixed fares, verified drivers."
+                />
+                <meta name="twitter:image" content="https://yourfrontenddomain.com/preview.jpg" />
+
+                {/* Schema.org Structured Data */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "LocalBusiness",
-                        name: "Cab Booking Bengaluru",
-                        image: "https://booking-one-sage.vercel.app/logo.png",
-                        address: {
+                        "name": "Bengaluru Cab Booking Service",
+                        "image": "https://yourfrontenddomain.com/logo.png",
+                        "url": "https://yourfrontenddomain.com",
+                        "telephone": "+91-9876543210",
+                        "address": {
                             "@type": "PostalAddress",
-                            streetAddress: "MG Road, Shivaji Nagar",
-                            addressLocality: "Bengaluru",
-                            addressRegion: "Karnataka",
-                            postalCode: "560001",
-                            addressCountry: "IN",
+                            "streetAddress": "Airport Road",
+                            "addressLocality": "Bengaluru",
+                            "addressRegion": "Karnataka",
+                            "postalCode": "560017",
+                            "addressCountry": "IN"
                         },
-                        url: "https://booking-one-sage.vercel.app/",
-                        telephone: "+91XXXXXXXXXX",
-                        priceRange: "₹₹",
+                        "openingHours": "Mo-Su 00:00-23:59",
+                        "priceRange": "₹₹",
+                        "servesCuisine": "Cab Service",
+                        "sameAs": [
+                            "https://www.facebook.com/yourpage",
+                            "https://www.instagram.com/yourpage",
+                            "https://www.twitter.com/yourpage"
+                        ]
                     })}
                 </script>
             </Helmet>
-
         </>
     );
 }
