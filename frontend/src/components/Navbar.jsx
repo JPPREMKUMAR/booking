@@ -28,12 +28,12 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className='position:fixed w-full'>
+        <div className='position:fixed w-full bg-black'>
 
 
-            <div className=" h-20 py-4 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
+            <div className="py-4 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
                 <div className='max-w-40 '>
-                    <img src={logo} alt="logo" className="w-30 h-full bg-transparent self-center " />
+                    <img src={logo} alt="logo" className="w-[160px] h-full bg-transparent self-center " />
                 </div>
                 <button className="ml-2 bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center max-w-30"><a href={`tel:+91${adminPhoneNumber}`} className='text-[12px] px-1 font-bold' >+91 {adminPhoneNumber}</a>
                 </button>

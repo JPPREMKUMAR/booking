@@ -1,7 +1,7 @@
 
 import menu_icon from "./menu_icon.png"
 import cross_icon from "./cross_icon.png"
-import logo from "./logo.svg"
+import logo from "./websiteLogo.jpeg"
 import image1 from "./1.png"
 import image2 from "./2.png"
 import image3 from "./3.png"
