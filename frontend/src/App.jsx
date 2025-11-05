@@ -14,13 +14,14 @@ import Register from "./pages/Register"
 import MyProfile from "./pages/MyProfile"
 import Thankyou from './pages/Thankyou'
 import Footer from './components/Footer'
-
+import HelmetSeo from "./components/HelmetSeo"
 const App = () => {
 
   return (
     <div className="bg-gray-200 min-h-screen ">
       <MainContextProvider>
         <>
+          <HelmetSeo />
           <Navbar />
 
           <Routes>
