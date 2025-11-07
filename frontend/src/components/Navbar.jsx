@@ -28,10 +28,10 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className='position:fixed w-full bg-black'>
+        <div className='position:fixed w-full bg-black '>
 
 
-            <div className="py-4 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
+            <div className="py-1 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
                 <div className='max-w-40 '>
                     <img src={logo} alt="logo" className="w-[160px] h-full bg-transparent self-center " />
                 </div>
