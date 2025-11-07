@@ -28,16 +28,16 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className='position:fixed w-full bg-black '>
+        <div className=' w-full bg-white  '>
 
 
-            <div className="py-1 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
+            <div className="py-2 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
                 <div className='max-w-40 '>
-                    <img src={logo} alt="logo" className="w-[160px] h-full bg-transparent self-center " />
+                    <img src={logo} alt="logo" className="w-[120px] h-[30px]  " />
                 </div>
                 <button className="ml-2 bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center max-w-30"><a href={`tel:+91${adminPhoneNumber}`} className='text-[12px] px-1 font-bold' >+91 {adminPhoneNumber}</a>
                 </button>
-                <div className='ml-5 self-center flex items-center'>
+                <div className='w-[40px] text-center flex items-center'>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
                         {
                             isMenu ? <img src={cross_icon} className=" text-gray-900 max-w-10 max-h-8  " /> : <img src={menu_icon} className=" text-gray-900 max-w-8 max-h-8 " />
@@ -52,39 +52,39 @@ const Navbar = () => {
 
             {
 
-                isMenu && <div className='mb-5 mt-4 flex flex-col gap-3 md:hidden font-bold text-gray-900 '>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/" className="flex items-center gap-x-3 px-4  cursor-pointer ">
+                isMenu && <div className='px-3 py-5 flex flex-col gap-3 md:hidden font-bold text-[#222222] transition-colors duration-300 text-lg '>
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/" className="flex items-center gap-x-3 px-4  cursor-pointer  hover:text-[#FFD700] ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg">Home</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/booking" className="flex items-center gap-x-3 px-4 cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/booking" className="flex items-center gap-x-3 px-4 cursor-pointer  hover:text-[#FFD700]">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg">Booking</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovaStation" className="flex items-center gap-x-3 px-4  cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovaStation" className="flex items-center gap-x-3 px-4  cursor-pointer  hover:text-[#FFD700]">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">Innova Taxi</p>
                     </Link>
 
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/outStation" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/outStation" className="flex items-center gap-x-3 px-4   cursor-pointer  hover:text-[#FFD700]">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">Outstation</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/services" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/services" className="flex items-center gap-x-3 px-4   cursor-pointer  hover:text-[#FFD700]">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">Services</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/aboutUs" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/aboutUs" className="flex items-center gap-x-3 px-4   cursor-pointer  hover:text-[#FFD700]">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">About Us</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/contactUs" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/contactUs" className="flex items-center gap-x-3 px-4   cursor-pointer  hover:text-[#FFD700]">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">Contact Us</p>
                     </Link>
 
                     {
-                        token !== '' && <Link onClick={() => setIsMenu((prev) => !prev)} to="/myProfile" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                        token !== '' && <Link onClick={() => setIsMenu((prev) => !prev)} to="/myProfile" className="flex items-center gap-x-3 px-4   cursor-pointer  hover:text-[#FFD700]">
                             {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                             <p className="self-center text-lg ">My Profile</p>
                         </Link>
@@ -105,33 +105,33 @@ const Navbar = () => {
 
             {/* Medium Screen  */}
 
-            <div className="h-18 hidden sm:block sm:flex flex-row items-center justify-around px-6 py-4 border-b border-slate-300 font-bold">
+            <div className=" hidden sm:block sm:flex flex-row items-center justify-around px-6 py-4 border-b border-slate-300 font-bold">
                 <Link to="/" className='w-60 h-7'>
-                    <img src={logo} alt="logo" className="w-30 bg-transparent self-center" />
+                    <img src={logo} alt="logo" className="w-[200px] h-[40px] bg-transparent self-center" />
                 </Link>
 
                 <div className=''>
 
-                    <Link to="/" className="px-4 text-md hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/" className="px-4 text-xl hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Home
                     </Link>
-                    <Link to="/booking" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/booking" className="px-4 text-xl hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Booking
                     </Link>
-                    <Link to="/innovaTaxi" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/innovaTaxi" className="px-4 text-xl hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Innova Taxi
                     </Link>
 
-                    <Link to="/outStation" className="px-4 text-md hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/outStation" className="px-4 text-xl hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Outstation
                     </Link>
-                    <Link to="/services" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/services" className="px-4 text-xl  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Services
                     </Link>
-                    <Link to="/aboutUs" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/aboutUs" className="px-4 text-xl  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         About Us
                     </Link>
-                    <Link to="/contactUs" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/contactUs" className="px-4 text-xl  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
                         Contact Us
                     </Link>
                     {
