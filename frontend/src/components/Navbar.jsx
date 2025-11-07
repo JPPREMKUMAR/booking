@@ -33,7 +33,7 @@ const Navbar = () => {
 
             <div className="py-3 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
                 <div className='max-w-40 '>
-                    <img src={logo} alt="logo" className="w-[180px] h-[40px]  " />
+                    <img src={logo} alt="logo" className=" min-w-[130px] max-w-[180px] max-h-[40px]  " />
                 </div>
                 <button className="ml-2 bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center max-w-30"><a href={`tel:+91${adminPhoneNumber}`} className='text-[12px] px-1 font-bold' >+91 {adminPhoneNumber}</a>
                 </button>
