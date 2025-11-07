@@ -26,8 +26,8 @@ const VehicleItem = ({ item }) => {
 
     return (
 
-        <div className="bg-white pb-3 px-4 py-4 rounded-lg shadow-lg flex  flex-col items-center gap-3 sm:m-2 m-2 mb-2 cursor-pointer" onClick={onClickCard}>
-            <img src={imageUrl} alt={`${vehicleName}`} className="w-full h-60 sm:h-60" />
+        <div className="flex  flex-col items-center gap-3 sm:m-2 m-2 mb-2  border border-gray-300" onClick={onClickCard}>
+            <img src={imageUrl} alt={`${vehicleName}`} className="w-[70%] h-[20%] sm:h-60" />
             <h1 className="text-lg text-gray-800 font-bold text-medium sm:text-2xl">{vehicleName}</h1>
             <div className="flex items-center gap-x-2 text-md sm:text-xl">
                 <IoPeopleSharp className="text-gray-600" />

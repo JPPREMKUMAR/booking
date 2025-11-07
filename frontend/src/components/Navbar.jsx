@@ -32,15 +32,15 @@ const Navbar = () => {
 
 
             <div className="py-3 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
-                <div className='max-w-40 '>
-                    <img src={logo} alt="logo" className=" min-w-[130px] max-w-[180px] max-h-[40px]  " />
+                <div className=' px-2'>
+                    <img src={logo} alt="logo" className="min-w-[50px]  max-w-[150px] max-h-[40px]  " />
                 </div>
                 <button className="ml-2 bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center max-w-30"><a href={`tel:+91${adminPhoneNumber}`} className='text-[12px] px-1 font-bold' >+91 {adminPhoneNumber}</a>
                 </button>
                 <div className='w-[40px] text-center flex items-center'>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
                         {
-                            isMenu ? <img src={cross_icon} className=" text-gray-900 max-w-10 max-h-8  " /> : <img src={menu_icon} className=" text-gray-900 max-w-8 max-h-8 " />
+                            isMenu ? <img src={cross_icon} className="w-[24px] h-[24px] " /> : <img src={menu_icon} className="w-[24px] h-[24px] " />
                         }
 
                     </button>
@@ -53,38 +53,38 @@ const Navbar = () => {
             {
 
                 isMenu && <div className='px-3 py-5 flex flex-col gap-3 md:hidden font-bold text-[#222222] transition-colors duration-300 text-lg '>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/" className="flex items-center gap-x-3 px-4  cursor-pointer  hover:text-[#FFD700] ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/" className="flex items-center gap-x-3 px-4  cursor-pointer     ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg">Home</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/booking" className="flex items-center gap-x-3 px-4 cursor-pointer  hover:text-[#FFD700]">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/booking" className="flex items-center gap-x-3 px-4 cursor-pointer    ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg">Booking</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovaStation" className="flex items-center gap-x-3 px-4  cursor-pointer  hover:text-[#FFD700]">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovaStation" className="flex items-center gap-x-3 px-4  cursor-pointer    ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">Innova Taxi</p>
                     </Link>
 
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/outStation" className="flex items-center gap-x-3 px-4   cursor-pointer  hover:text-[#FFD700]">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/outStation" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">Outstation</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/services" className="flex items-center gap-x-3 px-4   cursor-pointer  hover:text-[#FFD700]">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/services" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">Services</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/aboutUs" className="flex items-center gap-x-3 px-4   cursor-pointer  hover:text-[#FFD700]">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/aboutUs" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">About Us</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/contactUs" className="flex items-center gap-x-3 px-4   cursor-pointer  hover:text-[#FFD700]">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/contactUs" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                         <p className="self-center text-lg ">Contact Us</p>
                     </Link>
 
                     {
-                        token !== '' && <Link onClick={() => setIsMenu((prev) => !prev)} to="/myProfile" className="flex items-center gap-x-3 px-4   cursor-pointer  hover:text-[#FFD700]">
+                        token !== '' && <Link onClick={() => setIsMenu((prev) => !prev)} to="/myProfile" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
                             {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                             <p className="self-center text-lg ">My Profile</p>
                         </Link>
@@ -107,7 +107,7 @@ const Navbar = () => {
 
             <div className=" hidden sm:block sm:flex flex-row items-center justify-around px-6 py-8 border-b border-slate-300 font-bold">
                 <Link to="/" className='w-60 h-7 flex items-center'>
-                    <img src={logo} alt="logo" className="w-[250px] h-[70px] " />
+                    <img src={logo} alt="logo" className="w-[300px] h-[60px] " />
                 </Link>
 
                 <div className=''>

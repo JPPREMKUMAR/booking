@@ -1,6 +1,6 @@
 
-import menu_icon from "./menu_icon.png"
-import cross_icon from "./cross_icon.png"
+import menu_icon from "./menu.png"
+import cross_icon from "./close.png"
 import logo from "./sample_logo.png"
 import image1 from "./1.png"
 import image2 from "./2.png"
