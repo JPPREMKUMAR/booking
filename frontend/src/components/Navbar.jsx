@@ -28,23 +28,27 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className=' w-full bg-white  '>
+        <div className=' w-full bg-white font-sans  '>
 
 
-            <div className="py-3 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
+            <div className="sm:px-4 px-3 flex justify-between items-center h-16 border-b border-slate-300 sm:hidden  ">
                 <div className=' px-2'>
-                    <img src={logo} alt="logo" className="w-[130px] h-[40px]  " />
+                    <img src={logo} alt="logo" className="w-[120px] h-[30px]  " />
                 </div>
-                <button className="ml-2 bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center max-w-30"><a href={`tel:+91${adminPhoneNumber}`} className='text-[12px] px-1 font-bold' >+91 {adminPhoneNumber}</a>
-                </button>
-                <div className='w-[40px] text-center flex items-center'>
-                    <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
+
+                <div className=' text-center flex items-center'>
+                    <button type="button" className=' px-2 py-2' onClick={() => setIsMenu((prev) => !prev)}>
                         {
-                            isMenu ? <img src={cross_icon} className="w-[24px] h-[24px] " /> : <img src={menu_icon} className="w-[24px] h-[24px] " />
+                            isMenu ? <img src={cross_icon} className="w-[14px] h-[14px] " /> : <img src={menu_icon} className="w-[14px] h-[14px] " />
                         }
 
                     </button>
                 </div>
+                <button className='text-[14px] px-4 py-1 flex items-center  text-white rounded-md  bg-purple-500  transition-all duration-300 ease-in-out  hover:scale-105'>
+                    <a href={`tel:+91${adminPhoneNumber}`}  >Call Now </a>
+                </button>
+
+
 
             </div>
 
@@ -52,46 +56,46 @@ const Navbar = () => {
 
             {
 
-                isMenu && <div className='px-3 py-5 flex flex-col gap-3 md:hidden font-bold text-[#222222] transition-colors duration-300 text-lg '>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/" className="flex items-center gap-x-3 px-4  cursor-pointer     ">
+                isMenu && <div className='px-3 py-2  md:hidden  '>
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/" className="flex items-center px-3 py-1 cursor-pointer hover:text-purple-500 ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg">Home</p>
+                        <p className="self-center text-[14px] ">Home</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/booking" className="flex items-center gap-x-3 px-4 cursor-pointer    ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/booking" className="flex items-center px-3 py-1 cursor-pointer hover:text-purple-500 ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg">Booking</p>
+                        <p className="self-center text-[14px] ">Booking</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovaStation" className="flex items-center gap-x-3 px-4  cursor-pointer    ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovaStation" className="flex items-center px-3 py-1 cursor-pointer hover:text-purple-500 ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg ">Innova Taxi</p>
+                        <p className="self-center text-[14px]  ">Innova Taxi</p>
                     </Link>
 
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/outStation" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/outStation" className="flex items-center px-3 py-1 cursor-pointer hover:text-purple-500 ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg ">Outstation</p>
+                        <p className="self-center text-[14px]  ">Outstation</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/services" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/services" className="flex items-center px-3 py-1 cursor-pointer hover:text-purple-500 ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg ">Services</p>
+                        <p className="self-center text-[14px] ">Services</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/aboutUs" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/aboutUs" className="flex items-center px-3 py-1 cursor-pointer hover:text-purple-500  ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg ">About Us</p>
+                        <p className="self-center text-[14px]  ">About Us</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/contactUs" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/contactUs" className="flex items-center px-3 py-1 cursor-pointer hover:text-purple-500 ">
                         {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                        <p className="self-center text-lg ">Contact Us</p>
+                        <p className="self-center text-[14px] ">Contact Us</p>
                     </Link>
 
                     {
-                        token !== '' && <Link onClick={() => setIsMenu((prev) => !prev)} to="/myProfile" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
+                        token !== '' && <Link onClick={() => setIsMenu((prev) => !prev)} to="/myProfile" className="flex items-center px-3 py-1 cursor-pointer hover:text-purple-500  ">
                             {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                            <p className="self-center text-lg ">My Profile</p>
+                            <p className="self-center text-[14px]  ">My Profile</p>
                         </Link>
                     }
-                    <div>
+                    <div className='my-1'>
                         {
-                            token === '' ? <Link onClick={() => setIsMenu((prev) => !prev)} to="/login" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                            token === '' ? <Link onClick={() => setIsMenu((prev) => !prev)} to="/login" className="flex items-center gap-x-3 px-4 py-1  cursor-pointer ">
                                 {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
                                 <button className="self-center text-md outline-none bg-blue-500 px-12 py-2 text-white rounded-md  hover:bg-blue-700 ">Login</button>
                             </Link>
