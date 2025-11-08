@@ -1,21 +1,28 @@
+
+
+
 import emailjs from "emailjs-com"
 
-const sendBookingMail = async (newBooking) => {
+
+const sendBookingMail = async (details) => {
 
 
-    try {
+    console.log(details)
+    const {
+        name,
+        mobile,
+        email,
+        pickUpPoint,
+        dropPoint,
+        pickUpTime,
+        pickUpDate,
+        bookingId,
+        frontendUrl
+    } = details
 
-        const {
-            name,
-            mobile,
-            email,
-            pickUpPoint,
-            dropPoint,
-            pickUpTime,
-            pickUpDate,
-            bookingId } = newBooking
-        const frontUrl = process.env.FRONT_END_URL
-        const htmlTemplate = `
+
+
+    const htmlTemplate = `
                     <!DOCTYPE html>
                     <html lang="en">
 
@@ -155,7 +162,7 @@ const sendBookingMail = async (newBooking) => {
                                 time.</p>
 
                             <div class="btn-container">
-                                <a href=${`${frontUrl}/thankyou/${bookingId}`} class="btn">View My Booking</a>
+                                <a href=${`${frontendUrl}/thankyou/${bookingId}`} class="btn">View My Booking</a>
                             </div>
                         </div>
 
@@ -170,30 +177,27 @@ const sendBookingMail = async (newBooking) => {
                     
                     `
 
+    const templateParams = {
+        to_email: email,
+        subject: "Booking Confirmation - RKN Airport Taxi",
+        message_html: htmlTemplate
+    }
 
-        const templateParams = {
-            name,
-            mobile,
-            email,
-            pickUpPoint,
-            dropPoint,
-            pickUpTime,
-            pickUpDate,
-            bookingId,
-            frontUrl
-        }
+    try {
 
+        const response = await emailjs.send(import.meta.env.VITE_EMAILJS_SERVER_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
 
-        const response = await emailjs.send("service_px6f125", "template_j5qlwl8", templateParams, "hSzN1bh5Fx4Jnoqop");
+        console.log(details)
+        console.log("email sent successfully.", response.status, response.text)
 
-        console.log('sending completed.')
     } catch (e) {
         console.log(e)
-        console.log("sendin Failed.")
+        console.log("Email NOt SENDED.")
     }
-};
 
 
+
+}
 
 
 export default sendBookingMail

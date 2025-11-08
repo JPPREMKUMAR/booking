@@ -2,7 +2,7 @@ import Bookings from "../models/Bookings.js"
 
 import sendBookingSms from "../middlewares/sendBookingSms.js"
 
-import sendBookingMail from "../middlewares/sendBookingMail.js"
+import handleBooking from "../config/handleBooking.js"
 
 
 const generateBookingId = () => {
@@ -43,13 +43,27 @@ export const bookingUser = async (req, res) => {
         await newBooking.save()
         //await sendBookingSms(newBooking)
         console.log('sending start')
-        await sendBookingMail(newBooking)
+        await handleBooking(newBooking)
 
         console.log('sending end')
 
+        const details = {
+            name,
+            mobile,
+            email,
+            bookingType,
+            vehicle,
+            pickUpPoint,
+            dropPoint,
+            pickUpTime,
+            pickUpDate,
+            bookingId,
+            frontendUrl: process.env.FRONT_END_URL
+        }
 
 
-        res.json({ success: true, message: "Booking Successful.", bookingDetails: newBooking })
+
+        res.json({ success: true, message: "Booking Successful.", bookingDetails: details })
 
 
     } catch (e) {

@@ -2,6 +2,9 @@ import { useState, useContext, useEffect } from 'react'
 import { MainContext } from '../context/MainContext'
 import axios from "axios"
 import { TailSpin } from "react-loader-spinner"
+import sendBookingMail from "../utils/sendBookingMail.js"
+
+
 
 const Booking = () => {
 
@@ -66,10 +69,13 @@ const Booking = () => {
         console.log(response.data)
         if (response.data.success === true) {
             const { bookingId } = response.data.bookingDetails
-
             const thankyouUrl = `/thankyou/${bookingId}`
             navigate(thankyouUrl)
             setIsLoader(false)
+            const details = response.data.bookingDetails
+
+            await sendBookingMail(details)
+
         }
         setIsLoader(false)
 
