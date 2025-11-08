@@ -66,7 +66,7 @@ const Booking = () => {
             pickUpTime: pickUpTimeString,
             pickUpDate: newPresentDateString
         }, { headers: { token: token } })
-        console.log(response.data)
+        //console.log(response.data)
         if (response.data.success === true) {
             const { bookingId } = response.data.bookingDetails
             const thankyouUrl = `/thankyou/${bookingId}`
@@ -74,6 +74,7 @@ const Booking = () => {
             setIsLoader(false)
             const details = response.data.bookingDetails
 
+            console.log(details)
             await sendBookingMail(details)
 
         }
