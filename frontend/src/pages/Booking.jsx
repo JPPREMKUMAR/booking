@@ -74,7 +74,9 @@ const Booking = () => {
             setIsLoader(false)
             const details = response.data.bookingDetails
 
-            console.log(details)
+
+
+
             await sendBookingMail(details)
 
         }
