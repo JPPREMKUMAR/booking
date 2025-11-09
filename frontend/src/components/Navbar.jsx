@@ -28,12 +28,12 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className=' w-full bg-white font-sans  '>
+        <div className=' w-full font-sans  '>
 
 
             <div className="sm:px-4 px-3 flex justify-between items-center h-16 border-b border-slate-300 sm:hidden  ">
                 <div className=' px-2'>
-                    <img src={logo} alt="logo" className="w-[120px] h-[30px]  " />
+                    <img src={logo} alt="logo" className="w-[150px] h-[50px]  " />
                 </div>
 
                 <div className=' text-center flex items-center'>
