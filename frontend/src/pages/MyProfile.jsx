@@ -30,7 +30,7 @@ const MyProfile = () => {
     return (
         <div className="px-3 ">
             <div className="my-3">
-                <h1 className="text-2xl font-semibold  text-center sm:text-4xl">MyProfile</h1>
+                <h1 className="text-2xl font-semibold  text-center sm:text-4xl text-[#FFD700]">MyProfile</h1>
                 <div className="flex items-center justify-center gap-x-3 text-md font-bold my-3 sm:text-3xl">
                     <Link to="/" className="cursor-pointer">Home</Link>
                     <h1>/
@@ -39,7 +39,7 @@ const MyProfile = () => {
             </div>
             <div>
                 {
-                    isLoader ? <div className="flex flex-col items-center justify-center h-40">
+                    isLoader ? <div className="flex flex-col items-center justify-center h-70">
                         <TailSpin width={50} heigth={50} color="blue" />
 
                     </div> : <div className="bg-white shadow-md px-5 py-5 mx-4 sm:mx-10 sm:my-10 sm:px-10 py-10 ">

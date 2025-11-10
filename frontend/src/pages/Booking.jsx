@@ -142,7 +142,7 @@ const Booking = () => {
             <div className='w-full sm:flex sm:justify-center '>
 
                 {
-                    isLoader ? <div className='flex items-center justify-center'>
+                    isLoader ? <div className='min-h-screen flex items-center justify-center'>
                         <TailSpin width={50} heigth={50} color='blue' />
                     </div> :
                         <div className="px-4 py-3 border border-gray-700 rounded-md sm:w-1/2 sm:py-5 my-5">
