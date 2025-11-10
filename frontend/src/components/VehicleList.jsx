@@ -61,10 +61,10 @@ const VehicleList = ({ Title }) => {
 
     return (
 
-        <div className=" ">
+        <div>
             <h1 className="font-bold text-3xl text-center mb-4 mt-4 sm:text-4xl">{Title}</h1>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 items-center">
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 items-center">
                 {
                     vehicleList.map((item, index) => (
                         <VehicleItem key={index} item={item} />

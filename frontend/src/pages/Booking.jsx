@@ -3,8 +3,7 @@ import { MainContext } from '../context/MainContext'
 import axios from "axios"
 import { TailSpin } from "react-loader-spinner"
 import sendBookingMail from "../utils/sendBookingMail.js"
-import Footer from '../components/Footer.jsx'
-import ContactWithUs from '../components/ContactWithUs.jsx'
+import ContactDetails from "../components/ContactDetails.jsx"
 
 
 const Booking = () => {
@@ -258,8 +257,8 @@ const Booking = () => {
 
             </div>
 
-            <Footer />
-            <ContactWithUs />
+
+
 
 
         </div>

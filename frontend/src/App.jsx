@@ -15,11 +15,11 @@ import MyProfile from "./pages/MyProfile"
 import Thankyou from './pages/Thankyou'
 import Footer from './components/Footer'
 import HelmetSeo from "./components/HelmetSeo"
-import ContactWithUs from "./components/ContactWithUs"
+import ContactDetails from "./components/ContactDetails"
 const App = () => {
 
   return (
-    <div className=" min-h-screen ">
+    <div className=" min-h-screen">
       <MainContextProvider>
         <>
           <HelmetSeo />
@@ -40,6 +40,8 @@ const App = () => {
             <Route path="/thankyou/:bookingId" element={<Thankyou />} />
 
           </Routes>
+          <Footer />
+          <ContactDetails />
 
         </>
       </MainContextProvider>
