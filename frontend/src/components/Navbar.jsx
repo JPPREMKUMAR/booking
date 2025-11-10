@@ -126,7 +126,7 @@ const Navbar = () => {
 
             <div className=" hidden sm:block sm:flex flex-row items-center justify-around px-6 py-4 border-b border-slate-300 font-bold">
                 <Link to="/" className=' flex items-center'>
-                    <img src={logo} alt="logo" className="w-[230px] h-[60px] " />
+                    <img src={logo} alt="logo" className="w-[200px] h-[50px] " />
                 </Link>
 
                 <div className='flex gap-x-4 items-center'>
