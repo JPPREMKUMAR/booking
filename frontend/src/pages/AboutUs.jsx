@@ -23,7 +23,7 @@ const AboutUs = () => {
 
 
             </div>
-            <WhyBookinWithUs />
+
 
 
         </div>
