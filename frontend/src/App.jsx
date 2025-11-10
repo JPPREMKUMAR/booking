@@ -40,8 +40,7 @@ const App = () => {
             <Route path="/thankyou/:bookingId" element={<Thankyou />} />
 
           </Routes>
-          <Footer />
-          <ContactWithUs />
+
         </>
       </MainContextProvider>
     </div>

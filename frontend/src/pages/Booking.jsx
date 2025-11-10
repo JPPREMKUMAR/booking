@@ -3,7 +3,8 @@ import { MainContext } from '../context/MainContext'
 import axios from "axios"
 import { TailSpin } from "react-loader-spinner"
 import sendBookingMail from "../utils/sendBookingMail.js"
-
+import Footer from '../components/Footer.jsx'
+import ContactWithUs from '../components/ContactWithUs.jsx'
 
 
 const Booking = () => {
@@ -174,7 +175,7 @@ const Booking = () => {
 
 
     return (
-        <div className='px-5 py-2 sm:flex sm:items-center sm:justify-center w-full'>
+        <div className='px-5 py-2 sm:flex sm:items-center sm:justify-center w-full min-h-screen '>
 
             <div className='w-full sm:flex sm:justify-center '>
 
@@ -293,6 +294,9 @@ const Booking = () => {
                 }
 
             </div>
+
+            <Footer />
+            <ContactWithUs />
 
 
         </div>
