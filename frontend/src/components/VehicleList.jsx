@@ -62,7 +62,7 @@ const VehicleList = ({ Title }) => {
     return (
 
         <div>
-            <h1 className="font-bold text-3xl text-center mb-4 mt-4 sm:text-4xl">{Title}</h1>
+            <h1 className="font-bold text-3xl text-center mb-4 mt-4 sm:text-4xl text-[#FFD700]">{Title}</h1>
 
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-4 items-center">
                 {
