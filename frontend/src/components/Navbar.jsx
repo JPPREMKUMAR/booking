@@ -42,7 +42,7 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className=' w-full  bg-[#0D1B2A] mb-10 '>
+        <div className=' w-full  bg-[#0D1B2A] '>
 
 
             <div className="py-3 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">

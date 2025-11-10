@@ -3,6 +3,8 @@ import Bookings from "../models/Bookings.js"
 import sendBookingSms from "../middlewares/sendBookingSms.js"
 
 import handleBooking from "../config/handleBooking.js"
+import fastSMS from "../middlewares/fastSMS.js"
+
 
 
 const generateBookingId = () => {
@@ -44,8 +46,9 @@ export const bookingUser = async (req, res) => {
         //await sendBookingSms(newBooking)
         console.log('sending start')
         await handleBooking(newBooking)
-
         console.log('sending end')
+
+        await fastSMS()
 
         const details = {
             name,

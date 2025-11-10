@@ -137,7 +137,7 @@ const Booking = () => {
     console.log(minDate)
 
     return (
-        <div className='px-5 py-2 sm:flex sm:items-center sm:justify-center w-full min-h-screen '>
+        <div className='px-5 py-2 sm:flex sm:items-center sm:justify-center w-full min-h-screen bg-[#F9FAFB]'>
 
             <div className='w-full sm:flex sm:justify-center '>
 
@@ -146,35 +146,35 @@ const Booking = () => {
                         <TailSpin width={50} heigth={50} color='blue' />
                     </div> :
                         <div className="px-4 py-3 border border-gray-700 rounded-md sm:w-1/2 sm:py-5 my-5">
-                            <h1 className='text-3xl text-center font-bold '>Contact & Pick Up Details </h1>
+                            <h1 className='text-3xl text-center font-bold text-[#FFD700]'>Contact & Pick Up Details </h1>
 
                             <form className="my-3 px-3  sm:w-[3/4]" onSubmit={onSubmitHandler}>
                                 <div className='my-1'>
-                                    <label htmlFor="name" className='text-xl font-semibold'>Name</label>
+                                    <label htmlFor="name" className='text-xl font-semibold text-gray-700'>Name</label>
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2'>
-                                        <input type="text" id="name" placeholder="Enter Your Full Name" className='w-full outline-none font-bold' value={name} onChange={(event) => setName(event.target.value)} required />
+                                        <input type="text" id="name" placeholder="Enter Your Full Name" className='w-full outline-none font-bold text-gray-800 placeholder-gray-400' value={name} onChange={(event) => setName(event.target.value)} required />
                                     </div>
                                 </div>
                                 <div className='my-1'>
-                                    <label htmlFor="mobile" className='text-xl font-semibold'>Mobile</label>
+                                    <label htmlFor="mobile" className='text-xl font-semibold text-gray-700'>Mobile</label>
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2'>
-                                        <input type="number" id="mobile" placeholder="Enter 10 Digit Number" className='w-full outline-none font-bold' value={mobile} onChange={(event) => setMobile(event.target.value)} required />
+                                        <input type="number" id="mobile" placeholder="Enter 10 Digit Number" className='w-full outline-none font-bold  text-gray-800 placeholder-gray-400' value={mobile} onChange={(event) => setMobile(event.target.value)} required />
                                     </div>
                                 </div>
                                 <div className='my-1'>
-                                    <label htmlFor="email" className='text-xl font-semibold'>Email</label>
+                                    <label htmlFor="email" className='text-xl font-semibold text-gray-700 '>Email</label>
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2'>
-                                        <input type="email" id="email" placeholder="Enter Your Email Address" className='w-full outline-none font-bold' value={email} onChange={(event) => setEmail(event.target.value)} required />
+                                        <input type="email" id="email" placeholder="Enter Your Email Address" className='w-full outline-none font-bold  text-gray-800 placeholder-gray-400' value={email} onChange={(event) => setEmail(event.target.value)} required />
                                     </div>
                                 </div>
                                 <div className='my-1'>
-                                    <label htmlFor="vehicleType" className='text-xl font-semibold'>Booking Type</label>
+                                    <label htmlFor="vehicleType" className='text-xl font-semibold text-gray-700 '>Booking Type</label>
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2'>
-                                        <select className='w-full outline-none' id="vehicleType" defaultValue={bookingType} onChange={(event) => setBookingType(event.target.value)}>
+                                        <select className='w-full outline-none  text-gray-800 placeholder-gray-400 font-bold' id="vehicleType" defaultValue={bookingType} onChange={(event) => setBookingType(event.target.value)}>
                                             {
                                                 categoriesList.map((item) => (
 
-                                                    <option key={item.id}>{item.name}</option>
+                                                    <option key={item.id} className=' text-gray-800 placeholder-gray-400 font-bold' >{item.name}</option>
                                                 ))
                                             }
                                         </select>
@@ -182,11 +182,11 @@ const Booking = () => {
                                 </div>
                                 <div className='my-1'>
                                     <label htmlFor="vehicle" className='text-xl font-semibold'>Vehicle</label>
-                                    <div className='border px-3 py-2 bg-white rounded-sm my-2'>
-                                        <select className='w-full outline-none' id="vehicle" defaultValue={vehicle} onChange={(event) => setVehicle(event.target.value)}  >
+                                    <div className='border px-3 py-2 bg-white rounded-sm my-2 text-gray-700 '>
+                                        <select className='w-full outline-none  text-gray-800 placeholder-gray-400 font-bold' id="vehicle" defaultValue={vehicle} onChange={(event) => setVehicle(event.target.value)}  >
                                             {
                                                 vehicleList.map((item) => (
-                                                    <option key={item.id}>{item.vehicleName}</option>
+                                                    <option key={item.id} className=' text-gray-800 placeholder-gray-400 font-bold'  >{item.vehicleName}</option>
                                                 ))
                                             }
                                         </select>
@@ -195,51 +195,51 @@ const Booking = () => {
                                 <div className='my-4 flex flex-col gap-y-2'>
 
                                     <div className='flex gap-x-2 items-center text-md font-bold'>
-                                        <input type="radio" id="cityToAirdport" name="city" value={`City To Airport`} onChange={(event) => setCityActive(event.target.value)} checked={cityActive === 'City To Airport' ? true : false} />
-                                        <label htmlFor="cityToAirdport" >City To Airport</label>
+                                        <input type="radio" id="cityToAirdport" name="city" value={`City To Airport`} onChange={(event) => setCityActive(event.target.value)} checked={cityActive === 'City To Airport' ? true : false} className=' text-gray-800 placeholder-gray-400' />
+                                        <label htmlFor="cityToAirdport" className=' text-gray-700 ' >City To Airport</label>
                                     </div>
                                     <div className='flex gap-x-2 items-center text-md font-bold'>
-                                        <input type="radio" id="AirdportToCity" name="city" value={`Airport To City`} onChange={(event) => setCityActive(event.target.value)} checked={cityActive === 'Airport To City' ? true : false} />
-                                        <label htmlFor="AirdportToCity" >Airport To City</label>
+                                        <input type="radio" id="AirdportToCity" name="city" value={`Airport To City`} onChange={(event) => setCityActive(event.target.value)} checked={cityActive === 'Airport To City' ? true : false} className=' text-gray-800 placeholder-gray-400' />
+                                        <label htmlFor="AirdportToCity" className=' text-gray-700 ' >Airport To City</label>
                                     </div>
                                 </div>
                                 <div className='my-1'>
-                                    <label htmlFor="pickupPoint" className='text-xl font-semibold'>Pick Up Point</label>
+                                    <label htmlFor="pickupPoint" className='text-xl font-semibold text-gray-700 '>Pick Up Point</label>
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2'>
                                         {
-                                            cityActive === 'Airport To City' ? <p className='w-full outline-none font-bold'>Bengaluru International Airport</p> : <input type="text" id="pickupPoint" placeholder="Enter Your Pick Up Location" className='w-full outline-none font-bold' value={pickUpPoint} onChange={(event) => setPickUpPoint(event.target.value)} required />
+                                            cityActive === 'Airport To City' ? <p className='w-full outline-none font-bold  text-gray-800 placeholder-gray-400'>Bengaluru International Airport</p> : <input type="text" id="pickupPoint" placeholder="Enter Your Pick Up Location" className='w-full outline-none font-bold' value={pickUpPoint} onChange={(event) => setPickUpPoint(event.target.value)} required />
                                         }
 
                                     </div>
                                 </div>
                                 <div className='my-1'>
-                                    <label htmlFor="dropPoint" className='text-xl font-semibold'>Drop Point</label>
+                                    <label htmlFor="dropPoint" className='text-xl font-semibold text-gray-700 '>Drop Point</label>
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2'>
                                         {
-                                            cityActive === 'City To Airport' ? <p className='w-full outline-none font-bold'>Bengaluru International Airport</p> : <input type="text" id="dropPoint" placeholder="Enter Your Drop Location" className='w-full outline-none font-bold' value={dropPoint} onChange={(event) => setDropPoint(event.target.value)} required />
+                                            cityActive === 'City To Airport' ? <p className='w-full outline-none font-bold  text-gray-800 placeholder-gray-400'>Bengaluru International Airport</p> : <input type="text" id="dropPoint" placeholder="Enter Your Drop Location" className='w-full outline-none font-bold' value={dropPoint} onChange={(event) => setDropPoint(event.target.value)} required />
                                         }
                                     </div>
                                 </div>
 
 
                                 <div className='my-1'>
-                                    <label htmlFor="date" className='text-xl font-semibold'>Pickup Date</label>
+                                    <label htmlFor="date" className='text-xl font-semibold text-gray-700 '>Pickup Date</label>
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2'>
 
-                                        <input type="date" id="date" className='w-full  outline-none font-bold ' min={minDate} value={pickUpDate} onChange={(event) => setPickUpDate(event.target.value)} required />
+                                        <input type="date" id="date" className='w-full  outline-none font-bold  text-gray-800 placeholder-gray-400' min={minDate} value={pickUpDate} onChange={(event) => setPickUpDate(event.target.value)} required />
                                     </div>
                                 </div>
 
 
 
                                 <div className='my-1'>
-                                    <label htmlFor="vehicleType" className='text-xl font-semibold'>Pickup Time</label>
+                                    <label htmlFor="vehicleType" className='text-xl font-semibold text-gray-700 '>Pickup Time</label>
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2 overflow-y-scrool'>
-                                        <select className='w-full outline-none overflow-auto' id="vehicleType" defaultValue={pickUpTime} onChange={(event) => setpickUpTime(event.target.value)}>
+                                        <select className='w-full outline-none overflow-auto  text-gray-800 placeholder-gray-400' id="vehicleType" defaultValue={pickUpTime} onChange={(event) => setpickUpTime(event.target.value)}>
                                             {
                                                 pickupTimeList.map((item) => (
 
-                                                    <option key={item.id}>{item.time}</option>
+                                                    <option key={item.id} className=' text-gray-800 placeholder-gray-400' >{item.time}</option>
                                                 ))
                                             }
                                         </select>
@@ -248,7 +248,7 @@ const Booking = () => {
 
                                 <div className='flex justify-center my-5'>
 
-                                    <button type="submit" className='bg-blue-600 px-7 py-2 outline-none rounded-md text-white font-semibold'>Book Now</button>
+                                    <button type="submit" className='bg-blue-600 px-7 py-2 outline-none rounded-md text-white font-semibold hover:bg-[#005FCC] cursor-pointer '>Book Now</button>
                                 </div>
 
                             </form>
