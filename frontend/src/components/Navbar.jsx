@@ -42,7 +42,7 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className=' w-full  bg-[#0a0a12] mb-10 '>
+        <div className=' w-full  bg-[#0D1B2A] mb-10 '>
 
 
             <div className="py-3 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
@@ -122,44 +122,44 @@ const Navbar = () => {
 
             {/* Medium Screen  */}
 
-            <div className=" hidden sm:block sm:flex flex-row items-center justify-around px-6 py-8 border-b border-slate-300 font-bold">
+            <div className=" hidden sm:block sm:flex flex-row items-center justify-around px-6 py-4 border-b border-slate-300 font-bold">
                 <Link to="/" className='w-60 h-7 flex items-center'>
-                    <img src={logo} alt="logo" className="w-[300px] h-[60px] " />
+                    <img src={logo} alt="logo" className="w-[230px] h-[60px] " />
                 </Link>
 
                 <div className=''>
 
-                    <Link to="/" className="px-4 text-xl hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/" className="px-4 text-xl text-white max-w-30 text-gray-600  cursor-pointer ">
                         Home
                     </Link>
-                    <Link to="/booking" className="px-4 text-xl hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/booking" className="px-4 text-xl text-white max-w-30 text-gray-600  cursor-pointer ">
                         Booking
                     </Link>
-                    <Link to="/innovaTaxi" className="px-4 text-xl hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/innovaTaxi" className="px-4 text-xl text-white max-w-30 text-gray-600  cursor-pointer ">
                         Innova Taxi
                     </Link>
 
-                    <Link to="/outStation" className="px-4 text-xl hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/outStation" className="px-4 text-xl text-white max-w-30 text-gray-600  cursor-pointer ">
                         Outstation
                     </Link>
-                    <Link to="/services" className="px-4 text-xl  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/services" className="px-4 text-xl text-white max-w-30 text-gray-600  cursor-pointer ">
                         Services
                     </Link>
-                    <Link to="/aboutUs" className="px-4 text-xl  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/aboutUs" className="px-4 text-xl text-white max-w-30 text-gray-600  cursor-pointer ">
                         About Us
                     </Link>
-                    <Link to="/contactUs" className="px-4 text-xl  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                    <Link to="/contactUs" className="px-4 text-xl text-white max-w-30 text-gray-600  cursor-pointer ">
                         Contact Us
                     </Link>
                     {
-                        token !== '' && <Link to="/myProfile" className="px-4 text-md  hover:text-lg max-w-30 text-gray-600 hover:text-gray-900 cursor-pointer ">
+                        token !== '' && <Link to="/myProfile" className="px-4 text-xl text-white max-w-30 text-gray-600  cursor-pointer ">
                             My Profile
                         </Link>
                     }
                     {
                         token === '' ? <Link to="/login" className="px-4 text-md  hover:text-lg max-w-30  text-gray-600 hover:text-gray-900 cursor-pointer ">
                             <button className='bg-blue-500 outline-none px-7 py-2 rounded-md text-white hover:bg-blue-600'>Login</button>
-                        </Link> : <button onClick={onClickLogout} className='bg-red-500 outline-none px-7 py-2 rounded-md text-white hover:bg-red-600'>Logout</button>
+                        </Link> : <button onClick={onClickLogout} className='bg-red-500 outline-none text-xl cursor-pointer px-7 py-2 rounded-md text-white hover:bg-red-600'>Logout</button>
                     }
                 </div>
             </div>
