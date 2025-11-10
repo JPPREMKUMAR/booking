@@ -1,5 +1,5 @@
 
-import menu_icon from "./menu.png"
+import menu_icon from "./menu2.png"
 import cross_icon from "./close.png"
 import logo from "./web_logo.png"
 import image1 from "./1.png"

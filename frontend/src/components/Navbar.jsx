@@ -4,6 +4,20 @@ import { MainContext } from '../context/MainContext'
 import Cookies from "js-cookie"
 import { logo, menu_icon, cross_icon } from "../assets/assets"
 
+import { IoMenu } from "react-icons/io5";
+import { RxCross1 } from "react-icons/rx";
+import { IoHome } from "react-icons/io5";
+import { FaTaxi } from "react-icons/fa6";
+import { FaCar } from "react-icons/fa";
+import { MdMiscellaneousServices } from "react-icons/md";
+import { BsInfoCircleFill } from "react-icons/bs";
+import { MdContacts } from "react-icons/md";
+import { FaCircleUser } from "react-icons/fa6";
+import { RiLoginCircleFill } from "react-icons/ri";
+import { RiLogoutCircleRFill } from "react-icons/ri";
+
+
+
 
 
 
@@ -37,10 +51,11 @@ const Navbar = () => {
                 </div>
                 <button className=""><a href={`tel:+91${adminPhoneNumber}`} className="bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center" >+91 {adminPhoneNumber}</a>
                 </button>
-                <div className='text-center flex items-center'>
+                <div className='text-center flex items-center w-[30px] '>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
                         {
-                            isMenu ? <img src={cross_icon} className="w-[24px] h-[24px] " /> : <img src={menu_icon} className="w-[24px] h-[24px] " />
+                            isMenu ? <RxCross1 className="w-[26px] h-[26px] text-white " />
+                                : <IoMenu className="w-[26px] h-[26px] text-white " />
                         }
 
                     </button>
@@ -52,50 +67,52 @@ const Navbar = () => {
 
             {
 
-                isMenu && <div className='px-3 py-5 flex flex-col gap-3 md:hidden font-bold text-[#222222] transition-colors duration-300 text-lg '>
+                isMenu && <div className='px-3 py-5 flex flex-col gap-3 md:hidden font-bold text-white transition-colors duration-300 text-lg '>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/" className="flex items-center gap-x-3 px-4  cursor-pointer     ">
-                        {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
+                        <IoHome className="self-center text-white" />
                         <p className="self-center text-lg">Home</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/booking" className="flex items-center gap-x-3 px-4 cursor-pointer    ">
-                        {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
+                        <FaTaxi className="self-center text-white" />
                         <p className="self-center text-lg">Booking</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovaStation" className="flex items-center gap-x-3 px-4  cursor-pointer    ">
-                        {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
+                        <FaCar className="self-center text-white" />
                         <p className="self-center text-lg ">Innova Taxi</p>
                     </Link>
 
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/outStation" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
-                        {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
+                        <FaCar className="self-center text-white" />
                         <p className="self-center text-lg ">Outstation</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/services" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
-                        {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
+                        <MdMiscellaneousServices className="self-center text-white" />
                         <p className="self-center text-lg ">Services</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/aboutUs" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
-                        {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
+                        <BsInfoCircleFill className="self-center text-white" />
                         <p className="self-center text-lg ">About Us</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/contactUs" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
-                        {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
+                        <MdContacts className="self-center text-white" />
                         <p className="self-center text-lg ">Contact Us</p>
                     </Link>
 
                     {
                         token !== '' && <Link onClick={() => setIsMenu((prev) => !prev)} to="/myProfile" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
-                            {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
+                            <FaCircleUser className="self-center text-white" />
                             <p className="self-center text-lg ">My Profile</p>
                         </Link>
                     }
                     <div>
                         {
                             token === '' ? <Link onClick={() => setIsMenu((prev) => !prev)} to="/login" className="flex items-center gap-x-3 px-4   cursor-pointer ">
-                                {/*<FaHome className="self-center text-gray-600 w-8 h-8" /> */}
-                                <button className="self-center text-md outline-none bg-blue-500 px-12 py-2 text-white rounded-md  hover:bg-blue-700 ">Login</button>
-                            </Link>
-                                : <button onClick={onClickLogout} className="self-center text-md outline-none bg-red-500 px-12 py-2 text-white rounded-md  hover:bg-red-700 ">Logout</button>
+                                <RiLoginCircleFill className="self-center text-blue-600" />
+                                <p className="self-center text-lg text-blue-600 ">Login In </p>                            </Link>
+                                : <Link onClick={onClickLogout} className="flex items-center gap-x-3 px-4 cursor-pointer">
+                                    <RiLogoutCircleRFill className="self-center text-red-500" />
+                                    <p className="self-center text-lg text-red-500 ">Logout</p>
+                                </Link>
                         }
                     </div>
 
