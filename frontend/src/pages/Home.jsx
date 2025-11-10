@@ -11,10 +11,8 @@ const Home = () => {
 
             <BookingCard />
 
-            <VehicleList Title={'INNOVA TAXI'} />
-            <VehicleList Title={'OUTSTATION'} />
-            <VehicleList Title={'LOCAL TAXI'} />
-            <VehicleList Title={'MINI BUSES'} />
+            <VehicleList Title={'AIRPORT TAXI'} />
+
 
 
             <WhyBookWithUs />
