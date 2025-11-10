@@ -5,7 +5,7 @@ const HelmetSeo = () => {
         <>
             <Helmet>
                 {/* Basic SEO */}
-                <title>Book Cabs in Bengaluru | Airport Pickup & Drop Service</title>
+
                 <meta
                     name="description"
                     content="Book affordable cabs in Bengaluru for airport pickup and drop. Fast, reliable, and safe cab booking services near you."
