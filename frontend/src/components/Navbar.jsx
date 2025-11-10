@@ -42,7 +42,7 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className=' w-full  bg-[#0a0a12] '>
+        <div className=' w-full  bg-[#0a0a12] mb-10 '>
 
 
             <div className="py-3 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
@@ -51,11 +51,11 @@ const Navbar = () => {
                 </div>
                 <button className=""><a href={`tel:+91${adminPhoneNumber}`} className="bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center" >+91 {adminPhoneNumber}</a>
                 </button>
-                <div className='text-center flex items-center w-[30px] '>
+                <div className='text-center flex items-center w-[30px] h-[30px] '>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
                         {
-                            isMenu ? <RxCross1 className="w-[26px] h-[26px] text-white " />
-                                : <IoMenu className="w-[26px] h-[26px] text-white " />
+                            isMenu ? <RxCross1 className="w-[30px] h-[30px] text-white " />
+                                : <IoMenu className="w-[30px] h-[30px] text-white " />
                         }
 
                     </button>

@@ -6,6 +6,10 @@ import { FaRupeeSign } from "react-icons/fa";
 import { Link } from "react-router-dom"
 import { MainContext } from "../context/MainContext";
 
+import { FaUsers } from "react-icons/fa";
+
+
+
 const VehicleItem = ({ item }) => {
 
     // console.log(item)
@@ -26,21 +30,19 @@ const VehicleItem = ({ item }) => {
 
     return (
 
-        <div className="flex  flex-col items-center gap-3 sm:m-2 m-2 mb-2  border border-gray-300" onClick={onClickCard}>
-            <img src={imageUrl} alt={`${vehicleName}`} className="w-[70%] h-[20%] sm:h-60" />
-            <h1 className="text-lg text-gray-800 font-bold text-medium sm:text-2xl">{vehicleName}</h1>
-            <div className="flex items-center gap-x-2 text-md sm:text-xl">
-                <IoPeopleSharp className="text-gray-600" />
-                <p className="text-gray-600 text-md sm:text-xl ">Capacity : {capacity}+1</p>
+        <div className="flex  flex-col items-center gap-2 text-[#111827]  sm:m-2 m-2 my-4 hover:m-5 transition duration-300 ease-in-out  rounded-md shadow-md  bg-[#F9FAFB]" onClick={onClickCard}>
+            <img src={imageUrl} alt={`${vehicleName}`} className="w-[220px] h-[120px]" />
+            <h1 className="text-lg text-[#111827] font-bold text-medium sm:text-2xl">{vehicleName}</h1>
+            <div className="flex items-center gap-x-2 text-sm sm:text-2xl">
+                <FaUsers className="text-[#FFD700]" />
+                <p className="text-lg sm:text-xl text-[#111827] font-semibold">Capacity : {capacity}+1</p>
             </div>
             <div className="flex items-center gap-x-2">
-                <p className="text-gray-600 text-md  sm:text-xl font-semibold">A/C </p>
-                <p className="text-gray-600 text-md  sm:text-xl font-semibold">₹</p>
-                <p className="text-gray-600 text-md  sm:text-xl font-semibold">{price}</p>
+                <p className="text-[#111827]   text-md  sm:text-xl font-semibold">A/C </p>
+                <p className="text-[#111827]  text-md  sm:text-xl font-semibold">₹</p>
+                <p className="text-[#111827]  text-md  sm:text-xl font-semibold">{price}</p>
             </div>
             <div className="flex items-center gap-x-3">
-
-
 
                 <button type="button" className="sm:bg-blue-400 bg-blue-600 text-white px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 font-semibold  mb-5 mt-2 cursor-pointer">
                     <Link to="/booking" >

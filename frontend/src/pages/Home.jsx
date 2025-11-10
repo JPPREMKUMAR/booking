@@ -2,17 +2,14 @@
 import VehicleList from "../components/VehicleList"
 import WhyBookWithUs from "../components/WhyBookWithUs"
 import ContactWithUs from "../components/ContactWithUs"
-
+import BookingCard from "../components/BookingCard"
 const Home = () => {
 
     return (
-        <div className="px-5 py-2 my-10">
-
-            <h1 className="text-center text-4xl text-[#d4af37] font-bold ">RKN AIRPORT TAXI</h1>
-            <h1 className="text-xl px-6 text-center my-3 text-black font-bold uppercase">Welcome to Bengaluru Airport Taxi Booking</h1>
-            <p className="text-md my-3 text-gray-900 text-center font-bold uppercase">Book your airport pickup and drop now!</p>
+        <div className="px-2">
 
 
+            <BookingCard />
 
             <VehicleList Title={'INNOVA TAXI'} />
             <VehicleList Title={'OUTSTATION'} />
