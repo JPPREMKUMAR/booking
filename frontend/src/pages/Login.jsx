@@ -54,7 +54,7 @@ const Login = () => {
     }, [])
 
     return (
-        <div className="px-5 py-2">
+        <div className="px-5 py-2 overflow-auto scrollbar-hide">
 
             <h1 className="px-3 text-2xl font-bold">Login</h1>
             <div>
@@ -72,7 +72,7 @@ const Login = () => {
 
 
                         <div className='my-1'>
-                            <label htmlFor="password" className='text-xl font-semibold'>Email</label>
+                            <label htmlFor="password" className='text-xl font-semibold'>Password</label>
                             <div className='border px-3 py-2 bg-white rounded-sm my-2'>
                                 <input type="password" id="password" placeholder="Enter Your Password" className='w-full outline-none font-bold' value={password} onChange={(event) => setPassword(event.target.value)} required />
                             </div>
