@@ -35,9 +35,9 @@ const Navbar = () => {
                 <div className=' px-2'>
                     <img src={logo} alt="logo" className="w-[130px] h-[50px]  " />
                 </div>
-                <button className="ml-2 bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center max-w-30"><a href={`tel:+91${adminPhoneNumber}`} className='text-[12px] px-1 font-bold' >+91 {adminPhoneNumber}</a>
+                <button className=""><a href={`tel:+91${adminPhoneNumber}`} className="bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center" >+91 {adminPhoneNumber}</a>
                 </button>
-                <div className='w-[40px] text-center flex items-center'>
+                <div className='text-center flex items-center'>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
                         {
                             isMenu ? <img src={cross_icon} className="w-[24px] h-[24px] " /> : <img src={menu_icon} className="w-[24px] h-[24px] " />
