@@ -16,6 +16,12 @@ import Thankyou from './pages/Thankyou'
 import Footer from './components/Footer'
 import HelmetSeo from "./components/HelmetSeo"
 import ContactDetails from "./components/ContactDetails"
+import AllRights from "./components/AllRights"
+import Policy from './pages/Policy'
+
+
+
+
 const App = () => {
 
   return (
@@ -38,10 +44,12 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/myProfile" element={<MyProfile />} />
             <Route path="/thankyou/:bookingId" element={<Thankyou />} />
+            <Route path="/policy" element={<Policy />} />
 
           </Routes>
           <Footer />
           <ContactDetails />
+          <AllRights />
 
         </>
       </MainContextProvider>

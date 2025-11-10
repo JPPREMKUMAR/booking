@@ -45,7 +45,11 @@ const WhyBookWithUs = () => {
 
                 <div className="my-2">
                     <h1 className="text-xl font-bold my-1 text-[#007BFF]">🧾 6. Instant Confirmation</h1>
-                    <p className="text-md font-semibold text-gray-700 my-1">Get instant booking confirmation through SMS and email for every ride.</p>
+                    <p className="text-md font-semibold text-gray-700 my-1">Get instant booking confirmation through SMS and email for every ride.
+                        Book your cab anytime — day or night.
+                        We’re available 24/7 with instant booking confirmation via SMS and Email.
+                        Experience the easiest way to travel with RKN Airport Taxi — Bengaluru’s most trusted taxi partner.
+                    </p>
                 </div>
 
 
