@@ -15,7 +15,7 @@ const fastSMS = async () => {
             sender_id: "TXTIND",
             messsage,
             language: "english",
-            numbers: TEST_NUMBER
+            numbers: process.env.TEST_NUMBER
         }, { headers: { authorization: process.env.FASTSMS_API_KEY } })
 
         console.log("SMS Sent Successfully.")

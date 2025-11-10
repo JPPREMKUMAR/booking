@@ -48,7 +48,7 @@ export const bookingUser = async (req, res) => {
         await handleBooking(newBooking)
         console.log('sending end')
 
-        await fastSMS()
+        // await fastSMS()
 
         const details = {
             name,
