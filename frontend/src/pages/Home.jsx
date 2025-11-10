@@ -8,7 +8,7 @@ import ContactDetails from "../components/ContactDetails.jsx"
 const Home = () => {
 
     return (
-        <div className="px-2">
+        <div className="px-2 my-5">
 
 
             <BookingCard />
