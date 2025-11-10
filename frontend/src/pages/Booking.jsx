@@ -121,58 +121,21 @@ const Booking = () => {
 
     useEffect(() => {
 
-        const todayDate = new Date()
-        // console.log(todayDate)
-        //Date Month Year
-        const day = todayDate.getDate()
-        const month = todayDate.getMonth()
-        const year = todayDate.getFullYear()
-        const monthName = monthsList[month]
-        //console.log(monthName)
-        //console.log(day, month, year)
-        // console.log(day)
-        // const newPresentDateString = `${day}-${monthName}-${year}`
-        //console.log(newPresentDateString)
-        if (month + 1 < 9) {
-            if (day < 9) {
-                const presentDateValue = `${year}-0${month + 1}-0${day}`
-                console.log(presentDateValue)
-                setPickUpDate(presentDateValue)
-                setMinDate(presentDateValue)
-
-            } else {
-                const presentDateValue = `${year}-${month + 1}-${day}`
-                console.log(presentDateValue)
-                setPickUpDate(presentDateValue)
-                setMinDate(presentDateValue)
-
-            }
-
-
-        } else {
-            if (day < 9) {
-                const presentDateValue = `${year}-${month + 1}-0${day}`
-                console.log(presentDateValue)
-                setPickUpDate(presentDateValue)
-                setMinDate(presentDateValue)
-
-            } else {
-                const presentDateValue = `${year}-${month + 1}-${day}`
-                console.log(presentDateValue)
-                setPickUpDate(presentDateValue)
-                setMinDate(presentDateValue)
-
-            }
-
-
-        }
+        const today = new Date();
+        const yyyy = today.getFullYear()
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const dd = String(today.getDate()).padStart(2, "0")
+        const formatedDate = `${yyyy}-${mm}-${dd}`
+        console.log(formatedDate);
+        setMinDate(formatedDate);
+        setPickUpDate(formatedDate);
 
 
 
     }, [])
 
 
-
+    console.log(minDate)
 
     return (
         <div className='px-5 py-2 sm:flex sm:items-center sm:justify-center w-full min-h-screen '>
