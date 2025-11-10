@@ -30,8 +30,8 @@ const VehicleItem = ({ item }) => {
 
     return (
 
-        <div className="flex  flex-col items-center gap-2 text-[#111827] px-5  sm:m-2 m-2 my-4 shadow-md  bg-[#F9FAFB]" onClick={onClickCard}>
-            <img src={imageUrl} alt={`${vehicleName}`} className="w-full h-[180px]" />
+        <div className="flex  flex-col items-center gap-2 text-[#111827] px-5  sm:m-2 m-2 my-4 shadow-md  bg-[#F9FAFB] " onClick={onClickCard}>
+            <img src={imageUrl} alt={`${vehicleName}`} className="w-[75%] h-[180px]" />
             <h1 className="text-2xl text-[#111827] font-bold text-medium sm:text-2xl">{vehicleName}</h1>
             <div className="flex items-center gap-x-2 text-sm sm:text-2xl">
                 <FaUsers className="text-[#111827] " />
