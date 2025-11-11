@@ -189,3 +189,24 @@ export const deleteVehicle = async (req, res) => {
 
     }
 }
+
+
+
+export const getAllVehiclesBookingType = async (req, res) => {
+
+
+    try {
+
+        const { bookingTypeId } = req.params;
+
+        const getAllVehicle = await Vehicles.find({ bookingTypeId: bookingTypeId }).sort({ createdAt: -1 });
+
+
+        return res.json({ success: true, allVehicles: getAllVehicle });
+
+    } catch (e) {
+        return res.json({ success: false, e });
+    }
+
+
+}

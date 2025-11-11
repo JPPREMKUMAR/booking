@@ -1,7 +1,7 @@
 
 
 import express from "express"
-import { addVehicle, allVehicles, getVehicle, updateVehicle, deleteVehicle } from "../controllers/vehicleController.js"
+import { addVehicle, allVehicles, getVehicle, updateVehicle, deleteVehicle, getAllVehiclesBookingType } from "../controllers/vehicleController.js"
 import uploadImage from "../middlewares/uploadImage.js"
 import authAdmin from "../middlewares/authAdmin.js"
 
@@ -14,8 +14,8 @@ vehicleRouter.post("/addItem", authAdmin, uploadImage.single("image"), addVehicl
 vehicleRouter.post("/allVehicles", authAdmin, allVehicles)
 
 vehicleRouter.post("/getVehicle/:id", authAdmin, getVehicle)
-
 vehicleRouter.post("/update/:id", authAdmin, updateVehicle)
 vehicleRouter.post('/delete/:id', authAdmin, deleteVehicle)
+vehicleRouter.post("/getAllVehicles/:bookingTypeId", authAdmin, getAllVehiclesBookingType)
 
 export default vehicleRouter

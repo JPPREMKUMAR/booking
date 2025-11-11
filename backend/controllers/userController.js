@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 import User from "../models/User.js"
-
+import Vehicles from "../models/Vehicles.js"
 
 
 export const jwtToken = (payload) => {
@@ -111,5 +111,31 @@ export const userProfile = async (req, res) => {
 
 }
 
+
+
+
+export const getAllVehiclesUser = async (req, res) => {
+
+
+    try {
+
+
+        const getAllVehicles = await Vehicles.find({}).sort({ createdAt: -1 })
+
+
+        res.json({
+            success: true,
+            vehicles: getAllVehicles
+        })
+
+
+    } catch (e) {
+
+        console.log(e)
+        return res.json({ success: false, e })
+
+    }
+
+}
 
 
