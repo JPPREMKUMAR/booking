@@ -59,25 +59,20 @@ import axios from "axios"
 
 const VehicleList = ({ Title, bookingTypeId }) => {
     console.log(bookingTypeId)
-    const { navigate, backendUrl } = useContext(MainContext)
+    const { navigate, backendUrl, vehicleList, getAllVehicles } = useContext(MainContext)
     const [isLoading, setIsLoading] = useState(true);
 
-    const [vehicleList, setVehicleList] = useState([])
 
 
-    const getAllVehicles = async () => {
-
-        const response = await axios.post(backendUrl + "/api/user/getAllVehicles", {}, {});
-
-        console.log(response.data.vehicles);
-        setVehicleList(response.data.vehicles);
-        setIsLoading(false)
-
+    const getVehicles = async () => {
+        await getAllVehicles()
+        setIsLoading(false);
     }
 
 
     useEffect(() => {
-        getAllVehicles();
+
+        getVehicles()
 
 
     }, [])

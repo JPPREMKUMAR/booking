@@ -25,6 +25,8 @@ export const MainContextProvider = (props) => {
 
     console.log(backendUrl)
 
+    const [vehicleList, setVehicleList] = useState([])
+
     const getAllVehicles = async () => {
 
         const response = await axios.post(backendUrl + "/api/user/getAllVehicles", {}, {});
@@ -267,8 +269,6 @@ export const MainContextProvider = (props) => {
 
 
 
-    const [vehicleList, setVehicleList] = useState([])
-
 
 
 
@@ -280,7 +280,7 @@ export const MainContextProvider = (props) => {
         vehicleList,
         backendUrl, token, setToken,
         userDetails, navigate, getUserProfile,
-        pickupTimeList, monthsList, adminPhoneNumber
+        pickupTimeList, monthsList, adminPhoneNumber, getAllVehicles
 
     }
 
