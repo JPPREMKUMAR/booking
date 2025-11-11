@@ -10,6 +10,7 @@ const AddItem = () => {
     const { categoriesList, backendUrl, token, navigate } = useContext(MainContext)
     // console.log(categoriesList)
 
+
     const [vehicle, setVahicle] = useState('')
     const [bookingType, setBookingType] = useState(categoriesList[0].name)
     const [price, setPrice] = useState('')
@@ -62,10 +63,10 @@ const AddItem = () => {
             setVahicle('')
             setBookingType(categoriesList[0].name)
             setPrice('')
-            setCapacity('')
+            setCapacity()
             setImage(null)
             setPreview('')
-            navigate("/addItem")
+
         } else {
             setIsLoading(false)
             setMessage("Please Try Again.")
