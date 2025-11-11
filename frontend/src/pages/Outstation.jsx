@@ -5,7 +5,7 @@ const Outstation = () => {
     return (
         <div>
 
-            <VehicleList Title={'OUTSTATION'} />
+            <VehicleList Title={'OUTSTATION'} bookingTypeId={"OUTSTATION_TAXI"} />
         </div>
     )
 }

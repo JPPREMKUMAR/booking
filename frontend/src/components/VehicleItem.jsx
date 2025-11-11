@@ -30,26 +30,34 @@ const VehicleItem = ({ item }) => {
 
     return (
 
-        <div className="flex  flex-col items-center gap-2 text-[#111827] px-5  sm:m-2 m-2 my-4 shadow-md  bg-[#F9FAFB] " onClick={onClickCard}>
-            <img src={imageUrl} alt={`${vehicleName}`} className="w-[75%] h-[180px]" />
-            <h1 className="text-2xl text-[#111827] font-bold text-medium sm:text-2xl">{vehicleName}</h1>
-            <div className="flex items-center gap-x-2 text-sm sm:text-2xl">
-                <FaUsers className="text-[#111827] " />
-                <p className="text-xl sm:text-xl text-[#111827] font-semibold">Capacity : {capacity}+1</p>
-            </div>
-            <div className="flex items-center gap-x-2">
-                <p className="text-[#111827]   text-md  sm:text-xl font-semibold">A/C </p>
-                <p className="text-[#111827]  text-md  sm:text-xl font-semibold">₹</p>
-                <p className="text-[#111827]  text-md  sm:text-xl font-semibold">{price}</p>
-            </div>
-            <div className="flex items-center gap-x-3">
+        <div className="text-[#111827]  sm:m-2 m-2 my-4 shadow-md  bg-[#F9FAFB] " onClick={onClickCard}>
+            <img src={imageUrl} alt={`${vehicleName}`} className="w-full h-[180px]" />
 
-                <Link to="/booking" className="sm:bg-blue-400 w-40 bg-blue-600 text-white px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 font-semibold  mb-5 mt-2 cursor-pointer text-center hover:text-gray-800">
+            <div className="px-5 my-5 flex  flex-col items-center gap-2 ">
 
-                    Book Now
+                <h1 className="text-2xl text-[#111827] font-bold text-medium sm:text-2xl">{vehicleName}</h1>
+                <div className="flex items-center gap-x-2 text-sm sm:text-2xl">
+                    <FaUsers className="text-[#111827] " />
+                    <p className="text-xl sm:text-xl text-[#111827] font-semibold">Capacity : {capacity}+1</p>
+                </div>
+                <div className="flex items-center gap-x-2">
+                    <p className="text-[#111827]   text-md  sm:text-xl font-semibold">A/C </p>
+                    <p className="text-[#111827]  text-md  sm:text-xl font-semibold">₹</p>
+                    <p className="text-[#111827]  text-md  sm:text-xl font-semibold">{price}</p>
+                </div>
+                <div className="flex items-center gap-x-3">
 
-                </Link>
+                    <Link to="/booking" className="sm:bg-blue-400 w-40 bg-blue-600 text-white px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 font-semibold  mb-5 mt-2 cursor-pointer text-center hover:text-gray-800">
+
+                        Book Now
+
+                    </Link>
+                </div>
+
+
             </div>
+
+
         </div>
     )
 }

@@ -6,7 +6,7 @@ const Innovataxi = () => {
 
     return (
         <div>
-            <VehicleList Title={'INNOVA TAXI'} />
+            <VehicleList Title={'INNOVA TAXI'} bookingTypeId={"INNOVA_TAXI"} />
 
         </div>
     )

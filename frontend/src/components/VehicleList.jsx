@@ -3,7 +3,7 @@ import VehicleItem from "./VehicleItem"
 
 import { image1, image2, image3, image4, image5, image6 } from "../assets/assets"
 
-const vehicleList = [
+const vehicleList1 = [
 
     // ----------------- AIRPORT TAXI -----------------
     {
@@ -51,13 +51,14 @@ const vehicleList = [
         imageUrl: image6
     },
 ]
+import { MainContext } from "../context/MainContext"
+import { useContext } from "react"
 
 
 
-
-
-const VehicleList = ({ Title }) => {
-
+const VehicleList = ({ Title, bookingTypeId }) => {
+    console.log(bookingTypeId)
+    const { vehicleList } = useContext(MainContext)
 
     return (
 

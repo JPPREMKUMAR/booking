@@ -32,61 +32,6 @@ export const MainContextProvider = (props) => {
 
     ]
 
-    const vehicleList = [
-
-        // ----------------- AIRPORT TAXI -----------------
-        {
-            vehicleName: "Suzuki Dzire",
-            capacity: 4,
-            price: 2500,
-            vehicleType: "AIRPORT TAXI",
-            imageUrl: image1,
-            id: uuid()
-
-        },
-        {
-            vehicleName: "Toyota Etios",
-            capacity: 4,
-            price: 2800,
-            vehicleType: "AIRPORT TAXI",
-            imageUrl: image2, id: uuid()
-
-        },
-        {
-            vehicleName: "Hyundai Xcent",
-            capacity: 4,
-            price: 2600,
-            vehicleType: "AIRPORT TAXI",
-            imageUrl: image3, id: uuid()
-
-        },
-        {
-            vehicleName: "Honda Amaze",
-            capacity: 4,
-            price: 2700,
-            vehicleType: "AIRPORT TAXI",
-            imageUrl: image4, id: uuid()
-
-        },
-        {
-            vehicleName: "Tata Zest",
-            capacity: 4,
-            price: 2400,
-            vehicleType: "AIRPORT TAXI",
-
-            imageUrl: image5, id: uuid()
-
-        },
-        {
-            vehicleName: "Tata Zest",
-            capacity: 10,
-            price: 4000,
-            vehicleType: "AIRPORT TAXI",
-            imageUrl: image6, id: uuid()
-
-        },
-    ]
-
 
 
     // PICKUP TIME LIST
@@ -242,8 +187,88 @@ export const MainContextProvider = (props) => {
     }, [])
 
 
+    {
+        /*/ 
+        const vehicleList = [
+    
+            // ----------------- AIRPORT TAXI -----------------
+            {
+                vehicleName: "Suzuki Dzire",
+                capacity: 4,
+                price: 2500,
+                vehicleType: "AIRPORT TAXI",
+                imageUrl: image1,
+                id: uuid()
+    
+            },
+            {
+                vehicleName: "Toyota Etios",
+                capacity: 4,
+                price: 2800,
+                vehicleType: "AIRPORT TAXI",
+                imageUrl: image2, id: uuid()
+    
+            },
+            {
+                vehicleName: "Hyundai Xcent",
+                capacity: 4,
+                price: 2600,
+                vehicleType: "AIRPORT TAXI",
+                imageUrl: image3, id: uuid()
+    
+            },
+            {
+                vehicleName: "Honda Amaze",
+                capacity: 4,
+                price: 2700,
+                vehicleType: "AIRPORT TAXI",
+                imageUrl: image4, id: uuid()
+    
+            },
+            {
+                vehicleName: "Tata Zest",
+                capacity: 4,
+                price: 2400,
+                vehicleType: "AIRPORT TAXI",
+    
+                imageUrl: image5, id: uuid()
+    
+            },
+            {
+                vehicleName: "Tata Zest",
+                capacity: 10,
+                price: 4000,
+                vehicleType: "AIRPORT TAXI",
+                imageUrl: image6, id: uuid()
+    
+            },
+        ]
+    
+        
+        /*/
+    }
 
 
+
+    const [vehicleList, setVehicleList] = useState([])
+
+
+    const getAllVehicles = async () => {
+
+        const response = await axios.post(backendUrl + "/api/user/getAllVehicles", {}, {});
+
+        // console.log(response.data.vehicles);
+        setVehicleList(response.data.vehicles);
+
+    }
+
+
+    useEffect(() => {
+        getAllVehicles();
+
+    }, [])
+
+    //console.log(vehicleList);
     const value = {
 
         rupees,
