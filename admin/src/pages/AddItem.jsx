@@ -65,6 +65,7 @@ const AddItem = () => {
             setCapacity('')
             setImage(null)
             setPreview('')
+            navigate("/addItem")
         } else {
             setIsLoading(false)
             setMessage("Please Try Again.")
