@@ -20,7 +20,7 @@ import ContactDetails from "./components/ContactDetails"
 import AllRights from "./components/AllRights"
 import Policy from './pages/Policy'
 
-
+import ScrollToTop from "./components/ScrollToTop"
 
 
 const App = () => {
@@ -47,7 +47,7 @@ const App = () => {
             <>
               <HelmetSeo />
               <Navbar />
-
+              <ScrollToTop />
               <Routes>
 
 
