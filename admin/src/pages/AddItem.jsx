@@ -39,6 +39,9 @@ const AddItem = () => {
     const onSubmitHandler = async (event) => {
         setIsLoading(true)
         event.preventDefault()
+        const getId = categoriesList.find((item) => item.name === bookingType);
+        //console.log(getId.id);
+        const bookingTypeId = getId.id;
 
         console.log(vehicle, bookingType, price, capacity, image)
 
@@ -49,6 +52,7 @@ const AddItem = () => {
         formData.append("bookingType", bookingType)
         formData.append("price", price)
         formData.append("capacity", capacity)
+        formData.append("bookingTypeId", bookingTypeId)
 
         const response = await axios.post(backendUrl + "/api/vehicle/addItem", formData, { headers: { token } })
         console.log(response)

@@ -26,27 +26,33 @@ const VehicleItem = ({ item, getAllVehicles }) => {
 
     return (
 
-        <div className="bg-white rounded-md px-5 py-3 ">
-            <div className="px-3 py-2">
-                <img src={imageUrl} alt="imageUrl" className="w-full h-[120px]" />
-            </div>
-            <div className="my-4">
-                <p className="text-md font-semibold text-gray-600">Vehicle : <span className="text-gray-900">{vehicle}</span> </p>
-                <p className="text-md font-semibold text-gray-600">Booking Type : <span className="text-gray-900">{bookingType}</span> </p>
-                <p className="text-md font-semibold text-gray-600">Price : <span className="text-gray-900">{price}</span> </p>
-                <p className="text-md font-semibold text-gray-600">Capacity : <span className="text-gray-900">{capacity}</span> </p>
+        <div className="bg-white rounded-lg ">
+            <div className="px-2 py-2">
+                <img src={imageUrl} alt="imageUrl" className="w-full h-[150px]" />
             </div>
 
-            <div className="flex justify-between items-center">
-                <button className="text-white rounded-md outline-none px-7 py-2 bg-blue-600 font-semibold cursor-pointer">
-                    <Link to={`/vehicles/${_id}`} >
-                        Update
-                    </Link>
-                </button>
-                <button onClick={deleteVehicle} className="text-white rounded-md outline-none px-7 py-2 bg-red-600 font-semibold cursor-pointer">
-                    Delete
-                </button>
+            <div className=" px-5 py-3">
 
+
+
+                <div className="my-2">
+                    <p className="text-md font-semibold text-gray-600">Vehicle : <span className="text-gray-900">{vehicle}</span> </p>
+                    <p className="text-md font-semibold text-gray-600">Booking Type : <span className="text-gray-900">{bookingType}</span> </p>
+                    <p className="text-md font-semibold text-gray-600">Price : <span className="text-gray-900">{price}</span> </p>
+                    <p className="text-md font-semibold text-gray-600">Capacity : <span className="text-gray-900">{capacity}</span> </p>
+                </div>
+
+                <div className="flex justify-between items-center my-3">
+                    <button className="text-white rounded-md outline-none px-7 py-2 bg-blue-600 font-semibold cursor-pointer">
+                        <Link to={`/vehicles/${_id}`} >
+                            Update
+                        </Link>
+                    </button>
+                    <button onClick={deleteVehicle} className="text-white rounded-md outline-none px-7 py-2 bg-red-600 font-semibold cursor-pointer">
+                        Delete
+                    </button>
+
+                </div>
             </div>
 
         </div>

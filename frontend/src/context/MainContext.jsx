@@ -25,10 +25,10 @@ export const MainContextProvider = (props) => {
 
     console.log(backendUrl)
     const categoriesList = [
-        { id: uuid(), name: "AIRPORT TAXI" },
-        { id: uuid(), name: "INNOVA TAXI" },
-        { id: uuid(), name: "OUTSTATION TAXI" },
-        { id: uuid(), name: "LOCAL PACKAGE" },
+        { id: "AIRPORT_TAXI", name: "AIRPORT TAXI" },
+        { id: "INNOVA_TAXI", name: "INNOVA TAXI" },
+        { id: "OUTSTATION_TAXI", name: "OUTSTATION TAXI" },
+        { id: "LOCAL_PACKAGE", name: "LOCAL PACKAGE" },
 
     ]
 
@@ -40,7 +40,8 @@ export const MainContextProvider = (props) => {
             capacity: 4,
             price: 2500,
             vehicleType: "AIRPORT TAXI",
-            imageUrl: image1, id: uuid()
+            imageUrl: image1,
+            id: uuid()
 
         },
         {

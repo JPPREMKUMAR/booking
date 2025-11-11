@@ -5,7 +5,7 @@ export const addVehicle = async (req, res) => {
 
 
     try {
-        const { vehicle, bookingType, price, capacity } = req.body
+        const { vehicle, bookingType, price, capacity, bookingTypeId } = req.body
 
         console.log(req.file.path)
         const imageUrl = req.file.path
@@ -18,7 +18,8 @@ export const addVehicle = async (req, res) => {
             bookingType,
             price,
             capacity,
-            imageUrl
+            imageUrl,
+            bookingTypeId
 
         })
         await newVehicle.save()

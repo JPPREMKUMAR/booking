@@ -40,7 +40,7 @@ const AllVehicles = () => {
 
     return (
         <div className="bg-gray-200 min-h-screen px-5 py-5">
-            <h1 className="text-xl text-center font-semibold sm:text-4xl ">All Vehicles</h1>
+            <h1 className="text-center text-4xl text-[#d4af37] font-bold">All Vehicles</h1>
 
             <div className="my-10">
                 {
