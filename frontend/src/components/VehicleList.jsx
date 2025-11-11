@@ -52,28 +52,65 @@ const vehicleList1 = [
     },
 ]
 import { MainContext } from "../context/MainContext"
-import { useContext } from "react"
-
+import { useContext, useEffect, useState } from "react"
+import { TailSpin } from "react-loader-spinner"
+import axios from "axios"
 
 
 const VehicleList = ({ Title, bookingTypeId }) => {
     console.log(bookingTypeId)
-    const { vehicleList } = useContext(MainContext)
+    const { navigate, backendUrl } = useContext(MainContext)
+
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    const [vehicleList, setVehicleList] = useState([])
+
+
+    const getAllVehicles = async () => {
+
+        const response = await axios.post(backendUrl + "/api/user/getAllVehicles", {}, {});
+
+        console.log(response.data.vehicles);
+        setVehicleList(response.data.vehicles);
+        setIsLoading(false)
+
+    }
+
+
+    useEffect(() => {
+        getAllVehicles();
+
+
+    }, [])
+
+
+
+    console.log(vehicleList);
 
     return (
 
         <div>
             <h1 className="font-bold text-3xl text-center mb-4 mt-4 sm:text-4xl text-[#FFD700]">{Title}</h1>
 
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:grid-cols-4 items-center">
-                {
-                    vehicleList.map((item, index) => (
-                        <VehicleItem key={index} item={item} />
+            {
 
-                    ))
+                isLoading ?
+                    <div className="flex justify-center my-10 min-h-screen ">
+                        <TailSpin width={50} height={50} color="blue" />
 
-                }
-            </div>
+                    </div> : <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:grid-cols-4 items-center">
+                        {
+                            vehicleList.map((item, index) => (
+                                <VehicleItem key={index} item={item} />
+
+                            ))
+
+                        }
+                    </div>
+            }
+
+
         </div>
     )
 }
