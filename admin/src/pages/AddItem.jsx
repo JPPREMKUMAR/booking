@@ -122,7 +122,7 @@ const AddItem = () => {
                     <div>
                         <label htmlFor="image" className="text-md text-gray-700 font-bold">Image</label>
                         <div className='border rounded-sm my-1'>
-                            <input type="file" accept="image/*" id="image" value={image} className='px-3 py-2 outline-none font-semibold' onChange={handleImageChange} required />
+                            <input type="file" accept="image/*" id="image" defaultValue={image} className='px-3 py-2 outline-none font-semibold' onChange={handleImageChange} required />
                         </div>
                         <div className='my-5'>
                             {
