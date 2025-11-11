@@ -25,7 +25,7 @@ export const addVehicle = async (req, res) => {
         await newVehicle.save()
 
 
-        console.log(newVehicle)
+        //console.log(newVehicle)
 
         res.json({ success: true, message: "Vehicle Added.", newVehicle: newVehicle })
 
