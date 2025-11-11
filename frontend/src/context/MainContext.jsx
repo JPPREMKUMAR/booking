@@ -24,6 +24,23 @@ export const MainContextProvider = (props) => {
 
 
     console.log(backendUrl)
+
+    const getAllVehicles = async () => {
+
+        const response = await axios.post(backendUrl + "/api/user/getAllVehicles", {}, {});
+
+        console.log(response.data.vehicles);
+        setVehicleList(response.data.vehicles);
+
+    }
+
+
+    useEffect(() => {
+        getAllVehicles();
+
+    }, [])
+
+
     const categoriesList = [
         { id: "AIRPORT_TAXI", name: "AIRPORT TAXI" },
         { id: "INNOVA_TAXI", name: "INNOVA TAXI" },
@@ -253,20 +270,7 @@ export const MainContextProvider = (props) => {
     const [vehicleList, setVehicleList] = useState([])
 
 
-    const getAllVehicles = async () => {
 
-        const response = await axios.post(backendUrl + "/api/user/getAllVehicles", {}, {});
-
-        // console.log(response.data.vehicles);
-        setVehicleList(response.data.vehicles);
-
-    }
-
-
-    useEffect(() => {
-        getAllVehicles();
-
-    }, [])
 
     //console.log(vehicleList);
     const value = {

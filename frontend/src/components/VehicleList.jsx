@@ -60,8 +60,6 @@ import axios from "axios"
 const VehicleList = ({ Title, bookingTypeId }) => {
     console.log(bookingTypeId)
     const { navigate, backendUrl } = useContext(MainContext)
-
-
     const [isLoading, setIsLoading] = useState(true);
 
     const [vehicleList, setVehicleList] = useState([])
