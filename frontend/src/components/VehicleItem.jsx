@@ -30,10 +30,12 @@ const VehicleItem = ({ item }) => {
 
     return (
 
-        <div className="text-[#111827]  sm:m-2 m-2 my-4 shadow-md  bg-[#F9FAFB] " onClick={onClickCard}>
-            <img src={imageUrl} alt={`${vehicle}`} className="w-full h-[180px]" />
+        <div className="text-[#111827]  sm:m-2 m-2 my-4 shadow-md  bg-white " onClick={onClickCard}>
+            <div className="flex justify-center">
+                <img src={imageUrl} alt={`${vehicle}`} className="w-[80%] h-[150px] sm:h-[150px] " />
+            </div>
 
-            <div className="px-5 my-5 flex  flex-col items-center gap-2 ">
+            <div className="px-5 flex  flex-col items-center gap-2 ">
 
                 <h1 className="text-2xl text-[#111827] font-bold text-medium sm:text-2xl">{vehicle}</h1>
                 <div className="flex items-center gap-x-2 text-sm sm:text-2xl">
@@ -45,9 +47,9 @@ const VehicleItem = ({ item }) => {
                     <p className="text-[#111827]  text-md  sm:text-xl font-semibold">₹</p>
                     <p className="text-[#111827]  text-md  sm:text-xl font-semibold">{price}</p>
                 </div>
-                <div className="flex items-center gap-x-3">
+                <div className="flex items-center gap-x-3 my-2">
 
-                    <Link to={`/booking/${_id}`} className="sm:bg-blue-400 w-40 bg-blue-600 text-white px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 font-semibold  mb-5 mt-2 cursor-pointer text-center hover:text-gray-800">
+                    <Link to={`/booking/${_id}`} className="sm:bg-blue-400 text-md w-40 bg-blue-600 text-white px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 font-semibold  mb-5 mt-2 cursor-pointer text-center hover:text-gray-800">
 
                         Book Now
 

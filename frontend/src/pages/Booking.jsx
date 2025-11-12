@@ -21,7 +21,7 @@ const Booking = () => {
     const [mobile, setMobile] = useState('')
     const [email, setEmail] = useState('')
     const [bookingType, setBookingType] = useState(categoriesList[0].name)
-    const [vehicle, setVehicle] = useState(vehiclesNames[0].vehicleName);
+    const [vehicle, setVehicle] = useState('');
     const [pickUpPoint, setPickUpPoint] = useState('')
     const [dropPoint, setDropPoint] = useState('')
     const [cityActive, setCityActive] = useState('City To Airport')
@@ -153,7 +153,9 @@ const Booking = () => {
         if (response.data.success === true) {
             console.log(response.data.vehicleDetails);
             const { vehicle, bookingType } = response.data.vehicleDetails;
-            setVehicle("Toyota Etios")
+            console.log("change Vehicle name")
+            console.log(vehicle)
+            setVehicle(vehicle)
             setBookingType(bookingType)
 
 
@@ -162,6 +164,7 @@ const Booking = () => {
 
         } else {
             console.log(response.data)
+            setVehicle(vehiclesNames[0].vehicleName)
             setIsLoader(false)
         }
     }
@@ -175,7 +178,7 @@ const Booking = () => {
 
 
 
-
+    console.log(vehicle)
 
     return (
         <div className='px-5 py-2 sm:flex sm:items-center sm:justify-center w-full min-h-screen bg-[#F9FAFB]'>
@@ -211,7 +214,7 @@ const Booking = () => {
                                 <div className='my-1'>
                                     <label htmlFor="vehicleType" className='text-xl font-semibold text-gray-700 '>Booking Type</label>
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2'>
-                                        <select className='w-full outline-none  text-gray-800 placeholder-gray-400 font-bold' id="vehicleType" defaultValue={bookingType} onChange={(event) => setBookingType(event.target.value)}>
+                                        <select className='w-full outline-none  text-gray-800 placeholder-gray-400 font-bold' id="vehicleType" value={bookingType} onChange={(event) => setBookingType(event.target.value)}>
                                             {
                                                 categoriesList.map((item) => (
 
@@ -224,7 +227,7 @@ const Booking = () => {
                                 <div className='my-1'>
                                     <label htmlFor="vehicle" className='text-xl font-semibold'>Vehicle</label>
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2 text-gray-700 '>
-                                        <select className='w-full outline-none  text-gray-800 placeholder-gray-400 font-bold' id="vehicle" defaultValue={vehicle} onChange={(event) => setVehicle(event.target.value)}  >
+                                        <select className='w-full outline-none  text-gray-800 placeholder-gray-400 font-bold' id="vehicle" value={vehicle} onChange={(event) => setVehicle(event.target.value)}  >
                                             {
                                                 vehiclesNames.map((item) => (
                                                     <option key={item.id} className=' text-gray-800 placeholder-gray-400 font-bold'  >{item.vehicleName}</option>

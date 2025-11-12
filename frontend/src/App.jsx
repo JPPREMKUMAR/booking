@@ -38,7 +38,7 @@ const App = () => {
 
 
 
-      <div className=" min-h-screen">
+      <div className="bg-gray-100  min-h-screen">
         <MainContextProvider>
           {isLoading ?
             < div className='flex flex-col  justify-center items-center min-h-screen py-10'>
