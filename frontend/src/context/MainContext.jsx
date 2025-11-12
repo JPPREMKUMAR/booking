@@ -234,11 +234,7 @@ export const MainContextProvider = (props) => {
             id: uuid()
 
         },
-        {
-            vehicleName: "Tata Zest",
-            id: uuid()
 
-        },
 
 
     ]
