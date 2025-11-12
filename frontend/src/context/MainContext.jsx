@@ -209,35 +209,37 @@ export const MainContextProvider = (props) => {
 
     const vehiclesNames = [
 
-        {
-            vehicleName: "Suzuki Dzire",
-            id: uuid()
 
-        },
-        {
-            vehicleName: "Toyota Etios",
-            id: uuid()
+        { vehicleName: "Tata Indica", id: uuid() },
+        { vehicleName: "Maruti Swift", id: uuid() },
+        { vehicleName: "Hyundai i10", id: uuid() },
+        { vehicleName: "Maruti WagonR", id: uuid() },
+        { vehicleName: "Hyundai Santro", id: uuid() },
 
-        },
-        {
-            vehicleName: "Hyundai Xcent",
-            id: uuid()
+        { vehicleName: "Swift Dzire", id: uuid() },
+        { vehicleName: "Toyota Etios", id: uuid() },
+        { vehicleName: "Honda Amaze", id: uuid() },
+        { vehicleName: "Hyundai Xcent", id: uuid() },
+        { vehicleName: "Tata Tigor", id: uuid() },
 
-        },
-        {
-            vehicleName: "Honda Amaze",
-            id: uuid()
+        { vehicleName: "Toyota Innova", id: uuid() },
+        { vehicleName: "Innova Crysta", id: uuid() },
+        { vehicleName: "Maruti Ertiga", id: uuid() },
+        { vehicleName: "Mahindra Xylo", id: uuid() },
+        { vehicleName: "Mahindra Scorpio", id: uuid() },
 
-        },
-        {
-            vehicleName: "Tata Zest",
-            id: uuid()
-
-        },
-
-
+        { vehicleName: "Toyota Camry", id: uuid() },
+        { vehicleName: "Skoda Superb", id: uuid() },
+        { vehicleName: "Honda City", id: uuid() },
+        { vehicleName: "BMW 3 Series", id: uuid() },
+        { vehicleName: "Mercedes-Benz E-Class", id: uuid() }
 
     ]
+
+
+
+
+
 
 
     {

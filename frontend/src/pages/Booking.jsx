@@ -162,6 +162,7 @@ const Booking = () => {
 
         } else {
             console.log(response.data)
+            setIsLoader(false)
         }
     }
 

@@ -7,11 +7,11 @@ import { TailSpin } from "react-loader-spinner"
 const AddItem = () => {
 
 
-    const { categoriesList, backendUrl, token, navigate } = useContext(MainContext)
+    const { categoriesList, backendUrl, token, navigate, vehiclesNames } = useContext(MainContext)
     // console.log(categoriesList)
 
 
-    const [vehicle, setVahicle] = useState('')
+    const [vehicle, setVahicle] = useState(vehiclesNames[0].vehicleName)
     const [bookingType, setBookingType] = useState(categoriesList[0].name)
     const [price, setPrice] = useState('')
     const [capacity, setCapacity] = useState('')
@@ -92,7 +92,13 @@ const AddItem = () => {
                     <div>
                         <label htmlFor="vehicle" className="text-md text-gray-700 font-bold">Vehicle Name</label>
                         <div className='border rounded-sm my-1'>
-                            <input id="vehicle" placeholder='Enter Vehicle Name' className='px-3 py-2 outline-none font-semibold' value={vehicle} onChange={(e) => setVahicle(e.target.value)} required />
+                            <select id="bookingType" className='w-full px-3 py-2 outline-none  font-semibold' value={vehicle} onChange={(e) => setVahicle(e.target.value)}>
+                                {
+                                    vehiclesNames.map((item) => (
+                                        <option key={item.id}>{item.vehicleName}</option>
+                                    ))
+                                }
+                            </select>
                         </div>
                     </div>
                     <div>

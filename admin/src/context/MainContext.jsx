@@ -40,6 +40,9 @@ const MainContextProvider = (props) => {
 
 
 
+
+
+
     const categoriesList = [
         { id: "AIRPORT_TAXI", name: "AIRPORT TAXI" },
         { id: "INNOVA_TAXI", name: "INNOVA TAXI" },
@@ -50,8 +53,40 @@ const MainContextProvider = (props) => {
 
 
 
+
+    const vehiclesNames = [
+
+
+        { vehicleName: "Tata Indica", id: uuid() },
+        { vehicleName: "Maruti Swift", id: uuid() },
+        { vehicleName: "Hyundai i10", id: uuid() },
+        { vehicleName: "Maruti WagonR", id: uuid() },
+        { vehicleName: "Hyundai Santro", id: uuid() },
+
+        { vehicleName: "Swift Dzire", id: uuid() },
+        { vehicleName: "Toyota Etios", id: uuid() },
+        { vehicleName: "Honda Amaze", id: uuid() },
+        { vehicleName: "Hyundai Xcent", id: uuid() },
+        { vehicleName: "Tata Tigor", id: uuid() },
+
+        { vehicleName: "Toyota Innova", id: uuid() },
+        { vehicleName: "Innova Crysta", id: uuid() },
+        { vehicleName: "Maruti Ertiga", id: uuid() },
+        { vehicleName: "Mahindra Xylo", id: uuid() },
+        { vehicleName: "Mahindra Scorpio", id: uuid() },
+
+        { vehicleName: "Toyota Camry", id: uuid() },
+        { vehicleName: "Skoda Superb", id: uuid() },
+        { vehicleName: "Honda City", id: uuid() },
+        { vehicleName: "BMW 3 Series", id: uuid() },
+        { vehicleName: "Mercedes-Benz E-Class", id: uuid() }
+
+    ]
+
+
+
     const value = {
-        backendUrl, token, setToken, navigate, categoriesList
+        backendUrl, token, setToken, navigate, categoriesList, vehiclesNames
     }
 
 

@@ -74,7 +74,7 @@ const Navbar = () => {
                         <IoHome className="self-center text-white" />
                         <p className="self-center text-lg">Home</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/booking" className="flex items-center gap-x-3 px-4 cursor-pointer    ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/booking/1" className="flex items-center gap-x-3 px-4 cursor-pointer    ">
                         <FaTaxi className="self-center text-white" />
                         <p className="self-center text-lg">Booking</p>
                     </Link>
@@ -134,7 +134,7 @@ const Navbar = () => {
                     <Link to="/" className="px-2 text-md text-white text-gray-600  cursor-pointer ">
                         Home
                     </Link>
-                    <Link to="/booking" className=" px-2 text-md text-white  text-gray-600  cursor-pointer ">
+                    <Link to="/booking/1" className=" px-2 text-md text-white  text-gray-600  cursor-pointer ">
                         Booking
                     </Link>
                     <Link to="/innovaTaxi" className="sm:hidden md:block  px-2 text-md text-white text-gray-600  cursor-pointer ">
