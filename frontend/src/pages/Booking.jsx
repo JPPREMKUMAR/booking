@@ -1,5 +1,7 @@
 import { useState, useContext, useEffect } from 'react'
+import { useParams } from "react-router-dom"
 import { MainContext } from '../context/MainContext'
+
 import axios from "axios"
 import { TailSpin } from "react-loader-spinner"
 import sendBookingMail from "../utils/sendBookingMail.js"
@@ -8,14 +10,18 @@ import ContactDetails from "../components/ContactDetails.jsx"
 
 const Booking = () => {
 
-    const { categoriesList, vehicleList, userDetails, getUserProfile, backendUrl, navigate, pickupTimeList, monthsList, token } = useContext(MainContext)
+    const { categoriesList, userDetails, getUserProfile, getAllVehicles, vehiclesNames, backendUrl, navigate, pickupTimeList, monthsList, token } = useContext(MainContext)
     //console.log(categoriesList)
+
+
+    const { id } = useParams()
+
 
     const [name, setName] = useState('')
     const [mobile, setMobile] = useState('')
     const [email, setEmail] = useState('')
     const [bookingType, setBookingType] = useState(categoriesList[0].name)
-    const [vehicle, setVehicle] = useState(vehicleList[0].vehicleName)
+    const [vehicle, setVehicle] = useState(vehiclesNames[0].vehicleName);
     const [pickUpPoint, setPickUpPoint] = useState('')
     const [dropPoint, setDropPoint] = useState('')
     const [cityActive, setCityActive] = useState('City To Airport')
@@ -23,7 +29,7 @@ const Booking = () => {
     const [minDate, setMinDate] = useState('')
     const [pickUpDate, setPickUpDate] = useState('')
 
-    const [isLoader, setIsLoader] = useState(false)
+    const [isLoader, setIsLoader] = useState(true)
 
 
 
@@ -125,7 +131,7 @@ const Booking = () => {
         const mm = String(today.getMonth() + 1).padStart(2, "0");
         const dd = String(today.getDate()).padStart(2, "0")
         const formatedDate = `${yyyy}-${mm}-${dd}`
-        console.log(formatedDate);
+        // console.log(formatedDate);
         setMinDate(formatedDate);
         setPickUpDate(formatedDate);
 
@@ -134,7 +140,41 @@ const Booking = () => {
     }, [])
 
 
-    console.log(minDate)
+    //console.log(minDate)
+
+
+    // Geting Present VehicleItem Details 
+
+
+    const getPresentVehicleDetails = async () => {
+        console.log(id, "GetVehicle");
+        const response = await axios.post(backendUrl + `/api/user/getVehicle/${id}`, {})
+
+        if (response.data.success === true) {
+            console.log(response.data.vehicleDetails);
+            const { vehicle, bookingType } = response.data.vehicleDetails;
+            setVehicle("Toyota Etios")
+            setBookingType(bookingType)
+
+
+            setIsLoader(false)
+
+
+        } else {
+            console.log(response.data)
+        }
+    }
+
+
+
+    useEffect(() => {
+        getPresentVehicleDetails()
+    }, [])
+
+
+
+
+
 
     return (
         <div className='px-5 py-2 sm:flex sm:items-center sm:justify-center w-full min-h-screen bg-[#F9FAFB]'>
@@ -185,7 +225,7 @@ const Booking = () => {
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2 text-gray-700 '>
                                         <select className='w-full outline-none  text-gray-800 placeholder-gray-400 font-bold' id="vehicle" defaultValue={vehicle} onChange={(event) => setVehicle(event.target.value)}  >
                                             {
-                                                vehicleList.map((item) => (
+                                                vehiclesNames.map((item) => (
                                                     <option key={item.id} className=' text-gray-800 placeholder-gray-400 font-bold'  >{item.vehicleName}</option>
                                                 ))
                                             }

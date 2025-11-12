@@ -12,11 +12,11 @@ import { FaUsers } from "react-icons/fa";
 
 const VehicleItem = ({ item }) => {
 
-    // console.log(item)
+    console.log(item)
 
     const { adminPhoneNumber } = useContext(MainContext)
 
-    const { vehicleName, capacity, imageUrl, price, vehicleType } = item
+    const { _id, vehicle, capacity, imageUrl, price } = item
 
 
 
@@ -31,11 +31,11 @@ const VehicleItem = ({ item }) => {
     return (
 
         <div className="text-[#111827]  sm:m-2 m-2 my-4 shadow-md  bg-[#F9FAFB] " onClick={onClickCard}>
-            <img src={imageUrl} alt={`${vehicleName}`} className="w-full h-[180px]" />
+            <img src={imageUrl} alt={`${vehicle}`} className="w-full h-[180px]" />
 
             <div className="px-5 my-5 flex  flex-col items-center gap-2 ">
 
-                <h1 className="text-2xl text-[#111827] font-bold text-medium sm:text-2xl">{vehicleName}</h1>
+                <h1 className="text-2xl text-[#111827] font-bold text-medium sm:text-2xl">{vehicle}</h1>
                 <div className="flex items-center gap-x-2 text-sm sm:text-2xl">
                     <FaUsers className="text-[#111827] " />
                     <p className="text-xl sm:text-xl text-[#111827] font-semibold">Capacity : {capacity}+1</p>
@@ -47,7 +47,7 @@ const VehicleItem = ({ item }) => {
                 </div>
                 <div className="flex items-center gap-x-3">
 
-                    <Link to="/booking" className="sm:bg-blue-400 w-40 bg-blue-600 text-white px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 font-semibold  mb-5 mt-2 cursor-pointer text-center hover:text-gray-800">
+                    <Link to={`/booking/${_id}`} className="sm:bg-blue-400 w-40 bg-blue-600 text-white px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 font-semibold  mb-5 mt-2 cursor-pointer text-center hover:text-gray-800">
 
                         Book Now
 

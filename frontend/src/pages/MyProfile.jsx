@@ -13,7 +13,7 @@ const MyProfile = () => {
     const getUserProfile = async () => {
 
         const response = await axios.post(backendUrl + "/api/user/userProfile", {}, { headers: { token: token } })
-        //console.log(response.data)
+        console.log(response.data)
         const responseData = response.data.userDetails
         console.log(responseData)
         setUserDetails(responseData)

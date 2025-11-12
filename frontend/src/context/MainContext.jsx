@@ -206,6 +206,44 @@ export const MainContextProvider = (props) => {
     }, [])
 
 
+
+    const vehiclesNames = [
+
+        {
+            vehicleName: "Suzuki Dzire",
+            id: uuid()
+
+        },
+        {
+            vehicleName: "Toyota Etios",
+            id: uuid()
+
+        },
+        {
+            vehicleName: "Hyundai Xcent",
+            id: uuid()
+
+        },
+        {
+            vehicleName: "Honda Amaze",
+            id: uuid()
+
+        },
+        {
+            vehicleName: "Tata Zest",
+            id: uuid()
+
+        },
+        {
+            vehicleName: "Tata Zest",
+            id: uuid()
+
+        },
+
+
+    ]
+
+
     {
         /*/ 
         const vehicleList = [
@@ -281,7 +319,7 @@ export const MainContextProvider = (props) => {
         backendUrl, token, setToken,
         userDetails, navigate, getUserProfile,
         pickupTimeList, monthsList, adminPhoneNumber, getAllVehicles
-
+        , vehiclesNames
     }
 
     return <MainContext.Provider value={value}>
