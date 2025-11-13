@@ -29,7 +29,7 @@ const Login = () => {
             navigate("/")
             //console.log(getToken)
             setToken(getToken)
-            Cookies.set("token", getToken, { expires: 30 })
+            Cookies.set("adminToken", getToken, { expires: 30 })
             setError('')
             setIsLoading(false)
 

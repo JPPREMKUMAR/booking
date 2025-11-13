@@ -16,14 +16,14 @@ const MainContextProvider = (props) => {
 
     const backendUrl = import.meta.env.VITE_BACKEND_URL
     // console.log(backendUrl)
-    const [token, setToken] = useState(Cookies.get("token") === undefined ? '' : Cookies.get("token"))
+    const [token, setToken] = useState(Cookies.get("adminToken") === undefined ? '' : Cookies.get("adminToken"))
 
 
 
 
     useEffect(() => {
 
-        const newToken = Cookies.get("token")
+        const newToken = Cookies.get("adminToken")
         setToken(newToken)
     }, [token])
 
