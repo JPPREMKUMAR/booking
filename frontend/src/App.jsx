@@ -7,6 +7,7 @@ import Home from "./pages/Home"
 import Booking from "./pages/Booking"
 import Innovataxi from "./pages/Innovataxi"
 import Outstation from "./pages/Outstation"
+import LuxuryCars from "./pages/LuxuryCars"
 import Services from "./pages/Services"
 import AboutUs from "./pages/AboutUs"
 import ContactUs from "./pages/ContactUs"
@@ -57,6 +58,7 @@ const App = () => {
                 <Route exact path="/booking/:id" element={<Booking />} />
                 <Route path="/innovaStation" element={<Innovataxi />} />
                 <Route path="/outStation" element={<Outstation />} />
+                <Route path="/luxuryCars" element={<LuxuryCars />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/aboutUs" element={<AboutUs />} />
                 <Route path="/contactUs" element={<ContactUs />} />

@@ -87,6 +87,10 @@ const Navbar = () => {
                         <FaCar className="self-center text-white" />
                         <p className="self-center text-lg ">Outstation</p>
                     </Link>
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/luxuryCars" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
+                        <FaCar className="self-center text-white" />
+                        <p className="self-center text-lg ">Luxury Cars</p>
+                    </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/services" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
                         <MdMiscellaneousServices className="self-center text-white" />
                         <p className="self-center text-lg ">Services</p>
@@ -143,6 +147,10 @@ const Navbar = () => {
 
                     <Link to="/outStation" className="sm:hidden md:block  px-2 text-md text-white  text-gray-600  cursor-pointer ">
                         Outstation
+                    </Link>
+
+                    <Link to="/luxuryCars" className="sm:hidden md:block  px-2 text-md text-white  text-gray-600  cursor-pointer ">
+                        Luxury Cars
                     </Link>
                     <Link to="/services" className="sm:hidden md:block  px-2 text-md text-white  text-gray-600  cursor-pointer ">
                         Services
