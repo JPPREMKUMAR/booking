@@ -106,6 +106,7 @@ const AddItem = () => {
         console.log(response.data.vehicleNames)
 
         setVehiclesNames(response.data.vehicleNames)
+        setMainLoading(false)
 
     }
 
@@ -114,7 +115,7 @@ const AddItem = () => {
     useEffect(() => {
         getCategoriesList()
         getVehiclesList()
-        setMainLoading(false)
+
     }, [])
 
 

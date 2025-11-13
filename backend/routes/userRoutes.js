@@ -1,6 +1,8 @@
 import express from "express"
 import { loginUser, registerUser, userProfile, getAllVehiclesUser } from "../controllers/userController.js"
 import { getVehicle } from "../controllers/vehicleController.js"
+import { getCategories, getVehicleNames, getAllCategoriesVehiclesNames } from "../controllers/categoriesController.js"
+
 
 import authUser from "../middlewares/authUser.js"
 
@@ -11,6 +13,9 @@ userRouter.post("/login", loginUser)
 userRouter.post('/userProfile', authUser, userProfile)
 userRouter.post("/getAllVehicles", getAllVehiclesUser)
 userRouter.post("/getVehicle/:id", getVehicle);
+userRouter.post("/getCategories", getCategories)
+userRouter.post("/categoryVehicles/:categoryId", getVehicleNames)
+userRouter.post("/allCategoriesVehicles", getAllCategoriesVehiclesNames)
 
 
 export default userRouter
