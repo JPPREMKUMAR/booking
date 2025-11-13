@@ -12,7 +12,7 @@ import { FaUsers } from "react-icons/fa";
 
 const VehicleItem = ({ item }) => {
 
-    console.log(item)
+    //console.log(item)
 
     const { adminPhoneNumber } = useContext(MainContext)
 

@@ -35,6 +35,8 @@ const Booking = () => {
     const [isLoader, setIsLoader] = useState(true)
 
 
+    console.log(vehicle, "start")
+
     const onSetVehicleAndCategory = () => {
         if (categoriesList.length > 0) {
             console.log(categoriesList)
@@ -83,7 +85,9 @@ const Booking = () => {
         //console.log(response.data.vehicleNames)
         setVehiclesNames(response.data.vehicleNames)
         //console.log(response.data.vehicleNames[0].vehicleName)
-        setVehicle(response.data.vehicleNames[0].vehicleName)
+        if (vehicle === '') {
+            setVehicle(response.data.vehicleNames[0].vehicleName)
+        }
 
 
 
@@ -101,6 +105,7 @@ const Booking = () => {
 
     useEffect(() => {
         getCategoryVehicles()
+
     }, [bookingTypeId])
 
 
@@ -237,13 +242,13 @@ const Booking = () => {
             const response = await axios.post(backendUrl + `/api/user/getVehicle/${id}`, {})
 
             if (response.data.success === true) {
-                console.log(response.data.vehicleDetails);
-                const { vehicle, bookingType } = response.data.vehicleDetails;
-                console.log("change Vehicle name")
+                //console.log(response.data.vehicleDetails);
+                const { vehicle, bookingType, bookingTypeId } = response.data.vehicleDetails;
+                //console.log("change Vehicle name")
                 console.log(vehicle)
                 setVehicle(vehicle)
                 setBookingType(bookingType)
-
+                setBookingTypeId(bookingTypeId)
 
                 setIsLoader(false)
 
@@ -402,15 +407,9 @@ const Booking = () => {
             </div>
 
 
-
-
-
         </div>
     )
 }
 
 
 export default Booking
-
-
-
