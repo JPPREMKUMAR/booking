@@ -27,6 +27,9 @@ const AddItem = () => {
     const [message, setMessage] = useState('')
 
 
+
+
+
     const handleImageChange = (e) => {
         const file = e.target.files[0]
         setImage(file)
@@ -45,11 +48,12 @@ const AddItem = () => {
     const onSubmitHandler = async (event) => {
         setIsLoading(true)
         event.preventDefault()
-        const getId = categoriesList.find((item) => item.category === bookingType);
-        //console.log(getId.id);
-        const bookingTypeId = getId.id;
 
-        console.log(vehicle, bookingType, price, capacity, image)
+
+
+        //console.log(vehicle, bookingType)
+
+
 
         const formData = new FormData()
 
@@ -89,9 +93,19 @@ const AddItem = () => {
 
     const getCategoriesList = async () => {
         const response = await axios.post(backendUrl + "/api/categories/getCategories", {}, { headers: { token } })
-        //console.log(response.data.categories)
+
 
         setCategoriesList(response.data.categories)
+        if (response.data.categories.length > 0) {
+            //console.log(response.data.categories[0])
+            const { category } = response.data.categories[0]
+            //console.log(category)
+            setBookingType(category)
+
+
+        }
+
+
 
 
     }
@@ -103,9 +117,12 @@ const AddItem = () => {
 
 
         const response = await axios.post(backendUrl + `/api/categories/getVNames/${bookingTypeId}`, {}, { headers: { token } })
-        console.log(response.data.vehicleNames)
+        //console.log(response.data.vehicleNames)
 
         setVehiclesNames(response.data.vehicleNames)
+
+        //console.log(response.data.vehicleNames[0].vehicleName)
+        setVahicle(response.data.vehicleNames[0].vehicleName)
         setMainLoading(false)
 
     }
@@ -127,8 +144,11 @@ const AddItem = () => {
 
 
 
+
+    console.log(bookingType)
+
     const onChangeCategory = (e) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setBookingType(e.target.value)
 
         const item = categoriesList.find((item) => item.category === e.target.value)

@@ -12,23 +12,13 @@ const VehicleItem = ({ item, getAllVehicles }) => {
     const { vehicle, imageUrl, price, capacity, bookingType, _id } = item
     //console.log(_id)
 
-    const deleteVehicle = async () => {
-        const url = `${backendUrl}/api/vehicle/delete/${_id}`
-        const response = await axios.post(url, { id: _id }, { headers: { token } })
-        console.log(response.data)
-        navigate("/allVehicles")
-        console.log('delete vehicle')
-        getAllVehicles()
-
-    }
-
 
 
     return (
 
         <div className="bg-white rounded-lg ">
-            <div className="px-2 py-2">
-                <img src={imageUrl} alt="imageUrl" className="w-full h-[150px]" />
+            <div className="px-2 py-2 flex justify-center my-1">
+                <img src={imageUrl} alt="imageUrl" className="w-[75%] h-[150px]" />
             </div>
 
             <div className=" px-5 py-3">
@@ -48,7 +38,7 @@ const VehicleItem = ({ item, getAllVehicles }) => {
                             Update
                         </Link>
                     </button>
-                    <button onClick={deleteVehicle} className="text-white rounded-md outline-none px-7 py-2 bg-red-600 font-semibold cursor-pointer">
+                    <button className="text-white rounded-md outline-none px-7 py-2 bg-red-600 font-semibold cursor-pointer" onClick={() => navigate(`/deleteItem/${_id}`)} >
                         Delete
                     </button>
 

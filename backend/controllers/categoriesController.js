@@ -54,7 +54,7 @@ export const addVehicleName = async (req, res) => {
     try {
 
         const { categoryId, vehicleName } = req.body
-        console.log(categoryId, vehicleName)
+        // console.log(categoryId, vehicleName)
 
         const newVehicleName = new VehicleNames({
             categoryId,
@@ -82,7 +82,7 @@ export const getVehicleNames = async (req, res) => {
     try {
 
         const { categoryId } = req.params;
-        console.log(categoryId);
+        //console.log(categoryId);
 
 
         const vehicles = await VehicleNames.find({ categoryId: categoryId })

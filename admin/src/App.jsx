@@ -8,7 +8,7 @@ import AddItem from "./pages/AddItem"
 import AllVehicles from "./pages/AllVehicles"
 import VehicleDetails from "./pages/VehicleDetails"
 import Categories from "./pages/Categories"
-
+import DeleteItem from "./pages/DeleteItem"
 
 
 
@@ -30,6 +30,8 @@ const App = () => {
           <Route path="/allVehicles" element={<AllVehicles />} />
           <Route path="/vehicles/:id" element={<VehicleDetails />} />
           <Route path="/Categories" element={<Categories />} />
+
+          <Route path="/deleteItem/:id" element={<DeleteItem />} />
 
         </Routes>
 
