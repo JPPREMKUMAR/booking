@@ -1,5 +1,4 @@
-
-
+import axios from "axios"
 import { createContext, useEffect, useState } from "react"
 import Cookies from "js-cookie"
 import { useNavigate } from "react-router-dom"
@@ -42,7 +41,8 @@ const MainContextProvider = (props) => {
 
 
 
-
+    {/*/
+    
     const categoriesList = [
         { id: "AIRPORT_TAXI", name: "AIRPORT TAXI" },
         { id: "INNOVA_TAXI", name: "INNOVA TAXI" },
@@ -50,6 +50,11 @@ const MainContextProvider = (props) => {
         { id: "LOCAL_PACKAGE", name: "LOCAL PACKAGE" },
 
     ]
+
+    /*/}
+
+
+
 
 
 
@@ -85,8 +90,11 @@ const MainContextProvider = (props) => {
 
 
 
+
+
+
     const value = {
-        backendUrl, token, setToken, navigate, categoriesList, vehiclesNames
+        backendUrl, token, setToken, navigate, vehiclesNames
     }
 
 

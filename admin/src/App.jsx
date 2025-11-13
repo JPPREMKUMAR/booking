@@ -7,6 +7,9 @@ import Home from "./pages/Home"
 import AddItem from "./pages/AddItem"
 import AllVehicles from "./pages/AllVehicles"
 import VehicleDetails from "./pages/VehicleDetails"
+import Categories from "./pages/Categories"
+
+
 
 
 const App = () => {
@@ -26,6 +29,7 @@ const App = () => {
           <Route path="/addItem" element={<AddItem />} />
           <Route path="/allVehicles" element={<AllVehicles />} />
           <Route path="/vehicles/:id" element={<VehicleDetails />} />
+          <Route path="/Categories" element={<Categories />} />
 
         </Routes>
 

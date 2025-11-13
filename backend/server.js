@@ -7,7 +7,15 @@ import userRouter from "./routes/userRoutes.js"
 import bookingsRouter from "./routes/bookingsRoutes.js"
 import adminRouter from "./routes/adminRoutes.js"
 import vehicleRouter from "./routes/vehicleRoutes.js"
+import categoriesRouter from "./routes/categoriesRoutes.js"
+
+
+
 import connectCloudinary from "./config/connectCloudinary.js"
+
+
+
+
 
 
 dotenv.config()
@@ -37,6 +45,9 @@ app.use("/api/admin", adminRouter)
 
 //Vehicle
 app.use("/api/vehicle", vehicleRouter)
+
+//Categories 
+app.use("/api/categories", categoriesRouter)
 
 
 

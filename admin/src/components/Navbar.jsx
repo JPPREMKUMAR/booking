@@ -59,6 +59,7 @@ const Navbar = () => {
                     <Link to="/" className="text-xl text-white font-semibold " ><p>Home</p></Link>
                     <Link to="/addItem" className="text-xl text-white font-semibold "><p>Add Vehicle</p></Link>
                     <Link to="/allVehicles" className="text-xl text-white font-semibold "><p>All Vehicles</p></Link>
+                    <Link to="/Categories" className="text-xl text-white font-semibold "><p>Categories</p></Link>
                     {
                         token === undefined || token === "" ? <Link to="/login" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}>
                             <button className="bg-blue-500 text-white rounded-md px-8 py-2 ">Login</button>
@@ -82,6 +83,8 @@ const Navbar = () => {
                         <Link to="/" className="text-md text-white font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>Home</p></Link>
                         <Link to="/addItem" className="text-md text-white font-semibold" onClick={(prev) => setIsMenu(!prev)} ><p>Add Vehicle</p></Link>
                         <Link to="/allVehicles" className="text-md text-white font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>All Vehicles</p></Link>
+                        <Link to="/Categories" className="text-md text-white font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>Categories</p></Link>
+
                         {
                             token === undefined || token === "" ? <Link to="/login" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}>
 
