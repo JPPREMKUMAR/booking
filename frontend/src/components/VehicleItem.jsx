@@ -32,7 +32,7 @@ const VehicleItem = ({ item }) => {
 
         <div className="text-[#111827]  sm:m-2 m-2 my-4 shadow-md  bg-white " onClick={onClickCard}>
             <div className="flex justify-center my-2">
-                <img src={imageUrl} alt={`${vehicle}`} className="w-[70%] h-[150px] " />
+                <img src={imageUrl} alt={`${vehicle}`} className="w-[65%] h-[140px] " />
             </div>
 
             <div className="px-5 flex  flex-col items-center gap-2 ">

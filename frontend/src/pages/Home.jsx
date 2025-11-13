@@ -24,7 +24,7 @@ const Home = () => {
     const getCategories = async () => {
 
         console.log("Hello")
-        const response = await axios.post(backendUrl + "/api/user/getCategories", {}, { headers: { token } })
+        const response = await axios.post(backendUrl + "/api/user/getCategories", {})
 
         // console.log(response.data.categories)
 

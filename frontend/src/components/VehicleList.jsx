@@ -61,7 +61,7 @@ const VehicleList = ({ item }) => {
     const { navigate, backendUrl } = useContext(MainContext)
     const [isLoading, setIsLoading] = useState(true);
 
-    console.log(item)
+    //console.log(item)
     const { id, category } = item
 
     const [vehicleList, setVehicleList] = useState([])
@@ -69,7 +69,11 @@ const VehicleList = ({ item }) => {
 
     const getVehicles = async () => {
         const response = await axios.post(backendUrl + `/api/user/getAllVehicles/${id}`, {})
-        console.log(response.data)
+        //console.log(response.data.vehicles)
+        setVehicleList(response.data.vehicles)
+        setIsLoading(false)
+
+
 
 
 
@@ -94,15 +98,19 @@ const VehicleList = ({ item }) => {
                     <div className="flex justify-center my-10 min-h-screen ">
                         <TailSpin width={50} height={50} color="blue" />
 
-                    </div> : <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:grid-cols-4 items-center">
+                    </div> : <div>
                         <h1 className="font-bold text-3xl text-center mb-4 mt-4 sm:text-4xl text-[#FFD700]">{category}</h1>
-                        {
-                            vehicleList.map((item, index) => (
-                                <VehicleItem key={index} item={item} />
 
-                            ))
+                        <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:grid-cols-4 items-center">
 
-                        }
+                            {
+                                vehicleList.map((item, index) => (
+                                    <VehicleItem key={index} item={item} />
+
+                                ))
+
+                            }
+                        </div>
                     </div>
             }
 
