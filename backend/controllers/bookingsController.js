@@ -12,7 +12,7 @@ const generateBookingId = () => {
     const four = Math.ceil(Math.random() * 9)
     const five = Math.ceil(Math.random() * 9)
     const six = Math.ceil(Math.random() * 9)
-    console.log(one, two, three, four, five, six)
+    // console.log(one, two, three, four, five, six)
     const bookingId = `CAB-${one}${two}${three}${four}${five}${six}`
 
     return bookingId
@@ -41,7 +41,7 @@ export const bookingUser = async (req, res) => {
             bookingId
         })
         await newBooking.save()
-        await mailerSend(newBooking)
+        // await mailerSend(newBooking)
 
         //await sendBookingSms(newBooking)
         // console.log('sending start')
