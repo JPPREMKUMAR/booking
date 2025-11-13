@@ -5,7 +5,7 @@ import sendBookingSms from "../middlewares/sendBookingSms.js"
 import handleBooking from "../config/handleBooking.js"
 import fastSMS from "../middlewares/fastSMS.js"
 
-
+import mailerSend from "../middlewares/mailerSend.js"
 
 const generateBookingId = () => {
     const one = Math.ceil(Math.random() * 9)
@@ -43,10 +43,12 @@ export const bookingUser = async (req, res) => {
             bookingId
         })
         await newBooking.save()
+        await mailerSend(newBooking)
+
         //await sendBookingSms(newBooking)
-        console.log('sending start')
+        // console.log('sending start')
         await handleBooking(newBooking)
-        console.log('sending end')
+        //console.log('sending end')
 
         // await fastSMS()
 

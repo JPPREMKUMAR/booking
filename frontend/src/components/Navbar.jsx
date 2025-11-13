@@ -26,7 +26,7 @@ const Navbar = () => {
 
     const [isMenu, setIsMenu] = useState(false)
 
-    const { token, setToken, adminPhoneNumber } = useContext(MainContext)
+    const { token, setToken, adminPhoneNumber1 } = useContext(MainContext)
 
 
     const navigate = useNavigate()
@@ -51,7 +51,7 @@ const Navbar = () => {
                         <img src={logo} alt="logo" className="w-[130px] h-[40px]  " />
                     </Link>
                 </div>
-                <button className=""><a href={`tel:+91${adminPhoneNumber}`} className="bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center" >+91 {adminPhoneNumber}</a>
+                <button className=""><a href={`tel:+91${adminPhoneNumber1}`} className="bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center" >+91 {adminPhoneNumber1}</a>
                 </button>
                 <div className='text-center flex items-center w-[30px] h-[30px] '>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>

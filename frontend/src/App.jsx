@@ -18,7 +18,9 @@ import Footer from './components/Footer'
 import HelmetSeo from "./components/HelmetSeo"
 import ContactDetails from "./components/ContactDetails"
 import AllRights from "./components/AllRights"
-import Policy from './pages/Policy'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfServices from "./pages/TermsOfServices"
+
 
 import ScrollToTop from "./components/ScrollToTop"
 
@@ -62,7 +64,7 @@ const App = () => {
                 <Route path="/register" element={<Register />} />
                 <Route path="/myProfile" element={<MyProfile />} />
                 <Route path="/thankyou/:bookingId" element={<Thankyou />} />
-                <Route path="/policy" element={<Policy />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
               </Routes>
               <Footer />

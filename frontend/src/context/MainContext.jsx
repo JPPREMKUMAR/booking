@@ -20,10 +20,19 @@ export const MainContextProvider = (props) => {
 
     const backendUrl = import.meta.env.VITE_BACK_END_URL
 
-    const adminPhoneNumber = import.meta.env.VITE_PHONE_NUMBER
+    const adminPhoneNumber1 = import.meta.env.VITE_PHONE_NUMBER1
+    const adminPhoneNumber2 = import.meta.env.VITE_PHONE_NUMBER2
+    const adminPhoneNumber3 = import.meta.env.VITE_PHONE_NUMBER3
 
 
-    console.log(backendUrl)
+    const adminEmail1 = import.meta.env.VITE_EMAIL1;
+    const adminEmail2 = import.meta.env.VITE_EMAIL2;
+
+
+
+
+
+    //console.log(backendUrl)
 
     const [vehicleList, setVehicleList] = useState([])
 
@@ -316,8 +325,8 @@ export const MainContextProvider = (props) => {
         vehicleList,
         backendUrl, token, setToken,
         userDetails, navigate, getUserProfile,
-        pickupTimeList, monthsList, adminPhoneNumber, getAllVehicles
-        , vehiclesNames
+        pickupTimeList, monthsList, adminPhoneNumber1, adminPhoneNumber2, adminPhoneNumber3, getAllVehicles
+        , vehiclesNames, adminEmail1, adminEmail2
     }
 
     return <MainContext.Provider value={value}>

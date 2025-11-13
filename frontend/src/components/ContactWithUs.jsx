@@ -9,7 +9,7 @@ import { Link } from "react-router-dom"
 
 const ContactWithUs = () => {
 
-    const { adminPhoneNumber } = useContext(MainContext)
+    const { adminPhoneNumber1, adminPhoneNumber2, adminPhoneNumber3, adminEmail1, adminEmail2 } = useContext(MainContext)
 
     return (
         <section className=" px-5 py-5 w-full text-gray-50 mx-2 shadow-xl rounded-md">
@@ -23,9 +23,9 @@ const ContactWithUs = () => {
 
                 <div className="my-2">
                     <h1 className="text-xl font-bold  my-1 text-[#007BFF]">📍 Visit Us:</h1>
-                    <p className="text-md font-semibold text-gray-700 my-1">CabBooking Pvt. Ltd.</p>
-                    <p className="text-md font-semibold text-gray-700 my-1">123, <br />
-                        MG Road, <br /> Bengaluru, <br /> Karnataka – 560001</p>
+                    <p className="text-md font-semibold text-gray-700 my-1">RKN TRAVELS .</p>
+                    <p className="text-md font-semibold text-gray-700 my-1">#02 63/1 , 9th Cross ,<br />
+                        Teachers Colony ,<br /> HSR 5th Sector, <br /> Bengalore – 560034.</p>
                 </div>
 
 
@@ -33,18 +33,26 @@ const ContactWithUs = () => {
                 <div className="my-2">
                     <h1 className="text-xl font-bold my-1 text-[#007BFF]">📱 24/7 Call Us</h1>
                     <p className="text-md font-semibold text-gray-700 my-1 flex gap-x-3">
-                        <a href={`tel:+916303845985`} className=" hover:text-[#007BFF]" >6303845985</a>
-                        <a href={`tel:+916303845985`} className=" hover:text-[#007BFF]" >6303845985</a>
-                        <a href={`tel:+916303845985`} className=" hover:text-[#007BFF]" >6303845985</a>
+                        <a href={`tel:+91${adminPhoneNumber1}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber1}</a>
+                        <a href={`tel:+91${adminPhoneNumber2}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber2}</a>
+                        <a href={`tel:+91${adminPhoneNumber3}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber3}</a>
                     </p>
                     <p className="text-md font-semibold text-gray-700 my-1">(Our support team is available round the clock for all your cab booking needs in Bengaluru.)</p>
                 </div>
 
-                <div className="my-2">
+                <div className="my-2 ">
                     <h1 className="text-xl font-bold my-1 text-[#007BFF]">✉️ Email Us:</h1>
-                    <p className="text-md font-semibold text-gray-700 my-1" >sample@gmail.com</p>
+                    <div className="flex flex-col">
+                        <a href={`https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLWmpSQnWFhtzSWVxBBfxNfNjxkHBQXPjrHvxNnbMmtGmjLMtNgGrMBrbGtngcXwZDz`} target="_blank" className="text-md font-semibold text-gray-700 my-1 hover:text-blue-500" >{adminEmail1}</a>
+                        <a href={`https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLWmpSQnWFhtzSWVxBBfxNfNjxkHBQXPjrHvxNnbMmtGmjLMtNgGrMBrbGtngcXwZDz`} target="_blank" className="text-md font-semibold text-gray-700 my-1 hover:text-blue-500" >{adminEmail2}</a>
 
-                    <p className="text-md font-semibold text-gray-700 my-1">(Write to us for bookings, feedback, or partnership inquiries.)</p>
+
+                    </div>
+                    {
+                        // <p className="text-md font-semibold text-gray-700 my-1">(Write to us for bookings, feedback, or partnership inquiries.)</p>
+
+                    }
+
                 </div>
 
 
