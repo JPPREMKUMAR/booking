@@ -57,34 +57,36 @@ import { TailSpin } from "react-loader-spinner"
 import axios from "axios"
 
 
-const VehicleList = ({ Title, bookingTypeId }) => {
-    console.log(bookingTypeId)
-    const { navigate, backendUrl, vehicleList, getAllVehicles } = useContext(MainContext)
+const VehicleList = ({ item }) => {
+    const { navigate, backendUrl } = useContext(MainContext)
     const [isLoading, setIsLoading] = useState(true);
 
+    console.log(item)
+    const { id, category } = item
+
+    const [vehicleList, setVehicleList] = useState([])
 
 
     const getVehicles = async () => {
-        await getAllVehicles()
-        setIsLoading(false);
+        const response = await axios.post(backendUrl + `/api/user/getAllVehicles/${id}`, {})
+        console.log(response.data)
+
+
+
     }
 
 
     useEffect(() => {
 
         getVehicles()
-
-
     }, [])
 
 
 
-    console.log(vehicleList);
-
     return (
 
         <div>
-            <h1 className="font-bold text-3xl text-center mb-4 mt-4 sm:text-4xl text-[#FFD700]">{Title}</h1>
+
 
             {
 
@@ -93,6 +95,7 @@ const VehicleList = ({ Title, bookingTypeId }) => {
                         <TailSpin width={50} height={50} color="blue" />
 
                     </div> : <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:grid-cols-4 items-center">
+                        <h1 className="font-bold text-3xl text-center mb-4 mt-4 sm:text-4xl text-[#FFD700]">{category}</h1>
                         {
                             vehicleList.map((item, index) => (
                                 <VehicleItem key={index} item={item} />

@@ -139,3 +139,21 @@ export const getAllVehiclesUser = async (req, res) => {
 }
 
 
+
+
+export const getAllVehiclesCategory = async (req, res) => {
+
+    try {
+        const { categoryId } = req.params
+        const vehicles = await Vehicles.find({ bookingTypeId: categoryId })
+
+        res.json({ success: true, vehicles }).sort({ createdAt: -1 })
+
+
+    } catch (e) {
+        return res.json({ success: false, e })
+    }
+
+
+}
+

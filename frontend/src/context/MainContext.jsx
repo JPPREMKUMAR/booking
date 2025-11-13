@@ -47,7 +47,7 @@ export const MainContextProvider = (props) => {
 
 
     useEffect(() => {
-        getAllVehicles();
+        // getAllVehicles();
 
     }, [])
 

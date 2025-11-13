@@ -198,8 +198,9 @@ export const getAllVehiclesBookingType = async (req, res) => {
     try {
 
         const { bookingTypeId } = req.params;
+        console.log(bookingTypeId)
 
-        const getAllVehicle = await Vehicles.find({ bookingTypeId: bookingTypeId }).sort({ createdAt: -1 });
+        const getAllVehicle = await Vehicles.find({ categoryId: bookingTypeId }).sort({ createdAt: -1 });
 
 
         return res.json({ success: true, allVehicles: getAllVehicle });
