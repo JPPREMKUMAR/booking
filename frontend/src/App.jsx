@@ -21,6 +21,8 @@ import ContactDetails from "./components/ContactDetails"
 import AllRights from "./components/AllRights"
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfServices from "./pages/TermsOfServices"
+import Bookings from "./pages/Bookings"
+
 
 
 import ScrollToTop from "./components/ScrollToTop"
@@ -56,6 +58,7 @@ const App = () => {
 
                 <Route path="/" element={<Home />} />
                 <Route exact path="/booking/:id" element={<Booking />} />
+                <Route path="/booking/1" element={<Bookings />} />
                 <Route path="/innovaStation" element={<Innovataxi />} />
                 <Route path="/outStation" element={<Outstation />} />
                 <Route path="/luxuryCars" element={<LuxuryCars />} />

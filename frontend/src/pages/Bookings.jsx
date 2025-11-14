@@ -8,7 +8,7 @@ import sendBookingMail from "../utils/sendBookingMail.js"
 import ContactDetails from "../components/ContactDetails.jsx"
 
 
-const Booking = () => {
+const Bookings = () => {
 
     const { userDetails, getUserProfile, backendUrl, navigate, pickupTimeList, monthsList, token } = useContext(MainContext)
 
@@ -31,7 +31,7 @@ const Booking = () => {
     const [pickUpTime, setpickUpTime] = useState(pickupTimeList[0])
     const [minDate, setMinDate] = useState('')
     const [pickUpDate, setPickUpDate] = useState('')
-    const [price, setPrice] = useState('')
+    const [price, setPrice] = useState(1000)
 
     const [isLoader, setIsLoader] = useState(true)
 
@@ -69,6 +69,11 @@ const Booking = () => {
         const response = await axios.post(backendUrl + `/api/user/categoryVehicles/${bookingTypeId}`, {}, {})
         //console.log(response.data.vehicleNames)
         setVehiclesNames(response.data.vehicleNames)
+        const newVehicle = response.data.vehicleNames[0]
+        // console.log(newVehicle)
+        setVehicle(newVehicle.vehicleName)
+        setIsLoader(false)
+
 
 
 
@@ -123,8 +128,6 @@ const Booking = () => {
         //console.log(pickUpTime)
         const pickUpTimeString = pickUpTime['time']
         //console.log(pickUpTimeString)
-
-
 
         if (token === undefined || token === '') {
             navigate("/login")
@@ -215,54 +218,6 @@ const Booking = () => {
     //console.log(minDate)
 
 
-    // Geting Present VehicleItem Details 
-
-
-    const getPresentVehicleDetails = async () => {
-        //console.log(id, "GetVehicle");
-
-        if (id.length > 2) {
-
-            const response = await axios.post(backendUrl + `/api/user/getVehicle/${id}`, {})
-
-            if (response.data.success === true) {
-                //console.log(response.data.vehicleDetails);
-                const { vehicle, bookingType, bookingTypeId, price } = response.data.vehicleDetails;
-                //console.log("change Vehicle name")
-                //console.log(vehicle)
-                setVehicle(vehicle)
-                setBookingType(bookingType)
-                setBookingTypeId(bookingTypeId)
-                setPrice(price)
-
-                setIsLoader(false)
-
-
-
-            } else {
-                //console.log(response.data)
-                //onSetVehicleAndCategory()
-                //setVehicle(vehiclesNames[0].vehicleName)
-                //setIsLoader(false)
-                navigate('/booking/1')
-            }
-
-
-
-        }
-
-        // setIsLoader(false)
-
-    }
-
-
-
-    useEffect(() => {
-        getPresentVehicleDetails()
-    }, [])
-
-
-
 
     const onChangeVehicle = (e) => {
         //console.log(e.target.value)
@@ -272,7 +227,7 @@ const Booking = () => {
 
 
 
-    //console.log(vehicle, bookingType, bookingTypeId)
+    console.log(vehicle, bookingType, bookingTypeId)
 
 
     return (
@@ -402,4 +357,4 @@ const Booking = () => {
 }
 
 
-export default Booking
+export default Bookings

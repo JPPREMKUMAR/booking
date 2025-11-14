@@ -10,7 +10,7 @@ const bookingsRouter = express.Router()
 
 
 
-bookingsRouter.post("/booking", bookingUser)
+bookingsRouter.post("/booking", authUser, bookingUser)
 
 
 
