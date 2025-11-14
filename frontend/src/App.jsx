@@ -23,7 +23,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfServices from "./pages/TermsOfServices"
 import Bookings from "./pages/Bookings"
 
-
+import AutoComplete from "./pages/AutoComplete"
 
 import ScrollToTop from "./components/ScrollToTop"
 import AirportTaxi from './pages/AirportTaxi'
@@ -73,6 +73,8 @@ const App = () => {
                 <Route path="/myProfile" element={<MyProfile />} />
                 <Route path="/thankyou/:bookingId" element={<Thankyou />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+                <Route path="/autoComplete" element={<AutoComplete />} />
 
               </Routes>
               <Footer />

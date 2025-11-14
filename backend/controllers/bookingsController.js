@@ -4,6 +4,8 @@ import sendBookingSms from "../middlewares/sendBookingSms.js"
 
 import handleBooking from "../config/handleBooking.js"
 
+import { sendWhatsAppMessage } from "../middlewares/whatsapp.js"
+
 
 const generateBookingId = () => {
     const one = Math.ceil(Math.random() * 9)
@@ -48,6 +50,10 @@ export const bookingUser = async (req, res) => {
         // console.log('sending start')
         await handleBooking(newBooking)
         //console.log('sending end')
+
+        // After booking saved, send WhatsApp message
+        // await sendWhatsAppMessage(`Hello ${newBooking.name}, your cab booking is confirmed 🚕\nBooking ID: ${newBooking.bookingId}`   );
+
 
 
         const details = {
