@@ -23,7 +23,7 @@ export const bookingUser = async (req, res) => {
 
     try {
 
-        const { name, mobile, email, bookingType, vehicle, pickUpPoint, dropPoint, pickUpTime, pickUpDate } = req.body
+        const { name, mobile, email, bookingType, vehicle, pickUpPoint, dropPoint, pickUpTime, pickUpDate, price } = req.body
 
         const bookingId = await generateBookingId()
 

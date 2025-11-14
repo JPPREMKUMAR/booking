@@ -226,7 +226,7 @@ const Booking = () => {
             const response = await axios.post(backendUrl + `/api/user/getVehicle/${id}`, {})
 
             if (response.data.success === true) {
-                console.log(response.data.vehicleDetails);
+                //console.log(response.data.vehicleDetails);
                 const { vehicle, bookingType, bookingTypeId, price } = response.data.vehicleDetails;
                 //console.log("change Vehicle name")
                 //console.log(vehicle)
@@ -288,9 +288,7 @@ const Booking = () => {
             }
         } else {
             getPresentVehicleDetails()
-            if (vehicle !== '') {
-                setIsLoader(false)
-            }
+
         }
 
     })
