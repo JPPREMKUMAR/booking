@@ -4,7 +4,7 @@ import { MainContext } from "../context/MainContext"
 import { TailSpin } from "react-loader-spinner"
 import VehicleItem from "../components/VehicleItem"
 
-const InnovaTaxi = () => {
+const Innova = () => {
 
 
 
@@ -75,4 +75,4 @@ const InnovaTaxi = () => {
 
 
 
-export default InnovaTaxi
+export default Innova
