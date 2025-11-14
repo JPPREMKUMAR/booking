@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import Booking from "./pages/Booking"
-//import InnovaTaxi from "./pages/InnovaTaxi"
+import InnovaTaxi from "./pages/InnovaTaxi"
 import Outstation from "./pages/Outstation"
 import LuxuryCars from "./pages/LuxuryCars"
 import Services from "./pages/Services"
@@ -61,7 +61,7 @@ const App = () => {
                 <Route exact path="/booking/:id" element={<Booking />} />
                 <Route path="/booking/1" element={<Bookings />} />
                 <Route path="airportTaxi" element={<AirportTaxi />} />
-
+                <Route path="innovaTaxi" element={<InnovaTaxi />} />
                 <Route path="/outStation" element={<Outstation />} />
                 <Route path="/luxuryCars" element={<LuxuryCars />} />
                 <Route path="/services" element={<Services />} />
