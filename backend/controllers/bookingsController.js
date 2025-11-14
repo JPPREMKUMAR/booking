@@ -38,7 +38,7 @@ export const bookingUser = async (req, res) => {
             dropPoint,
             pickUpTime,
             pickUpDate,
-            bookingId
+            bookingId, price
         })
         await newBooking.save()
         // await mailerSend(newBooking)
@@ -60,7 +60,8 @@ export const bookingUser = async (req, res) => {
             pickUpTime,
             pickUpDate,
             bookingId,
-            frontendUrl: process.env.FRONT_END_URL
+            frontendUrl: process.env.FRONT_END_URL,
+            price
         }
 
 

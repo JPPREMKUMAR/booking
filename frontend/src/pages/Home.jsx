@@ -53,7 +53,7 @@ const Home = () => {
             <Carousel />
 
             <BookingCard />
-            {isLoading ? <div className="flex justify-center my-5">
+            {isLoading ? <div className="flex justify-center my-5 min-h-screen">
                 <TailSpin width={50} height={50} color="blue" />
             </div> :
                 <div>

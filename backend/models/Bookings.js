@@ -15,7 +15,8 @@ const BookingsSchema = mongoose.Schema({
     dropPoint: { type: String, required: true },
     pickUpTime: { type: String, required: true },
     pickUpDate: { type: String, required: true },
-    bookingId: { type: String, required: true }
+    bookingId: { type: String, required: true },
+    price: { type: Number, required: true }
 }, { timestamps: true })
 
 

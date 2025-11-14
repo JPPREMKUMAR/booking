@@ -10,7 +10,7 @@ import ContactDetails from "../components/ContactDetails.jsx"
 
 const Booking = () => {
 
-    const { userDetails, getUserProfile, getAllVehicles, backendUrl, navigate, pickupTimeList, monthsList, token } = useContext(MainContext)
+    const { userDetails, getUserProfile, backendUrl, navigate, pickupTimeList, monthsList, token } = useContext(MainContext)
 
 
     const { id } = useParams()
@@ -31,26 +31,11 @@ const Booking = () => {
     const [pickUpTime, setpickUpTime] = useState(pickupTimeList[0])
     const [minDate, setMinDate] = useState('')
     const [pickUpDate, setPickUpDate] = useState('')
+    const [price, setPrice] = useState(1000)
 
     const [isLoader, setIsLoader] = useState(true)
 
 
-    console.log(vehicle, "start")
-
-    const onSetVehicleAndCategory = () => {
-        if (categoriesList.length > 0) {
-            console.log(categoriesList)
-            console.log(vehiclesNames)
-            setBookingType(categoriesList[0].category)
-            setVehicle(vehiclesNames[0])
-        }
-
-    }
-
-
-    useEffect(() => {
-        onSetVehicleAndCategory()
-    }, [])
 
 
 
@@ -84,10 +69,7 @@ const Booking = () => {
         const response = await axios.post(backendUrl + `/api/user/categoryVehicles/${bookingTypeId}`, {}, {})
         //console.log(response.data.vehicleNames)
         setVehiclesNames(response.data.vehicleNames)
-        //console.log(response.data.vehicleNames[0].vehicleName)
-        if (vehicle === '') {
-            setVehicle(response.data.vehicleNames[0].vehicleName)
-        }
+
 
 
 
@@ -98,7 +80,6 @@ const Booking = () => {
 
     useEffect(() => {
         getCategoryVehicles()
-        onSetVehicleAndCategory()
 
     }, [])
 
@@ -107,6 +88,8 @@ const Booking = () => {
         getCategoryVehicles()
 
     }, [bookingTypeId])
+
+
 
 
 
@@ -158,9 +141,10 @@ const Booking = () => {
             pickUpPoint,
             dropPoint,
             pickUpTime: pickUpTimeString,
-            pickUpDate: newPresentDateString
+            pickUpDate: newPresentDateString,
+            price
         })
-        console.log(response.data)
+        //console.log(response.data)
         if (response.data.success === true) {
             const { bookingId } = response.data.bookingDetails
             const thankyouUrl = `/thankyou/${bookingId}`
@@ -242,28 +226,31 @@ const Booking = () => {
             const response = await axios.post(backendUrl + `/api/user/getVehicle/${id}`, {})
 
             if (response.data.success === true) {
-                //console.log(response.data.vehicleDetails);
-                const { vehicle, bookingType, bookingTypeId } = response.data.vehicleDetails;
+                console.log(response.data.vehicleDetails);
+                const { vehicle, bookingType, bookingTypeId, price } = response.data.vehicleDetails;
                 //console.log("change Vehicle name")
-                console.log(vehicle)
+                //console.log(vehicle)
                 setVehicle(vehicle)
                 setBookingType(bookingType)
                 setBookingTypeId(bookingTypeId)
+                setPrice(price)
 
-                setIsLoader(false)
+                //setIsLoader(false)
+
 
 
             } else {
-                console.log(response.data)
-                setVehicle(vehiclesNames[0].vehicleName)
-                setIsLoader(false)
+                //console.log(response.data)
+                //onSetVehicleAndCategory()
+                //setVehicle(vehiclesNames[0].vehicleName)
+                //setIsLoader(false)
             }
 
 
 
         }
 
-        setIsLoader(false)
+        // setIsLoader(false)
 
     }
 
@@ -283,6 +270,30 @@ const Booking = () => {
 
 
 
+
+    //console.log(vehicle, bookingType, bookingTypeId)
+
+    useEffect(() => {
+        //console.log(categoriesList)        
+        //console.log(vehiclesNames)
+        //console.log(vehicle)
+        //console.log(bookingTypeId)
+        if (vehicle === '') {
+            const newVehicle = vehiclesNames[0]
+            //console.log(newVehicle)
+            if (newVehicle !== undefined) {
+                console.log(newVehicle.vehicleName)
+                setVehicle(newVehicle.vehicleName);
+                setIsLoader(false)
+            }
+        } else {
+            getPresentVehicleDetails()
+            if (vehicle !== '') {
+                setIsLoader(false)
+            }
+        }
+
+    })
 
 
     return (

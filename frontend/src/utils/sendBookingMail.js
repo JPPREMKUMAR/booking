@@ -10,7 +10,7 @@ const sendBookingMail = async (details) => {
     pickUpTime,
     pickUpDate,
     bookingId,
-    frontendUrl,
+    frontendUrl, price
   } = details;
 
   const htmlTemplate = `
@@ -115,7 +115,7 @@ const sendBookingMail = async (details) => {
             <div class="detail"><strong>Drop Location:</strong> <span class="spn">${dropPoint}</span></div>
             <div class="detail"><strong>PickUp Date:</strong> <span class="spn">${pickUpDate}</span></div>
             <div class="detail"><strong>PickUp Time:</strong> <span class="spn">${pickUpTime}</span></div>
-            <div class="detail"><strong>Price:</strong> <span class="spn">₹1000</span></div>
+            <div class="detail"><strong>Price:</strong> <span class="spn">₹${price}</span></div>
           </div>
           <div class="btn-container">
             <a href="${frontendUrl}/thankyou/${bookingId}" class="btn">View My Booking</a>
@@ -141,6 +141,7 @@ const sendBookingMail = async (details) => {
     pickUpTime,
     bookingId,
     frontendUrl,
+    price
     //message_html: htmlTemplate, // optional if template expects it
   };
 
