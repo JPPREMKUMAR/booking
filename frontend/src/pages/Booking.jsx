@@ -144,7 +144,7 @@ const Booking = () => {
             pickUpDate: newPresentDateString,
             price
         })
-        //console.log(response.data)
+        console.log(response.data)
         if (response.data.success === true) {
             const { bookingId } = response.data.bookingDetails
             const thankyouUrl = `/thankyou/${bookingId}`

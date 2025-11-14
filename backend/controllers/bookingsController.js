@@ -38,7 +38,8 @@ export const bookingUser = async (req, res) => {
             dropPoint,
             pickUpTime,
             pickUpDate,
-            bookingId, price
+            bookingId,
+            price
         })
         await newBooking.save()
         // await mailerSend(newBooking)
