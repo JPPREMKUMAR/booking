@@ -286,9 +286,7 @@ const Booking = () => {
     }
 
 
-
-    console.log(bookingType, vehicle)
-
+    console.log(vehiclesNames)
 
 
 

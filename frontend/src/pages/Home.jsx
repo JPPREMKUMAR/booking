@@ -9,6 +9,11 @@ import { MainContext } from "../context/MainContext"
 import { useContext, useState, useEffect } from "react"
 import axios from "axios"
 import { TailSpin } from "react-loader-spinner"
+import AirportTaxi from "../pages/AirportTaxi"
+import Innova from "../pages/Innova"
+import Outstation from "../pages/Outstation"
+
+
 
 
 
@@ -43,6 +48,7 @@ const Home = () => {
 
 
 
+    // console.log(categories)
 
 
 
@@ -57,12 +63,9 @@ const Home = () => {
                 <TailSpin width={50} height={50} color="blue" />
             </div> :
                 <div>
-                    {
-                        categories.map((item, index) => (
-                            <VehicleList item={item} key={index} />
-
-                        ))
-                    }
+                    <AirportTaxi />
+                    <Innova />
+                    <Outstation />
                 </div>
 
             }

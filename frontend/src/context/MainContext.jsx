@@ -318,6 +318,262 @@ export const MainContextProvider = (props) => {
 
 
     //console.log(vehicleList);
+
+
+
+
+
+
+
+
+
+
+
+
+    const categories = [
+        {
+            "_id": "6915849d7e23981516549785",
+            "category": "AIRPORT TAXI",
+            "id": "AIRPORT_TAXI",
+            "vehicleNames": [
+                {
+                    "_id": "6915a647e51337b994b41a0b",
+                    "vehicleName": "Prime Sedan",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a654e51337b994b41a0d",
+                    "vehicleName": "SUV ERTIGA",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a658e51337b994b41a0f",
+                    "vehicleName": "INNOVA",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a65fe51337b994b41a11",
+                    "vehicleName": "INNOVA CRYSTA",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a668e51337b994b41a13",
+                    "vehicleName": "INNOVA HYCROSS",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a676e51337b994b41a15",
+                    "vehicleName": "TOYOTA FURTUNER",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a680e51337b994b41a17",
+                    "vehicleName": "TEMPO TRAVELLER",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915c7f48e05785bd6b7a72e",
+                    "vehicleName": "Hatchback",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                }
+            ],
+            "__v": 0
+        },
+        {
+            "_id": "691584de7e23981516549787",
+            "category": "INNOVA TAXI",
+            "id": "INNOVA_TAXI",
+            "vehicleNames": [
+                {
+                    "_id": "6915a6a1e51337b994b41a1d",
+                    "vehicleName": "SUV",
+                    "categoryId": "INNOVA_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a6a7e51337b994b41a21",
+                    "vehicleName": "INNOVA",
+                    "categoryId": "INNOVA_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a6bce51337b994b41a25",
+                    "vehicleName": "7 Seat with Carrier Vehicle",
+                    "categoryId": "INNOVA_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a6efe51337b994b41a3a",
+                    "vehicleName": "INNOVA CRYSTA",
+                    "categoryId": "INNOVA_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a882e51337b994b41a97",
+                    "vehicleName": "Sudan",
+                    "categoryId": "INNOVA_TAXI",
+                    "__v": 0
+                }
+            ],
+            "__v": 0
+        },
+        {
+            "_id": "6915852b7e23981516549789",
+            "category": "OUTSTATION",
+            "id": "OUTSTATION_TAXI",
+            "vehicleNames": [
+                {
+                    "_id": "6915a6cce51337b994b41a2a",
+                    "vehicleName": "Hatchback",
+                    "categoryId": "OUTSTATION_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a6d4e51337b994b41a2e",
+                    "vehicleName": "Sedan",
+                    "categoryId": "OUTSTATION_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a6dce51337b994b41a32",
+                    "vehicleName": "Prime Sedan",
+                    "categoryId": "OUTSTATION_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a6e4e51337b994b41a36",
+                    "vehicleName": "INNOVA",
+                    "categoryId": "OUTSTATION_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a6fbe51337b994b41a3e",
+                    "vehicleName": "TEMPO TRAVELLER",
+                    "categoryId": "OUTSTATION_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a70ee51337b994b41a42",
+                    "vehicleName": "TEMPO TRAVELLER A/C",
+                    "categoryId": "OUTSTATION_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a71ae51337b994b41a46",
+                    "vehicleName": "21 SEATER MINI BUS",
+                    "categoryId": "OUTSTATION_TAXI",
+                    "__v": 0
+                }
+            ],
+            "__v": 0
+        },
+        {
+            "_id": "691585457e2398151654978b",
+            "category": "LOCAL PACKAGE",
+            "id": "LOCAL_PACKAGE",
+            "vehicleNames": [
+                {
+                    "_id": "6915a72ae51337b994b41a4a",
+                    "vehicleName": "Hatchback",
+                    "categoryId": "LOCAL_PACKAGE",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a735e51337b994b41a4e",
+                    "vehicleName": "Sedan",
+                    "categoryId": "LOCAL_PACKAGE",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a73de51337b994b41a52",
+                    "vehicleName": "Prime Sedan",
+                    "categoryId": "LOCAL_PACKAGE",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a74ee51337b994b41a56",
+                    "vehicleName": "SUV ERTIGA",
+                    "categoryId": "LOCAL_PACKAGE",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a755e51337b994b41a5a",
+                    "vehicleName": "INNOVA",
+                    "categoryId": "LOCAL_PACKAGE",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a75ee51337b994b41a5e",
+                    "vehicleName": "INNOVA CRYSTA",
+                    "categoryId": "LOCAL_PACKAGE",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a76ee51337b994b41a62",
+                    "vehicleName": "TEMPO TRAVELLER",
+                    "categoryId": "LOCAL_PACKAGE",
+                    "__v": 0
+                }
+            ],
+            "__v": 0
+        },
+        {
+            "_id": "6915855d7e2398151654978d",
+            "category": "LUXURY CARS",
+            "id": "LUXURY_CARS",
+            "vehicleNames": [
+                {
+                    "_id": "6915a5a7e51337b994b419f0",
+                    "vehicleName": "Toyota Fortuner Legender",
+                    "categoryId": "LUXURY_CARS",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a5b4e51337b994b419f4",
+                    "vehicleName": "BMW",
+                    "categoryId": "LUXURY_CARS",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a5bee51337b994b419f8",
+                    "vehicleName": "Audi",
+                    "categoryId": "LUXURY_CARS",
+                    "__v": 0
+                },
+                {
+                    "_id": "6915a5fde51337b994b41a02",
+                    "vehicleName": "Mercedes Benz",
+                    "categoryId": "LUXURY_CARS",
+                    "__v": 0
+                }
+            ],
+            "__v": 0
+        }
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const value = {
 
         rupees,
@@ -326,7 +582,7 @@ export const MainContextProvider = (props) => {
         backendUrl, token, setToken,
         userDetails, navigate, getUserProfile,
         pickupTimeList, monthsList, adminPhoneNumber1, adminPhoneNumber2, adminPhoneNumber3, getAllVehicles
-        , vehiclesNames, adminEmail1, adminEmail2
+        , vehiclesNames, adminEmail1, adminEmail2, categories
     }
 
     return <MainContext.Provider value={value}>

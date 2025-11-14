@@ -10,13 +10,13 @@ import ContactDetails from "../components/ContactDetails.jsx"
 
 const Bookings = () => {
 
-    const { userDetails, getUserProfile, backendUrl, navigate, pickupTimeList, monthsList, token } = useContext(MainContext)
+    const { userDetails, getUserProfile, categories, backendUrl, navigate, pickupTimeList, monthsList, token } = useContext(MainContext)
 
 
     const { id } = useParams()
 
-    const [categoriesList, setCategoriesList] = useState([])
-    const [vehiclesNames, setVehiclesNames] = useState([])
+
+    const [vehiclesNamesList, setVehiclesNamesList] = useState(categories[0].vehicleNames)
 
 
     const [name, setName] = useState('')
@@ -33,76 +33,78 @@ const Bookings = () => {
     const [pickUpDate, setPickUpDate] = useState('')
     const [price, setPrice] = useState(1000)
 
+
     const [isLoader, setIsLoader] = useState(true)
 
 
 
+    //console.log(vehiclesNamesList, '-> Vehicle Names ')
 
 
-    // Get Categories
+    const getPresentVehiclesList = () => {
 
-    const getCategories = async () => {
-        const response = await axios.post(backendUrl + '/api/user/getCategories', {}, {})
-        //console.log(response.data.categories)
-        setCategoriesList(response.data.categories)
+        const getItem = categories.find((item) => item.category === bookingType)
+        // console.log(getItem)
+        const { vehicleNames } = getItem;
+        // console.log(vehicleNames)
+        setVehiclesNamesList(vehicleNames)
+
     }
 
 
 
+
+
+
     useEffect(() => {
-        getCategories()
+
+        getPresentVehiclesList()
+    }, [bookingType])
+
+
+
+    const getPresentItem = async () => {
+        const response = await axios.post(backendUrl + `/api/user/getVehicle/${id}`)
+
+        console.log(response.data)
+        if (response.data.success === true) {
+            console.log(response.data.vehicleDetails, "present Item")
+            const { bookingType, vehicle, price } = response.data.vehicleDetails
+
+            setPrice(price)
+            setBookingType(bookingType)
+            setVehicle(vehicle)
+
+
+
+
+        } else {
+            setBookingType(categories[0].category)
+            setVehicle(vehiclesNamesList[0].vehicleName)
+        }
+
+        setIsLoader(false)
+    }
+
+
+    useEffect(() => {
+        getPresentItem()
     }, [])
+
+
+
+
+
 
 
     const onChangeBookingType = (e) => {
         setBookingType(e.target.value)
-        const item = categoriesList.find((item) => item.category === e.target.value)
-        setBookingTypeId(item.id)
-        //console.log(bookingTypeId)
-
+        const getItem = categories.find((item) => item.category === e.target.value)
+        //console.log(getItem.vehicleNames[0])
+        const { vehicleName } = getItem.vehicleNames[0]
+        //console.log(vehicleName)
+        setVehicle(vehicleName)
     }
-
-
-    const getCategoryVehicles = async () => {
-        //console.log(bookingTypeId)
-
-        const response = await axios.post(backendUrl + `/api/user/categoryVehicles/${bookingTypeId}`, {}, {})
-        //console.log(response.data.vehicleNames)
-        setVehiclesNames(response.data.vehicleNames)
-        const newVehicle = response.data.vehicleNames[0]
-        // console.log(newVehicle)
-        setVehicle(newVehicle.vehicleName)
-        setIsLoader(false)
-
-
-
-
-
-
-    }
-
-
-
-    useEffect(() => {
-        getCategoryVehicles()
-
-    }, [])
-
-
-    useEffect(() => {
-        getCategoryVehicles()
-
-    }, [bookingTypeId])
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -216,20 +218,7 @@ const Bookings = () => {
     }, [])
 
 
-    //console.log(minDate)
-
-
-
-    const onChangeVehicle = (e) => {
-        //console.log(e.target.value)
-        setVehicle(e.target.value)
-    }
-
-
-
-
-    console.log(vehicle, bookingType, bookingTypeId)
-
+    console.log(vehicle, bookingType)
 
     return (
         <div className='px-5 py-2 sm:flex sm:items-center sm:justify-center w-full min-h-screen bg-[#F9FAFB]'>
@@ -267,7 +256,7 @@ const Bookings = () => {
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2'>
                                         <select className='w-full outline-none  text-gray-800 placeholder-gray-400 font-bold' id="vehicleType" value={bookingType} onChange={onChangeBookingType}>
                                             {
-                                                categoriesList.map((item, index) => (
+                                                categories.map((item, index) => (
 
                                                     <option key={index} className=' text-gray-800 placeholder-gray-400 font-bold' >{item.category}</option>
                                                 ))
@@ -278,9 +267,9 @@ const Bookings = () => {
                                 <div className='my-1'>
                                     <label htmlFor="vehicle" className='text-xl font-semibold'>Vehicle</label>
                                     <div className='border px-3 py-2 bg-white rounded-sm my-2 text-gray-700 '>
-                                        <select className='w-full outline-none  text-gray-800 placeholder-gray-400 font-bold' id="vehicle" value={vehicle} onChange={onChangeVehicle}  >
+                                        <select className='w-full outline-none  text-gray-800 placeholder-gray-400 font-bold' id="vehicle" value={vehicle} onChange={(e) => setVehicle(e.target.value)}  >
                                             {
-                                                vehiclesNames.map((item, index) => (
+                                                vehiclesNamesList.map((item, index) => (
                                                     <option key={index} className=' text-gray-800 placeholder-gray-400 font-bold'  >{item.vehicleName}</option>
                                                 ))
                                             }
