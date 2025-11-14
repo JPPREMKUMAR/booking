@@ -142,37 +142,37 @@ const Navbar = () => {
 
                 <div className='flex gap-x-4 items-center'>
 
-                    <Link to="/" className="px-2 text-md text-white text-gray-600  cursor-pointer ">
+                    <Link to="/" className="px-2 text-sm text-white text-gray-600  cursor-pointer ">
                         Home
                     </Link>
-                    <Link to="/booking/1" className=" px-2 text-md text-white  text-gray-600  cursor-pointer ">
+                    <Link to="/booking/1" className=" px-2 text-sm text-white  text-gray-600  cursor-pointer ">
                         Booking
                     </Link>
-                    <Link to="/airportTaxi" className="sm:hidden md:block  px-2 text-md text-white text-gray-600  cursor-pointer ">
+                    <Link to="/airportTaxi" className="sm:hidden md:block  px-2 text-sm text-white text-gray-600  cursor-pointer ">
                         Airport Taxi
                     </Link>
-                    <Link to="/innovaTaxi" className="sm:hidden md:block  px-2 text-md text-white text-gray-600  cursor-pointer ">
+                    <Link to="/innovaTaxi" className="sm:hidden md:block  px-2 text-sm text-white text-gray-600  cursor-pointer ">
                         Innova Taxi
                     </Link>
 
-                    <Link to="/outStation" className="sm:hidden md:block  px-2 text-md text-white  text-gray-600  cursor-pointer ">
+                    <Link to="/outStation" className="sm:hidden md:block  px-2 text-sm text-white  text-gray-600  cursor-pointer ">
                         Outstation
                     </Link>
 
-                    <Link to="/luxuryCars" className="sm:hidden md:block  px-2 text-md text-white  text-gray-600  cursor-pointer ">
+                    <Link to="/luxuryCars" className="sm:hidden md:block  px-2 text-sm text-white  text-gray-600  cursor-pointer ">
                         Luxury Cars
                     </Link>
-                    <Link to="/services" className="sm:hidden md:block  px-2 text-md text-white  text-gray-600  cursor-pointer ">
+                    <Link to="/services" className="sm:hidden md:block  px-2 text-sm text-white  text-gray-600  cursor-pointer ">
                         Services
                     </Link>
-                    <Link to="/aboutUs" className="sm:hidden md:block px-2 text-md text-white  text-gray-600  cursor-pointer ">
+                    <Link to="/aboutUs" className="sm:hidden md:block px-2 text-sm text-white  text-gray-600  cursor-pointer ">
                         About Us
                     </Link>
-                    <Link to="/contactUs" className="sm:hidden md:block  px-2 text-md text-white  text-gray-600  cursor-pointer ">
+                    <Link to="/contactUs" className="sm:hidden md:block  px-2 text-sm text-white  text-gray-600  cursor-pointer ">
                         Contact Us
                     </Link>
                     {
-                        token !== '' && <Link to="/myProfile" className="sm:hidden md:block  px-2 text-md text-white  text-gray-600  cursor-pointer ">
+                        token !== '' && <Link to="/myProfile" className="sm:hidden md:block  px-2 text-sm text-white  text-gray-600  cursor-pointer ">
                             My Profile
                         </Link>
                     }
