@@ -1,16 +1,78 @@
+import axios from "axios"
+import { useState, useEffect, useContext } from "react"
+import { MainContext } from "../context/MainContext"
+import { TailSpin } from "react-loader-spinner"
+import VehicleItem from "../components/VehicleItem"
 
-import VehicleList from "../components/VehicleList"
+const InnovaTaxi = () => {
 
 
-const Innovataxi = () => {
+
+    const { backendUrl } = useContext(MainContext)
+
+    const [isLoading, setIsLoading] = useState(true)
+    const [vehicles, setVehicles] = useState([])
+
+
+    const getAllVehicles = async () => {
+
+
+        const response = await axios.post(backendUrl + "/api/user/getAllVehicles/INNOVA_TAXI")
+        //console.log(response.data)
+        setVehicles(response.data.vehicles)
+
+
+
+
+        setIsLoading(false)
+
+    }
+
+
+    useEffect(() => {
+        getAllVehicles()
+    }, [])
+
+    console.log(vehicles)
+
+
 
     return (
-        <div>
-            <VehicleList Title={'INNOVA TAXI'} bookingTypeId={"INNOVA_TAXI"} />
+        <div className="min-h-screen">
+
+            <h1 className="my-10 font-bold text-3xl text-center mb-4 mt-4 sm:text-4xl text-[#FFD700]">INNOVA TAXI</h1>
+
+            {
+                isLoading ? <div className="flex justify-center">
+
+                    <TailSpin width={50} height={50} color="blue" />
+
+                </div> :
+
+                    <div className="mx-5 my-5">
+                        {
+                            vehicles.length === 0 ? <div className="flex justify-center my-10">
+
+
+                                <h1>No Vehicles Yet Here</h1>
+
+                            </div> : <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:grid-cols-4 items-center">
+
+                                {
+                                    vehicles.map((item, index) => (
+                                        <VehicleItem key={index} item={item} />
+                                    ))
+                                }
+                            </div>
+                        }
+                    </div>
+            }
 
         </div>
     )
 }
 
 
-export default Innovataxi
+
+
+export default InnovaTaxi

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import Booking from "./pages/Booking"
-import Innovataxi from "./pages/Innovataxi"
+import InnovaTaxi from "./pages/InnovaTaxi"
 import Outstation from "./pages/Outstation"
 import LuxuryCars from "./pages/LuxuryCars"
 import Services from "./pages/Services"
@@ -26,6 +26,7 @@ import Bookings from "./pages/Bookings"
 
 
 import ScrollToTop from "./components/ScrollToTop"
+import AirportTaxi from './pages/AirportTaxi'
 
 
 const App = () => {
@@ -59,7 +60,8 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route exact path="/booking/:id" element={<Booking />} />
                 <Route path="/booking/1" element={<Bookings />} />
-                <Route path="/innovaStation" element={<Innovataxi />} />
+                <Route path="airportTaxi" element={<AirportTaxi />} />
+                <Route path="/innovaTaxi" element={<InnovaTaxi />} />
                 <Route path="/outStation" element={<Outstation />} />
                 <Route path="/luxuryCars" element={<LuxuryCars />} />
                 <Route path="/services" element={<Services />} />

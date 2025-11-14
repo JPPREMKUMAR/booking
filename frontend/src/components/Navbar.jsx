@@ -78,7 +78,13 @@ const Navbar = () => {
                         <FaTaxi className="self-center text-white" />
                         <p className="self-center text-lg">Booking</p>
                     </Link>
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovaStation" className="flex items-center gap-x-3 px-4  cursor-pointer    ">
+
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/airportTaxi" className="flex items-center gap-x-3 px-4  cursor-pointer    ">
+                        <FaCar className="self-center text-white" />
+                        <p className="self-center text-lg ">Airport Taxi</p>
+                    </Link>
+
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovaTaxi" className="flex items-center gap-x-3 px-4  cursor-pointer    ">
                         <FaCar className="self-center text-white" />
                         <p className="self-center text-lg ">Innova Taxi</p>
                     </Link>
@@ -141,6 +147,10 @@ const Navbar = () => {
                     <Link to="/booking/1" className=" px-2 text-md text-white  text-gray-600  cursor-pointer ">
                         Booking
                     </Link>
+                    <Link to="/airportTaxi" className="sm:hidden md:block  px-2 text-md text-white text-gray-600  cursor-pointer ">
+                        Airport Taxi
+                    </Link>
+
                     <Link to="/innovaTaxi" className="sm:hidden md:block  px-2 text-md text-white text-gray-600  cursor-pointer ">
                         Innova Taxi
                     </Link>
