@@ -58,7 +58,13 @@ const Booking = () => {
         setBookingType(e.target.value)
         const item = categoriesList.find((item) => item.category === e.target.value)
         setBookingTypeId(item.id)
+        //console.log(vehiclesNames[0])
+        const newVehicle = vehiclesNames[0]
+        //console.log(newVehicle.vehicleName)
+        setVehicle(newVehicle.vehicleName)
+
         //console.log(bookingTypeId)
+        getCategoryVehicles()
 
     }
 
@@ -69,7 +75,11 @@ const Booking = () => {
         const response = await axios.post(backendUrl + `/api/user/categoryVehicles/${bookingTypeId}`, {}, {})
         //console.log(response.data.vehicleNames)
         setVehiclesNames(response.data.vehicleNames)
-
+        const newVehicle = response.data.vehicleNames[0]
+        //console.log(newVehicle)
+        if (bookingTypeId === newVehicle.categoryId) {
+            setVehicle(newVehicle.vehicleName)
+        }
 
 
 
@@ -85,7 +95,10 @@ const Booking = () => {
 
 
     useEffect(() => {
+        //console.log(bookingTypeId)
         getCategoryVehicles()
+
+        //console.log(vehiclesNames)
 
     }, [bookingTypeId])
 
@@ -234,6 +247,7 @@ const Booking = () => {
                 setBookingType(bookingType)
                 setBookingTypeId(bookingTypeId)
                 setPrice(price)
+                getCategoryVehicles()
 
                 setIsLoader(false)
 
@@ -267,12 +281,14 @@ const Booking = () => {
     const onChangeVehicle = (e) => {
         //console.log(e.target.value)
         setVehicle(e.target.value)
+
     }
 
 
 
+    console.log(bookingType, vehicle)
 
-    //console.log(vehicle, bookingType, bookingTypeId)
+
 
 
     return (
