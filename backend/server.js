@@ -10,18 +10,16 @@ import vehicleRouter from "./routes/vehicleRoutes.js"
 import categoriesRouter from "./routes/categoriesRoutes.js"
 import connectCloudinary from "./config/connectCloudinary.js"
 
-// Connect To Db 
-connectDB()
-
-
-
-
 dotenv.config()
 
 const app = express()
 // Middleware 
 app.use(express.json())
 app.use(cors())
+
+// Connect To Db 
+connectDB()
+
 
 
 
