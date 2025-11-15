@@ -64,25 +64,30 @@ const Bookings = () => {
 
 
     const getPresentItem = async () => {
-        const response = await axios.post(backendUrl + `/api/user/getVehicle/${id}`)
+        if (id.length === 24) {
+            const response = await axios.post(backendUrl + `/api/user/getVehicle/${id}`)
 
-        console.log(response.data)
-        if (response.data.success === true) {
-            console.log(response.data.vehicleDetails, "present Item")
-            const { bookingType, vehicle, price } = response.data.vehicleDetails
+            //console.log(response.data)
+            if (response.data.success === true) {
+                console.log(response.data.vehicleDetails, "present Item")
+                const { bookingType, vehicle, price } = response.data.vehicleDetails
 
-            setPrice(price)
-            setBookingType(bookingType)
-            setVehicle(vehicle)
+                setPrice(price)
+                setBookingType(bookingType)
+                setVehicle(vehicle)
 
 
 
+
+            } else {
+                setBookingType(categories[0].category)
+                setVehicle(vehiclesNamesList[0].vehicleName)
+            }
 
         } else {
             setBookingType(categories[0].category)
             setVehicle(vehiclesNamesList[0].vehicleName)
         }
-
         setIsLoader(false)
     }
 
@@ -137,6 +142,7 @@ const Bookings = () => {
 
 
 
+
         const response = await axios.post(backendUrl + "/api/book/booking", {
             name,
             mobile,
@@ -160,11 +166,12 @@ const Bookings = () => {
 
 
 
-            await sendBookingMail(details, email)
-            await sendBookingMail(details, "rolex515134@gmail.com")
+            //  await sendBookingMail(details, email)
+            //  await sendBookingMail(details, "rolex515134@gmail.com")
 
         }
         setIsLoader(false)
+
 
     }
 

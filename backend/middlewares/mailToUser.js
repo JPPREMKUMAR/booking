@@ -16,7 +16,10 @@ const mailToUser = async (newBooking) => {
         dropPoint,
         pickUpTime,
         pickUpDate,
-        bookingId } = newBooking
+        bookingId,
+        price,
+
+    } = newBooking
 
 
 

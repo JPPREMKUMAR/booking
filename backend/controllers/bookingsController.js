@@ -1,11 +1,4 @@
 import Bookings from "../models/Bookings.js"
-
-import sendBookingSms from "../middlewares/sendBookingSms.js"
-
-import handleBooking from "../config/handleBooking.js"
-
-import { sendWhatsAppMessage } from "../middlewares/whatsapp.js"
-
 import mailToUser from "../middlewares/mailToUser.js"
 
 
@@ -46,15 +39,12 @@ export const bookingUser = async (req, res) => {
             price
         })
         await newBooking.save()
-        // mailToUser(newBooking)
-
         //await sendBookingSms(newBooking)
-        // console.log('sending start')
-        await handleBooking(newBooking)
-        //console.log('sending end')
+        console.log('sending start')
+        mailToUser(newBooking)
+        console.log('sending end')
 
-        // After booking saved, send WhatsApp message
-        // await sendWhatsAppMessage(`Hello ${newBooking.name}, your cab booking is confirmed 🚕\nBooking ID: ${newBooking.bookingId}`   );
+
 
 
 

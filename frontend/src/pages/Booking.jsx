@@ -144,35 +144,39 @@ const Booking = () => {
         }
 
 
+        if (id !== 1) {
+            const response = await axios.post(backendUrl + "/api/book/booking", {
+                name,
+                mobile,
+                email,
+                bookingType,
+                vehicle,
+                pickUpPoint,
+                dropPoint,
+                pickUpTime: pickUpTimeString,
+                pickUpDate: newPresentDateString,
+                price
+            }, { headers: { token } })
+            console.log(response.data)
+            if (response.data.success === true) {
+                const { bookingId } = response.data.bookingDetails
+                const thankyouUrl = `/thankyou/${bookingId}`
+                navigate(thankyouUrl)
+                setIsLoader(false)
+                const details = response.data.bookingDetails
 
-        const response = await axios.post(backendUrl + "/api/book/booking", {
-            name,
-            mobile,
-            email,
-            bookingType,
-            vehicle,
-            pickUpPoint,
-            dropPoint,
-            pickUpTime: pickUpTimeString,
-            pickUpDate: newPresentDateString,
-            price
-        }, { headers: { token } })
-        console.log(response.data)
-        if (response.data.success === true) {
-            const { bookingId } = response.data.bookingDetails
-            const thankyouUrl = `/thankyou/${bookingId}`
-            navigate(thankyouUrl)
+
+
+
+                // await sendBookingMail(details, email)
+                //  await sendBookingMail(details, "rolex515134@gmail.com")
+
+            }
             setIsLoader(false)
-            const details = response.data.bookingDetails
 
-
-
-
-            await sendBookingMail(details, email)
-            await sendBookingMail(details, "rolex515134@gmail.com")
 
         }
-        setIsLoader(false)
+
 
     }
 
