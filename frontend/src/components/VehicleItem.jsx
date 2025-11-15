@@ -27,6 +27,8 @@ const VehicleItem = ({ item }) => {
     }
 
 
+    // console.log(imageUrl)
+
 
     return (
 
