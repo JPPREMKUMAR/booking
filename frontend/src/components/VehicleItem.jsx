@@ -27,7 +27,11 @@ const VehicleItem = ({ item }) => {
     }
 
 
-    // console.log(imageUrl)
+    // Optimize Cloudinary URL
+    const optimizedImage = imageUrl.replace(
+        "/upload/",
+        "/upload/f_auto,q_auto,w_500/"
+    );
 
 
     return (
