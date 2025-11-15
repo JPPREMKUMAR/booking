@@ -54,7 +54,7 @@ const Navbar = () => {
                 <button className=""><a href={`tel:+91${adminPhoneNumber1}`} className="bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center" >+91 {adminPhoneNumber1}</a>
                 </button>
                 <div className='text-center flex items-center w-[30px] h-[30px] '>
-                    <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
+                    <button type="button" onClick={() => setIsMenu((prev) => !prev)} className='w-full'>
                         {
                             isMenu ? <RxCross1 className="w-[30px] h-[30px] text-white " aria-label='Close Menu' />
                                 : <IoMenu className="w-[30px] h-[30px] text-white " aria-label='Open menu' />
@@ -119,10 +119,10 @@ const Navbar = () => {
                     }
                     <div>
                         {
-                            token === '' ? <Link onClick={() => setIsMenu((prev) => !prev)} to="/login" className="flex items-center gap-x-3 px-4   cursor-pointer ">
+                            token === '' ? <Link onClick={() => setIsMenu((prev) => !prev)} to="/login" className="flex items-center gap-x-3 px-4  w-full cursor-pointer ">
                                 <RiLoginCircleFill className="self-center text-blue-600" aria-level={`Login`} />
                                 <p className="self-center text-lg text-blue-600 ">Login In </p>                            </Link>
-                                : <Link onClick={onClickLogout} className="flex items-center gap-x-3 px-4 cursor-pointer">
+                                : <Link onClick={onClickLogout} className="flex items-center gap-x-3 px-4 cursor-pointer w-full">
                                     <RiLogoutCircleRFill className="self-center text-red-500" aria-level={`Logout`} />
                                     <p className="self-center text-lg text-red-500 ">Logout</p>
                                 </Link>
