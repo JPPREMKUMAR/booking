@@ -32,7 +32,7 @@ app.use(cors())
 
 // Routes 
 app.get("/", (req, res) => {
-    res.json({ success: true, message: "Api Working" }).status(200)
+    res.json({ success: true, message: "Api Working Code Is Updated" }).status(200)
 })
 
 app.use("/api/user", userRouter)
