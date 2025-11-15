@@ -101,21 +101,16 @@ const PrivacyPolicy = () => {
                             <a href={`tel:+91${adminPhoneNumber2}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber2}</a>
                             <a href={`tel:+91${adminPhoneNumber3}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber3}</a>
                         </p>
-                        <p className="text-md font-semibold text-gray-700 my-1">(Our support team is available round the clock for all your cab booking needs in Bengaluru.)</p>
-                    </div>
-
-                    <div className="my-2 ">
-                        <h1 className="text-xl font-bold my-1 text-[#007BFF]">✉️ Email Us:</h1>
-                        <div className="flex flex-col">
-                            <a href={`https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLWmpSQnWFhtzSWVxBBfxNfNjxkHBQXPjrHvxNnbMmtGmjLMtNgGrMBrbGtngcXwZDz`} target="_blank" className="text-md font-semibold text-gray-700 my-1 hover:text-blue-500" >{adminEmail1}</a>
-                            <a href={`https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLWmpSQnWFhtzSWVxBBfxNfNjxkHBQXPjrHvxNnbMmtGmjLMtNgGrMBrbGtngcXwZDz`} target="_blank" className="text-md font-semibold text-gray-700 my-1 hover:text-blue-500" >{adminEmail2}</a>
+                        <div className="my-2 ">
+                            <h1 className="text-xl font-bold my-1 text-[#007BFF]">✉️ Email Us:</h1>
+                            <div className="flex flex-col">
+                                <a href={`https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLWmpSQnWFhtzSWVxBBfxNfNjxkHBQXPjrHvxNnbMmtGmjLMtNgGrMBrbGtngcXwZDz`} target="_blank" className="text-md font-semibold text-gray-700 my-1 hover:text-blue-500" >{adminEmail1}</a>
+                                <a href={`https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLWmpSQnWFhtzSWVxBBfxNfNjxkHBQXPjrHvxNnbMmtGmjLMtNgGrMBrbGtngcXwZDz`} target="_blank" className="text-md font-semibold text-gray-700 my-1 hover:text-blue-500" >{adminEmail2}</a>
 
 
+                            </div>
                         </div>
-                        {
-                            // <p className="text-md font-semibold text-gray-700 my-1">(Write to us for bookings, feedback, or partnership inquiries.)</p>
 
-                        }
 
                     </div>
 
