@@ -8,12 +8,10 @@ import bookingsRouter from "./routes/bookingsRoutes.js"
 import adminRouter from "./routes/adminRoutes.js"
 import vehicleRouter from "./routes/vehicleRoutes.js"
 import categoriesRouter from "./routes/categoriesRoutes.js"
-
-
-
 import connectCloudinary from "./config/connectCloudinary.js"
 
-
+// Connect To Db 
+connectDB()
 
 
 
@@ -60,8 +58,7 @@ const PORT = process.env.PORT || 8000
 
 const startServer = async () => {
     try {
-        // Connect To Db 
-        await connectDB()
+
         await connectCloudinary()
         app.listen((PORT), () => {
             console.log(`Server Working on PORT ${PORT}`)
