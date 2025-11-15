@@ -31,8 +31,8 @@ const VehicleItem = ({ item }) => {
     return (
 
         <div className="text-[#111827]  sm:m-2 m-2 my-4 shadow-md  bg-white " onClick={onClickCard}>
-            <div className="flex justify-center my-2">
-                <img src={imageUrl} alt={`${vehicle}`} className="w-[65%] h-[140px] " />
+            <div className="flex justify-center my-2 px-10 py-4">
+                <img src={imageUrl} alt={`${vehicle}`} loading="lazy" width={900} height={550} />
             </div>
 
             <div className="px-5 flex  flex-col items-center gap-2 ">
