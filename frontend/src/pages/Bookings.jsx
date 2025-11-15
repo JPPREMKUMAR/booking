@@ -237,7 +237,7 @@ const Bookings = () => {
                         <TailSpin width={50} heigth={50} color='blue' />
                     </div> :
                         <div className="px-4 py-3 border border-gray-700 rounded-md sm:w-1/2 sm:py-5 my-5">
-                            <h1 className='text-3xl text-center font-bold text-[#FFD700]'>Contact & Pick Up Details </h1>
+                            <h3 className='text-3xl text-center font-bold text-[#FFD700]'>Contact & Pick Up Details </h3>
 
                             <form className="my-3 px-3  sm:w-[3/4]" onSubmit={onSubmitHandler}>
                                 <div className='my-1'>

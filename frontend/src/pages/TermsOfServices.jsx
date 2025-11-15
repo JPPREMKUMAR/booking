@@ -10,7 +10,7 @@ const TermsOfServices = () => {
         <div className="px-5 py-5 w-full text-gray-50 mx-2 shadow-xl rounded-md">
 
 
-            <h1 className="my-2 text-3xl text-center font-bold text-[#FFD700]">⚖️ Terms & Conditions – RKN Airport Taxi</h1>
+            <h3 className="my-2 text-3xl text-center font-bold text-[#FFD700]">⚖️ Terms & Conditions – RKN Airport Taxi</h3>
             <p className=" text-center text-md font-semibold text-gray-700 my-1 mb-2">By booking a ride with RKN Airport Taxi, you agree to the following terms and conditions:</p>
             <div className="grid grid-cols-1 sm:grid-cols-2">
                 <div className="p-5">

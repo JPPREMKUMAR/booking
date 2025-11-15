@@ -56,8 +56,8 @@ const Navbar = () => {
                 <div className='text-center flex items-center w-[30px] h-[30px] '>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
                         {
-                            isMenu ? <RxCross1 className="w-[30px] h-[30px] text-white " />
-                                : <IoMenu className="w-[30px] h-[30px] text-white " />
+                            isMenu ? <RxCross1 className="w-[30px] h-[30px] text-white " aria-label='Close Menu' />
+                                : <IoMenu className="w-[30px] h-[30px] text-white " aria-label='Open menu' />
                         }
 
                     </button>
@@ -71,59 +71,59 @@ const Navbar = () => {
 
                 isMenu && <div className='px-3 py-5 flex flex-col gap-3 md:hidden font-bold text-white transition-colors duration-300 text-lg '>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/" className="flex items-center gap-x-3 px-4  cursor-pointer     ">
-                        <IoHome className="self-center text-white" />
+                        <IoHome className="self-center text-white" aria-level={`Home`} />
                         <p className="self-center text-lg">Home</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/booking/1" className="flex items-center gap-x-3 px-4 cursor-pointer    ">
-                        <FaTaxi className="self-center text-white" />
+                        <FaTaxi className="self-center text-white" aria-level={`Booking`} />
                         <p className="self-center text-lg">Booking</p>
                     </Link>
 
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/airportTaxi" className="flex items-center gap-x-3 px-4  cursor-pointer    ">
-                        <FaCar className="self-center text-white" />
+                        <FaCar className="self-center text-white" aria-level={`Taxi`} />
                         <p className="self-center text-lg ">Airport Taxi</p>
                     </Link>
 
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovaTaxi" className="flex items-center gap-x-3 px-4  cursor-pointer    ">
-                        <FaCar className="self-center text-white" />
+                        <FaCar className="self-center text-white" aria-level={`Taxi`} />
                         <p className="self-center text-lg ">Innova Taxi</p>
                     </Link>
 
 
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/outStation" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
-                        <FaCar className="self-center text-white" />
+                        <FaCar className="self-center text-white" aria-level={`Taxi`} />
                         <p className="self-center text-lg ">Outstation</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/luxuryCars" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
-                        <FaCar className="self-center text-white" />
+                        <FaCar className="self-center text-white" aria-level={`Taxi`} />
                         <p className="self-center text-lg ">Luxury Cars</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/termsOfServices" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
-                        <MdMiscellaneousServices className="self-center text-white" />
+                        <MdMiscellaneousServices className="self-center text-white" aria-level={`Services`} />
                         <p className="self-center text-lg ">Services</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/aboutUs" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
-                        <BsInfoCircleFill className="self-center text-white" />
+                        <BsInfoCircleFill className="self-center text-white" aria-level={`About`} />
                         <p className="self-center text-lg ">About Us</p>
                     </Link>
                     <Link onClick={() => setIsMenu((prev) => !prev)} to="/contactUs" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
-                        <MdContacts className="self-center text-white" />
+                        <MdContacts className="self-center text-white" aria-level={`Contact`} />
                         <p className="self-center text-lg ">Contact Us</p>
                     </Link>
 
                     {
                         token !== '' && <Link onClick={() => setIsMenu((prev) => !prev)} to="/myProfile" className="flex items-center gap-x-3 px-4   cursor-pointer    ">
-                            <FaCircleUser className="self-center text-white" />
+                            <FaCircleUser className="self-center text-white" aria-level={`Profile`} />
                             <p className="self-center text-lg ">My Profile</p>
                         </Link>
                     }
                     <div>
                         {
                             token === '' ? <Link onClick={() => setIsMenu((prev) => !prev)} to="/login" className="flex items-center gap-x-3 px-4   cursor-pointer ">
-                                <RiLoginCircleFill className="self-center text-blue-600" />
+                                <RiLoginCircleFill className="self-center text-blue-600" aria-level={`Login`} />
                                 <p className="self-center text-lg text-blue-600 ">Login In </p>                            </Link>
                                 : <Link onClick={onClickLogout} className="flex items-center gap-x-3 px-4 cursor-pointer">
-                                    <RiLogoutCircleRFill className="self-center text-red-500" />
+                                    <RiLogoutCircleRFill className="self-center text-red-500" aria-level={`Logout`} />
                                     <p className="self-center text-lg text-red-500 ">Logout</p>
                                 </Link>
                         }

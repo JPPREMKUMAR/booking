@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
 
 
             <div className="px-5 py-5 w-full text-gray-50 mx-2 shadow-xl rounded-md">
-                <h1 className="text-3xl text-center font-bold text-[#FFD700]">🛡️ Privacy Policy – RKN Airport Taxi</h1>
+                <h3 className="text-3xl text-center font-bold text-[#FFD700]">🛡️ Privacy Policy – RKN Airport Taxi</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 my-3">
 
                     <div className="p-5">
