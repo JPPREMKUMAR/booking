@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 const AllRights = () => {
 
     return (
-        <div>
+        <div className="my-10">
 
             <div className="my-10 flex items-center flex-col text-center py-4  text-md font-semibold text-gray-700">
                 <p className="">
