@@ -54,7 +54,7 @@ const Navbar = () => {
                 <button className=""><a href={`tel:+91${adminPhoneNumber1}`} className="bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center" >+91 {adminPhoneNumber1}</a>
                 </button>
                 <div className='text-center flex items-center w-[30px] h-[30px] '>
-                    <button type="button" onClick={() => setIsMenu((prev) => !prev)} className=''>
+                    <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
                         {
                             isMenu ? <RxCross1 className="w-[30px] h-[30px] text-white " aria-label='Close Menu' />
                                 : <IoMenu className="w-[30px] h-[30px] text-white " aria-label='Open menu' />
@@ -176,11 +176,13 @@ const Navbar = () => {
                             My Profile
                         </Link>
                     }
-                    {
-                        token === '' ? <Link to="/login" className="px-4 text-md  hover:text-lg   text-gray-600 hover:text-gray-900 cursor-pointer ">
-                            <button className='bg-blue-500 outline-none px-7 py-2 rounded-md text-white hover:bg-blue-600'>Login</button>
-                        </Link> : <button onClick={onClickLogout} className='bg-red-500 outline-none text-md cursor-pointer px-7 py-2 rounded-md text-white hover:bg-red-600'>Logout</button>
-                    }
+                    <div className='w-30 '>
+                        {
+                            token === '' ? <Link to="/login" className="px-4 text-md  hover:text-lg   text-gray-600 hover:text-gray-900 cursor-pointer ">
+                                <button className='bg-blue-500 outline-none px-7 py-2 rounded-md text-white hover:bg-blue-600 w-[100%] cursor-pointer '>Login</button>
+                            </Link> : <button onClick={onClickLogout} className='bg-red-500 outline-none text-md cursor-pointer px-7  w-[100%] py-2 rounded-md text-white hover:bg-red-600 cursor-pointer'>Logout</button>
+                        }
+                    </div>
                 </div>
             </div>
 
