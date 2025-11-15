@@ -6,6 +6,8 @@ import handleBooking from "../config/handleBooking.js"
 
 import { sendWhatsAppMessage } from "../middlewares/whatsapp.js"
 
+import mailToUser from "../middlewares/mailToUser.js"
+
 
 const generateBookingId = () => {
     const one = Math.ceil(Math.random() * 9)
@@ -44,7 +46,7 @@ export const bookingUser = async (req, res) => {
             price
         })
         await newBooking.save()
-        // await mailerSend(newBooking)
+        // mailToUser(newBooking)
 
         //await sendBookingSms(newBooking)
         // console.log('sending start')
