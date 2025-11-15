@@ -4,12 +4,5 @@
             "source": "/(.*)",
             "destination": "/"
         }
-    ],
-    "functions": {
-        "api/**/*.js": {
-            "regions": [
-                "bom1"
-            ]
-        }
-    }
+    ]
 }
