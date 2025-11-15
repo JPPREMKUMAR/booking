@@ -33,6 +33,7 @@ const Carousel = () => {
                     <img
                         key={i}
                         src={img}
+                        loading="lazy"
                         alt={`Slide ${i}`}
                         className="w-full h-64 md:h-96 flex-shrink-0 object-cover"
                     />
