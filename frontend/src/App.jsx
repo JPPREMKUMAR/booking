@@ -44,7 +44,7 @@ const App = () => {
 
 
 
-      <div className="bg-gray-100  min-h-screen">
+      <div className="bg-gray-100  overflow-x-hidden overflow-y-hidden">
         <MainContextProvider>
           {isLoading ?
             < div className='flex flex-col  justify-center items-center min-h-screen py-10'>
