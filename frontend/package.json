@@ -20,6 +20,7 @@
     "dotenv": "^17.2.3",
     "emailjs-com": "^3.2.0",
     "flowbite": "^3.1.2",
+    "git": "^0.1.5",
     "js-cookie": "^3.0.5",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
