@@ -40,7 +40,7 @@ const Carousel = () => {
                 ))}
             </div>
 
-            {/* Navigation Dots */}
+            {/* Navigation Dots 
             <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
                 {images.map((_, i) => (
                     <button
@@ -51,6 +51,7 @@ const Carousel = () => {
                     ></button>
                 ))}
             </div>
+            */}
         </div>
     );
 };
