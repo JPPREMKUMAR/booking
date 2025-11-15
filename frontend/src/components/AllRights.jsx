@@ -14,7 +14,7 @@ const AllRights = () => {
                     <Link to="/aboutUs" className="cursor-pointer text-gray-700 hover:text-blue-500  mx-3 my-1">About</Link>
                     <Link to="/contactUs" className="cursor-pointer text-gray-700 hover:text-blue-500  mx-3 my-1">Contact</Link>
                     <Link to="/privacy-policy" className="cursor-pointer text-gray-700 hover:text-blue-500  mx-3 my-1">Privacy Policy</Link>
-                    <Link to="/services" className="cursor-pointer text-gray-700 hover:text-blue-500  mx-3 my-1">Services</Link>
+                    <Link to="/termsOfServices" className="cursor-pointer text-gray-700 hover:text-blue-500  mx-3 my-1">Services</Link>
 
 
                 </p>
