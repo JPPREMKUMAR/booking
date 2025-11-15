@@ -56,7 +56,12 @@ const Home = () => {
     return (
         <div className="px-2 my-5">
 
-            <Carousel />
+            {
+                /*/ 
+                      <Carousel />  
+                /*/
+            }
+
 
             <BookingCard />
             {isLoading ? <div className="flex justify-center my-5 min-h-screen">
