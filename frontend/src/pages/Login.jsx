@@ -56,7 +56,7 @@ const Login = () => {
     return (
         <div className="px-5 py-2 overflow-auto scrollbar-hide">
 
-            <h3 className="px-3 text-2xl font-bold">Login</h3>
+            <h1 className="px-3 text-2xl font-bold">Login</h1>
             <div>
                 {
                     isLoader ? <div className="flex justify-center">

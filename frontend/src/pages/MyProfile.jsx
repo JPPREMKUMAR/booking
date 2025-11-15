@@ -30,7 +30,7 @@ const MyProfile = () => {
     return (
         <div className="px-3 ">
             <div className="my-3">
-                <h3 className="text-2xl font-semibold  text-center sm:text-4xl text-[#FFD700]">MyProfile</h3>
+                <h1 className="text-2xl font-semibold  text-center sm:text-4xl text-[#FFD700]">MyProfile</h1>
                 <div className="flex items-center justify-center gap-x-3 text-md font-bold my-3 sm:text-3xl">
                     <Link to="/" className="cursor-pointer">Home</Link>
                     <h1>/

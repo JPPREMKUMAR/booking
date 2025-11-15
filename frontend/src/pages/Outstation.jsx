@@ -40,7 +40,7 @@ const Outstation = () => {
     return (
         <div className="min-h-screen">
 
-            <h3 className="my-10 font-bold text-3xl text-center mb-4 mt-4 sm:text-4xl text-[#FFD700]">OUTSATION</h3>
+            <h1 className="my-10 font-bold text-3xl text-center mb-4 mt-4 sm:text-4xl text-[#FFD700]">OUTSATION</h1>
 
             {
                 isLoading ? <div className="flex justify-center">
