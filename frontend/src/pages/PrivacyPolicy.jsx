@@ -94,13 +94,15 @@ const PrivacyPolicy = () => {
 
 
 
-                    <div className="my-2">
-                        <h1 className="text-xl font-bold my-1 text-[#007BFF]">📱 Call Us</h1>
-                        <p className="text-md font-semibold text-gray-700 my-1 flex gap-x-3">
-                            <a href={`tel:+91${adminPhoneNumber1}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber1}</a>
-                            <a href={`tel:+91${adminPhoneNumber2}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber2}</a>
-                            <a href={`tel:+91${adminPhoneNumber3}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber3}</a>
-                        </p>
+                    <div className="my-2 flex gap-x-3 ">
+                        <div>
+                            <h1 className="text-xl font-bold my-1 text-[#007BFF]">📱 Call Us</h1>
+                            <p className="text-md font-semibold text-gray-700 my-1 flex gap-x-3">
+                                <a href={`tel:+91${adminPhoneNumber1}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber1}</a>
+                                <a href={`tel:+91${adminPhoneNumber2}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber2}</a>
+                                <a href={`tel:+91${adminPhoneNumber3}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber3}</a>
+                            </p>
+                        </div>
                         <div className="my-2 ">
                             <h1 className="text-xl font-bold my-1 text-[#007BFF]">✉️ Email Us:</h1>
                             <div className="flex flex-col">
