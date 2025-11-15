@@ -1,6 +1,14 @@
 
+import { useContext } from "react"
+import { MainContext } from "../context/MainContext"
+
+
 
 const Services = () => {
+
+
+    const { adminPhoneNumber1, adminPhoneNumber2, adminPhoneNumber3, adminEmail1, adminEmail2 } = useContext(MainContext)
+
 
     return (
         <div className="px-5 py-5 bg-gray-50 m-4 shadow-md">
@@ -58,7 +66,7 @@ const Services = () => {
                     <h1 className="text-xl font-bold my-1 text-[#007BFF]">💬 Book Easily on WhatsApp</h1>
                     <p className="text-md font-semibold text-gray-700 my-1">
                         Need quick booking support?
-                        Message us directly on WhatsApp at <a className="text-blue-500" target="_blank" href={`https://api.whatsapp.com/send/?phone=916303845985&text&type=phone_number&app_absent=0`}> +91 6303845985</a>, <a className="text-blue-500" target="_blank" href={`https://api.whatsapp.com/send/?phone=916303845985&text&type=phone_number&app_absent=0`}> +91 6303845985 </a> , <a className="text-blue-500" href={`https://api.whatsapp.com/send/?phone=916303845985&text&type=phone_number&app_absent=0`} target="_blank"  > +91 6303845985 </a>
+                        Message us directly on WhatsApp at <a className="text-blue-500" target="_blank" href={`https://api.whatsapp.com/send/?phone=91${adminPhoneNumber1}&text&type=phone_number&app_absent=0`}> +91 {adminPhoneNumber1}</a>, <a className="text-blue-500" target="_blank" href={`https://api.whatsapp.com/send/?phone=91${adminPhoneNumber2}&text&type=phone_number&app_absent=0`}> +91 {adminPhoneNumber2} </a> , <a className="text-blue-500" href={`https://api.whatsapp.com/send/?phone=91${adminPhoneNumber3}&text&type=phone_number&app_absent=0`} target="_blank"  > +91 {adminPhoneNumber3} </a>
                         Our team will confirm your ride instantly and share your trip details.
                     </p>
 

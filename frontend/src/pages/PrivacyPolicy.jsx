@@ -2,9 +2,13 @@
 import TermsOfServices from "../pages/TermsOfServices"
 
 
-
+import { useContext } from "react"
+import { MainContext } from "../context/MainContext"
 
 const PrivacyPolicy = () => {
+
+
+    const { adminPhoneNumber1, adminPhoneNumber2, adminPhoneNumber3, adminEmail1, adminEmail2 } = useContext(MainContext)
 
     return (
 
@@ -87,15 +91,32 @@ const PrivacyPolicy = () => {
                         </p>
                     </div>
 
-                    <div className="p-5">
-                        <h1 className="text-xl font-bold  my-1 text-[#007BFF]">📞 Contact Us</h1>
-                        <p className="text-md font-semibold text-gray-700 my-1">
-                            If you have any questions about this Privacy Policy or how we handle your data, contact us at: <br />
-                            <a>Email : sample@gamil.com</a> <br />
-                            Number : <a href={`tel:+916303845985`} className=" hover:text-[#007BFF]" >6303845985</a>
 
 
+
+                    <div className="my-2">
+                        <h1 className="text-xl font-bold my-1 text-[#007BFF]">📱 Call Us</h1>
+                        <p className="text-md font-semibold text-gray-700 my-1 flex gap-x-3">
+                            <a href={`tel:+91${adminPhoneNumber1}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber1}</a>
+                            <a href={`tel:+91${adminPhoneNumber2}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber2}</a>
+                            <a href={`tel:+91${adminPhoneNumber3}`} className=" hover:text-[#007BFF]" >{adminPhoneNumber3}</a>
                         </p>
+                        <p className="text-md font-semibold text-gray-700 my-1">(Our support team is available round the clock for all your cab booking needs in Bengaluru.)</p>
+                    </div>
+
+                    <div className="my-2 ">
+                        <h1 className="text-xl font-bold my-1 text-[#007BFF]">✉️ Email Us:</h1>
+                        <div className="flex flex-col">
+                            <a href={`https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLWmpSQnWFhtzSWVxBBfxNfNjxkHBQXPjrHvxNnbMmtGmjLMtNgGrMBrbGtngcXwZDz`} target="_blank" className="text-md font-semibold text-gray-700 my-1 hover:text-blue-500" >{adminEmail1}</a>
+                            <a href={`https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLWmpSQnWFhtzSWVxBBfxNfNjxkHBQXPjrHvxNnbMmtGmjLMtNgGrMBrbGtngcXwZDz`} target="_blank" className="text-md font-semibold text-gray-700 my-1 hover:text-blue-500" >{adminEmail2}</a>
+
+
+                        </div>
+                        {
+                            // <p className="text-md font-semibold text-gray-700 my-1">(Write to us for bookings, feedback, or partnership inquiries.)</p>
+
+                        }
+
                     </div>
 
                 </div>
