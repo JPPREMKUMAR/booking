@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /api
+Disallow: /api/*
+
+Sitemap: https://booking-one-sage.vercel.app/sitemap.xml
