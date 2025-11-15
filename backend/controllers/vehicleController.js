@@ -9,11 +9,6 @@ export const addVehicle = async (req, res) => {
 
         console.log(req.file.path)
         const imageUrl = req.file.path
-        const optimizedUrl = imageUrl.replace(
-            '/upload/',
-            '/upload/f_auto,q_auto,w_600/'
-        );
-
         if (!req.path) {
             return res.json({ success: false, message: "Please Upload a Image." })
         }
@@ -23,7 +18,7 @@ export const addVehicle = async (req, res) => {
             bookingType,
             price,
             capacity,
-            imageUrl: optimizedUrl,
+            imageUrl,
             bookingTypeId
 
         })
