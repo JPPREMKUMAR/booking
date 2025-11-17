@@ -24,10 +24,11 @@ const Navbar = () => {
 
 
     const onClickLogout = () => {
-        navigate("/login")
-        Cookies.remove("token")
+
+        Cookies.remove("adminToken")
         setToken("")
         setIsMenu(false)
+        navigate("/login")
 
 
     }
