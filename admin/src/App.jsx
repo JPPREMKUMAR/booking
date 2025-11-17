@@ -1,4 +1,4 @@
-
+import { useEffect, useContext } from "react"
 import MainContextProvider from "./context/MainContext"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from "./components/Navbar"
@@ -13,6 +13,9 @@ import DeleteItem from "./pages/DeleteItem"
 
 
 const App = () => {
+
+
+
 
 
 

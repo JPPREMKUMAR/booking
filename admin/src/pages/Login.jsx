@@ -4,6 +4,12 @@ import axios from "axios"
 import { MainContext } from "../context/MainContext"
 import Cookies from "js-cookie"
 import { TailSpin } from "react-loader-spinner"
+import { BiSolidShow } from "react-icons/bi";
+import { BiSolidHide } from "react-icons/bi";
+
+
+
+
 
 const Login = () => {
 
@@ -12,6 +18,9 @@ const Login = () => {
     const [adminPassword, setAdminPassword] = useState('')
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(false)
+
+    const [isShow, setIsShow] = useState(false)
+
 
     const onSubmitHandler = async (event) => {
         setIsLoading(true)
@@ -52,6 +61,13 @@ const Login = () => {
         }
     }, [token])
 
+
+    const onChangeShow = () => {
+        setIsShow((prev) => (!prev))
+
+    }
+
+
     return (
 
         <div className="min-h-screen flex  justify-center bg-gray-300 px-2  sm:flex-col sm:items-center">
@@ -64,17 +80,24 @@ const Login = () => {
 
                     <div className="flex  flex-col gap-y-2 my-5">
 
-                        <label htmlFor="email" className="text-gray-700 text-md font-semibold">Admin Email Address</label>
-                        <div className="border px-2 py-2 rounded-sm">
+                        <label htmlFor="email" className="text-gray-700 text-xl font-semibold">Admin Email Address</label>
+                        <div className="border px-2 py-2 rounded-md">
                             <input id="email" type="email" placeholder="Enter Your Admin Email" className="outline-none w-full px-2" value={adminEmail} onChange={(e) => setAdminEmail(e.target.value)} required />
                         </div>
                     </div>
 
                     <div className="flex  flex-col gap-y-2 my-5">
 
-                        <label htmlFor="password" className="text-gray-700 text-md font-semibold">Admin Password </label>
-                        <div className="border px-2 py-2 rounded-sm">
-                            <input id="password" type="password" placeholder="Enter Your Admin Password" className="outline-none w-full px-2" value={adminPassword} onChange={(e) => setAdminPassword(e.target.value)} required />
+                        <label htmlFor="password" className="text-gray-700 text-xl font-semibold">Admin Password </label>
+                        <div className="border px-2 py-2 rounded-md flex justify-between">
+                            <input id="password" type={`${isShow ? "text" : "password"}`} placeholder="Enter Your Admin Password" className="outline-none w-full px-2" value={adminPassword} onChange={(e) => setAdminPassword(e.target.value)} required />
+
+                            {
+                                isShow ? <BiSolidHide aria-label="Hide" className="w-7 h-7 mr-3" onClick={onChangeShow} /> : <BiSolidShow aria-label="show" onClick={onChangeShow} className="w-7 h-7 mr-3" />
+                            }
+
+
+
                         </div>
                     </div>
                     <div className="flex justify-center my-10">

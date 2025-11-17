@@ -32,6 +32,16 @@ const Navbar = () => {
 
     }
 
+    useEffect(() => {
+
+        if (token === '' || token === undefined) {
+            return navigate("/login")
+        }
+
+
+    }, [])
+
+
 
 
     return (
