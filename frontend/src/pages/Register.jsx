@@ -5,6 +5,11 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import Cookies from "js-cookie"
 import { TailSpin } from "react-loader-spinner"
+import { BiSolidShow } from "react-icons/bi";
+import { BiSolidHide } from "react-icons/bi";
+
+
+
 
 
 
@@ -23,6 +28,11 @@ const Register = () => {
     const [errorPassword, setErrorPassword] = useState('')
     const [error, setError] = useState('')
     const [isLoader, setIsLoader] = useState(false)
+    const [isShow1, setIsShow1] = useState(false)
+    const [isShow2, setIsShow2] = useState(false)
+
+
+
 
     const onSubmitHandler = async (event) => {
         event.preventDefault()
@@ -77,6 +87,19 @@ const Register = () => {
         }
     })
 
+
+
+    const onChangeShow1 = () => {
+        setIsShow1((prev) => (!prev))
+    }
+
+
+    const onChangeShow2 = () => {
+        setIsShow2((prev) => (!prev))
+    }
+
+
+
     return (
         <div className="px-5 py-2">
 
@@ -112,14 +135,28 @@ const Register = () => {
                         </div>
                         <div className='my-1'>
                             <label htmlFor="password" className='text-xl font-semibold'>Password</label>
-                            <div className='border px-3 py-2 bg-white rounded-sm my-2'>
-                                <input type="password" id="password" placeholder="Enter Your Password" className='w-full outline-none font-bold' value={password} onChange={(event) => setPassword(event.target.value)} required />
+                            <div className='border px-3 py-2 bg-white rounded-sm my-2  flex justify-center items-center '>
+                                <input type={`${isShow1 ? "text" : "password"}`} id="password" placeholder="Enter Your Password" className='w-full outline-none font-bold' value={password} onChange={(event) => setPassword(event.target.value)} required />
+
+
+                                {
+                                    isShow1 ? <BiSolidHide aria-label="Hide" className="w-7 h-7 mr-3" onClick={onChangeShow1} /> : <BiSolidShow aria-label="show" onClick={onChangeShow1} className="w-7 h-7 mr-3" />
+                                }
+
+
                             </div>
                         </div>
                         <div className='my-1'>
                             <label htmlFor="password1" className='text-xl font-semibold'>Confirm Password</label>
-                            <div className='border px-3 py-2 bg-white rounded-sm my-2'>
-                                <input type="password" id="password1" placeholder="Enter Your Confirm Password" className='w-full outline-none font-bold' value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required />
+                            <div className='border px-3 py-2 bg-white rounded-sm my-2 flex justify-center items-center '>
+                                <input type={`${isShow2 ? "text" : "password"}`} id="password1" placeholder="Enter Your Confirm Password" className='w-full outline-none font-bold' value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required />
+
+
+
+                                {
+                                    isShow2 ? <BiSolidHide aria-label="Hide" className="w-7 h-7 mr-3" onClick={onChangeShow2} /> : <BiSolidShow aria-label="show" onClick={onChangeShow2} className="w-7 h-7 mr-3" />
+                                }
+
                             </div>
                         </div>
                         {

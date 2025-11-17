@@ -4,6 +4,13 @@ import { MainContext } from "../context/MainContext"
 import axios from "axios"
 import Cookies from "js-cookie"
 import { TailSpin } from 'react-loader-spinner'
+import { BiSolidShow } from "react-icons/bi";
+import { BiSolidHide } from "react-icons/bi";
+
+
+
+
+
 
 const Login = () => {
 
@@ -15,6 +22,8 @@ const Login = () => {
 
     const [isLoader, setIsLoader] = useState(false)
 
+
+    const [isShow, setIsShow] = useState(false)
 
 
 
@@ -53,6 +62,12 @@ const Login = () => {
         }
     }, [])
 
+
+
+
+    const onChangeShow = () => {
+        setIsShow((prev) => (!prev))
+    }
     return (
         <div className="px-5 py-2 overflow-auto scrollbar-hide">
 
@@ -63,7 +78,7 @@ const Login = () => {
                         <TailSpin width={50} height={50} color="blue" />
                     </div> : <form className="my-3 px-3" onSubmit={onSubmitHandler} >
 
-                        <div className='my-1'>
+                        <div className='my-1 bg-white'>
                             <label htmlFor="email" className='text-xl font-semibold'>Email</label>
                             <div className='border px-3 py-2 bg-white rounded-sm my-2'>
                                 <input type="email" id="email" placeholder="Enter Your Email Address" className='w-full outline-none font-bold' value={email} onChange={(event) => setEmail(event.target.value)} required />
@@ -71,10 +86,18 @@ const Login = () => {
                         </div>
 
 
-                        <div className='my-1'>
+                        <div className='my-1 bg-white'>
                             <label htmlFor="password" className='text-xl font-semibold'>Password</label>
-                            <div className='border px-3 py-2 bg-white rounded-sm my-2'>
-                                <input type="password" id="password" placeholder="Enter Your Password" className='w-full outline-none font-bold' value={password} onChange={(event) => setPassword(event.target.value)} required />
+                            <div className='border px-3 py-2 bg-white rounded-sm my-2  flex  justify-between items-center'>
+                                <input type={`${isShow ? "text" : "password"}`} id="password" placeholder="Enter Your Password" className='w-full outline-none font-bold' value={password} onChange={(event) => setPassword(event.target.value)} required />
+
+
+                                {
+                                    isShow ? <BiSolidHide aria-label="Hide" className="w-7 h-7 mr-3" onClick={onChangeShow} /> : <BiSolidShow aria-label="show" onClick={onChangeShow} className="w-7 h-7 mr-3" />
+                                }
+
+
+
                             </div>
                         </div>
 
