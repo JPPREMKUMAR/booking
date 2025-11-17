@@ -55,7 +55,7 @@ const Navbar = () => {
                     <img src={logo} alt="Logo" width={130} height={100} />
                 </div>
 
-                <div className='sm:hidden text-center flex items-center w-[30px] h-[30px] '>
+                <div className='sm:hidden text-center flex items-center w-[30px] h-[30px]  cursor-pointer'>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
                         {
                             isMenu ? <RxCross1 className="w-[30px] h-[30px] text-white " />
@@ -111,7 +111,7 @@ const Navbar = () => {
                             /*/
                         }
                         {
-                            token === undefined || token === "" ? <Link to="/login" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}>
+                            token === undefined || token === "" ? <Link to="/login" className="text-md font-semibold cursor-pointer" onClick={(prev) => setIsMenu(!prev)}>
 
                                 <button className="bg-blue-500 text-white rounded-md px-8 py-2 ">
                                     Login
