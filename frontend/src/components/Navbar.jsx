@@ -162,13 +162,13 @@ const Navbar = () => {
                     <Link to="/luxuryCars" className="sm:hidden md:block  px-2 text-sm text-white  text-gray-600  cursor-pointer ">
                         Luxury Cars
                     </Link>
-                    <Link to="/termsOfServices" className="sm:hidden md:block  px-2 text-sm text-white  text-gray-600  cursor-pointer ">
+                    <Link to="/termsOfServices" className="hidden md:block  px-2 text-sm text-white  text-gray-600  cursor-pointer ">
                         Services
                     </Link>
-                    <Link to="/aboutUs" className="sm:hidden md:block px-2 text-sm text-white  text-gray-600  cursor-pointer ">
+                    <Link to="/aboutUs" className="hidden md:block px-2 text-sm text-white  text-gray-600  cursor-pointer ">
                         About Us
                     </Link>
-                    <Link to="/contactUs" className="sm:hidden md:block  px-2 text-sm text-white  text-gray-600  cursor-pointer ">
+                    <Link to="/contactUs" className="hidden md:block  px-2 text-sm text-white  text-gray-600  cursor-pointer ">
                         Contact Us
                     </Link>
                     {
