@@ -48,7 +48,7 @@ const Navbar = () => {
             <div className="py-3 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
                 <div className=' px-2'>
                     <Link to="/">
-                        <img src={logo} alt="logo" loading="lazy" className="w-[130px] h-[40px]  " />
+                        <img src={logo} alt="logo" loading="lazy" className="w-[110px] h-[40px]  " />
                     </Link>
                 </div>
                 <button className=""><a href={`tel:+91${adminPhoneNumber1}`} className="bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md   text-white font-bold text-sm self-center" >+91 {adminPhoneNumber1}</a>
