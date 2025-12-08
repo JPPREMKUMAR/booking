@@ -1,7 +1,8 @@
 
 import menu_icon from "./menu2.png"
 import cross_icon from "./close.png"
-import logo from "./neewww.jpg"
+//import logo from "./neewww.jpg"
+import logo from "./orange_logo.jpg"
 import image1 from "./1.png"
 import image2 from "./2.png"
 import image3 from "./3.png"
