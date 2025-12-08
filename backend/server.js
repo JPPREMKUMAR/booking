@@ -10,6 +10,9 @@ import vehicleRouter from "./routes/vehicleRoutes.js"
 import categoriesRouter from "./routes/categoriesRoutes.js"
 import connectCloudinary from "./config/connectCloudinary.js"
 
+
+
+
 dotenv.config()
 
 const app = express()
@@ -61,6 +64,8 @@ const startServer = async () => {
         app.listen((PORT), () => {
             console.log(`Server Working on PORT ${PORT}`)
         })
+
+
     } catch (error) {
         console.log(error)
     }
