@@ -48,7 +48,7 @@ const Navbar = () => {
             <div className="py-3 px-3 flex items-center justify-between border-b border-slate-300 sm:hidden  ">
                 <div className=' px-2'>
                     <Link to="/">
-                        <img src={logo} alt="logo" loading="lazy" className="w-[130px] h-[40px] bg-transparent  " />
+                        <img src={logo} alt="logo" loading="lazy" className="w-[130px] h-[50px] bg-transparent  " />
                     </Link>
                 </div>
                 <button className=""><a href={`tel:+91${adminPhoneNumber1}`} className="bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md  text-white font-bold text-sm self-center" >+91 {adminPhoneNumber1}</a>
@@ -137,7 +137,7 @@ const Navbar = () => {
 
             <div className=" hidden sm:block sm:flex flex-row items-center justify-around px-6 py-4 border-b border-slate-300 font-bold">
                 <Link to="/" className=' flex items-center'>
-                    <img src={logo} alt="logo" className="w-[200px] h-[50px] " />
+                    <img src={logo} alt="logo" className="w-[250px] h-[50px] " />
                 </Link>
 
                 <div className='flex gap-x-4 items-center'>
