@@ -12,7 +12,6 @@ import connectCloudinary from "./config/connectCloudinary.js"
 
 
 
-
 dotenv.config()
 
 const app = express()
@@ -60,9 +59,10 @@ const PORT = process.env.PORT || 8000
 const startServer = async () => {
     try {
 
-        await connectCloudinary()
+        //await connectCloudinary()
         app.listen((PORT), () => {
             console.log(`Server Working on PORT ${PORT}`)
+
         })
 
 

@@ -1,5 +1,6 @@
 import Bookings from "../models/Bookings.js"
 import mailToUser from "../middlewares/mailToUser.js"
+import sendMailBrevo from "../middlewares/sendMailBrevo.js"
 
 
 const generateBookingId = () => {
@@ -41,7 +42,8 @@ export const bookingUser = async (req, res) => {
         await newBooking.save()
         //await sendBookingSms(newBooking)
         console.log('sending start')
-        mailToUser(newBooking)
+        //mailToUser(newBooking)
+        sendMailBrevo(newBooking)
         console.log('sending end')
 
 
