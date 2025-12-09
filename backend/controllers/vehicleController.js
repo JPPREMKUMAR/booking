@@ -1,5 +1,6 @@
 
 import Vehicles from "../models/Vehicles.js"
+import upload, { uploadToCloudinary } from "../middlewares/uploadImage.js";
 
 export const addVehicle = async (req, res) => {
 
@@ -7,8 +8,12 @@ export const addVehicle = async (req, res) => {
     try {
         const { vehicle, bookingType, price, capacity, bookingTypeId } = req.body
 
-        console.log(req.file.path)
-        const imageUrl = req.file.path
+
+        // Upload to Cloudinary
+        const result = await uploadToCloudinary(req.file.buffer);
+        //console.log(req.file.path)
+        const imageUrl = result.secure_url
+        //console.log(imageUrl)
         if (!req.path) {
             return res.json({ success: false, message: "Please Upload a Image." })
         }

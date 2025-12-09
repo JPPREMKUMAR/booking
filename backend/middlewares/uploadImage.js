@@ -1,38 +1,38 @@
-import multer from "multer"
-import { v2 as cloudinary } from "cloudinary"
-import pkg from 'multer-storage-cloudinary';
-const { CloudinaryStorage } = pkg;
+import multer from "multer";
+import { v2 as cloudinary } from "cloudinary";
+import streamifier from "streamifier";
 
-
-
-// Configure cloudinary connected
-
-
-// Configure Multer Storage
-
+// Cloudinary config
 cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
-})
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_API_KEY,
+    api_secret: process.env.CLOUD_API_SECRET
+});
 
-const storage = new CloudinaryStorage({
-    cloudinary,
-    params: {
-        folder: "cab-booking-images",
-        allowed: ['jpg', 'png', 'jpeg']
-    }
+// Use memory storage instead of disk
+const storage = multer.memoryStorage();
 
-})
+// Multer middleware
+const upload = multer({
+    storage,
+    limits: {
+        fileSize: 5 * 1024 * 1024, // 5 MB
+    },
+});
 
+// Cloudinary Upload Function
+export const uploadToCloudinary = (buffer, folder = "cab-booking-images") => {
+    return new Promise((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream(
+            { folder },
+            (error, result) => {
+                if (result) resolve(result);
+                else reject(error);
+            }
+        );
 
-const uploadImage = multer({ storage })
+        streamifier.createReadStream(buffer).pipe(stream);
+    });
+};
 
-
-
-
-
-
-
-
-//export default uploadImage
+export default upload;

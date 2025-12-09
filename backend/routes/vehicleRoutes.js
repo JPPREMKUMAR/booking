@@ -2,7 +2,7 @@
 
 import express from "express"
 import { addVehicle, allVehicles, getVehicle, updateVehicle, deleteVehicle, getAllVehiclesBookingType } from "../controllers/vehicleController.js"
-//import uploadImage from "../middlewares/uploadImage.js"
+import upload from "../middlewares/uploadImage.js";
 import authAdmin from "../middlewares/authAdmin.js"
 
 
@@ -10,7 +10,7 @@ import authAdmin from "../middlewares/authAdmin.js"
 const vehicleRouter = express.Router()
 //, uploadImage.single("image")
 
-vehicleRouter.post("/addItem", authAdmin, addVehicle)
+vehicleRouter.post("/addItem", authAdmin, upload.single("image"), addVehicle)
 
 vehicleRouter.post("/allVehicles", authAdmin, allVehicles)
 

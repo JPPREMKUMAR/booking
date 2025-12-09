@@ -20,10 +20,10 @@ const AllVehicles = () => {
         setIsLoading(true)
 
         const response = await axios.post(backendUrl + "/api/vehicle/allVehicles", {}, { headers: { token } })
-        // console.log(response)
+        console.log(response)
         if (response.data.success === true) {
             const getData = response.data.vehicles
-            // console.log(getData)
+            console.log(getData)
             setVehicles(getData)
         }
         setIsLoading(false)
@@ -34,7 +34,7 @@ const AllVehicles = () => {
             navigate("/login")
         }
         getAllVehicles()
-        //console.log(vehicles)
+        console.log(vehicles)
     }, [])
     console.log(vehicles)
 
