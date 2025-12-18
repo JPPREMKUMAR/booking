@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { carousel1, carousel2 } from "../assets/assets.js"
+import { carousel1, carousel2, carousel3, carousel4 } from "../assets/assets.js"
 const images = [
 
-    carousel1, carousel2
+    carousel1, carousel2, carousel3, carousel4
 
 
 

@@ -22,11 +22,12 @@ import linkedIn from "./linkedin-circle.svg"
 import gmail from './gmail.svg'
 import carousel1 from "./carousel1.jpeg"
 import carousel2 from "./carousel2.png"
-
+import carousel3 from "./carosule3.jpg"
+import carousel4 from "./carosule4.jpg"
 
 export {
     menu_icon, cross_icon,
-    carousel1, carousel2,
+    carousel1, carousel2, carousel3, carousel4,
     instagram, facebook, twitter, linkedIn, gmail
     ,
 
