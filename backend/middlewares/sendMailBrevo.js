@@ -26,7 +26,7 @@ const sendMailBrevo = async (newBooking) => {
         price,
 
     } = newBooking
-
+    const frontendUrl = process.env.FRONT_END_URL
 
 
 
@@ -153,14 +153,13 @@ const sendMailBrevo = async (newBooking) => {
 
 
 
-
-
     await transporter.sendMail({
-        from: "jppremkumar012@gmail.com",
-        to: `${email}`,
+        from: '"RKN AIRPORT TAXI" <jppremkumar012@gmail.com>',
+        to: email,
         subject: 'Your Cab Booking Confirmation',
         html: htmlTemplate
     });
+
 };
 
 
