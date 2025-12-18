@@ -157,7 +157,7 @@ const sendMailBrevo = async (newBooking) => {
 
     await transporter.sendMail({
         from: "jppremkumar012@gmail.com",
-        to: "rolex515134@gmail.com",
+        to: `${email}`,
         subject: 'Your Cab Booking Confirmation',
         html: htmlTemplate
     });
