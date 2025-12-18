@@ -1,8 +1,9 @@
 
 import menu_icon from "./menu2.png"
 import cross_icon from "./close.png"
-//import logo from "./neewww.jpg"
-import logo from "./black_logo.jpg"
+import logo from "./final_website_logo1.png"
+//import logo from "./final_website_logo.jpeg"
+//import logo from "./black_logo.jpg"
 import image1 from "./1.png"
 import image2 from "./2.png"
 import image3 from "./3.png"
