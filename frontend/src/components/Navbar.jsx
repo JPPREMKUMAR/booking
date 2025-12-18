@@ -51,9 +51,9 @@ const Navbar = () => {
                         <img src={logo} alt="logo" loading="lazy" className="w-[150px] h-[50px]  " />
                     </Link>
                 </div>
-                <button className=""><a href={`tel:+91${adminPhoneNumber1}`} className="bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md   text-white font-bold text-sm self-center" >+91 {adminPhoneNumber1}</a>
+                <button className=""><a href={`tel:+91${adminPhoneNumber1}`} className="bg-blue-500 px-2 py-2 outline-none cursor-pointer rounded-md   text-white font-bold text-xs self-center" >+91 {adminPhoneNumber1}</a>
                 </button>
-                <div className='text-center flex items-center w-[30px] h-[30px] '>
+                <div className='text-center flex items-center w-[30px] h-[30px] mx-3 '>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
                         {
                             isMenu ? <RxCross1 className="w-[30px] h-[30px]  text-black " aria-label='Close Menu' />
