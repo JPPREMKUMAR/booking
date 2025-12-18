@@ -20,12 +20,13 @@ import facebook from "./facebook.svg"
 import twitter from "./twitter-circle.svg"
 import linkedIn from "./linkedin-circle.svg"
 import gmail from './gmail.svg'
-
+import carousel1 from "./carousel1.jpeg"
+import carousel2 from "./carousel2.png"
 
 
 export {
     menu_icon, cross_icon,
-
+    carousel1, carousel2,
     instagram, facebook, twitter, linkedIn, gmail
     ,
 

@@ -12,8 +12,8 @@ const Footer = () => {
 
     return (
 
-        <div className="w-full fixed bottom-10 mx-5">
-            <div className="w-[90%]  flex items-center  ">
+        <div className="w-full mx-5">
+            <div className="w-[90%]  fixed bottom-10  flex items-center  ">
 
 
                 <div className="sm:h-25 w-[15%]">

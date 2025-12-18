@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-
+import { carousel1, carousel2 } from "../assets/assets.js"
 const images = [
-    "https://res.cloudinary.com/dokbp23jt/image/upload/v1762929119/cab-booking-images/iwsogvq3tope9mgxjbie.png",
-    "https://res.cloudinary.com/dokbp23jt/image/upload/v1762929119/cab-booking-images/iwsogvq3tope9mgxjbie.png",
-    "https://res.cloudinary.com/dokbp23jt/image/upload/v1762929119/cab-booking-images/iwsogvq3tope9mgxjbie.png",
-    "https://res.cloudinary.com/dokbp23jt/image/upload/v1762929119/cab-booking-images/iwsogvq3tope9mgxjbie.png",
 
+    carousel1, carousel2
 
 
 
@@ -30,13 +27,14 @@ const Carousel = () => {
                 style={{ transform: `translateX(-${index * 100}%)` }}
             >
                 {images.map((img, i) => (
-                    <img
+                    <div
                         key={i}
-                        src={img}
-                        loading="lazy"
-                        alt={`Slide ${i}`}
-                        className="w-full h-64 md:h-96 flex-shrink-0 object-cover"
-                    />
+                        className="w-full h-64 md:h-96 flex-shrink-0 bg-center bg-cover bg-no-repeat"
+                        style={{ backgroundImage: `url(${img})` }}
+                        aria-label={`Slide ${i}`}
+                    >
+                        <h1>Hello World</h1>
+                    </div>
                 ))}
             </div>
 
