@@ -36,6 +36,7 @@ const Carousel = () => {
                         className="w-full h-64 sm:h-100 flex-shrink-0 bg-center bg-cover bg-no-repeat flex flex-col justify-center items-center cursor-pointer "
                         style={{ backgroundImage: `url(${img})` }}
                         aria-label={`Slide ${i}`}
+                        onClick={onClickBook}
                     >
 
                     </div>
