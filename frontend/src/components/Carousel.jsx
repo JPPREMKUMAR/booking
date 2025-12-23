@@ -5,7 +5,7 @@ const images = [
     carousel6,
     carousel5,
 
-    carousel2, carousel3
+    carousel3
 
 
 
