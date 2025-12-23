@@ -29,11 +29,16 @@ const Carousel = () => {
                 {images.map((img, i) => (
                     <div
                         key={i}
-                        className="w-full h-64 md:h-96 flex-shrink-0 bg-center bg-cover bg-no-repeat"
+                        className="w-full h-64 md:h-96 flex-shrink-0 bg-center bg-cover bg-no-repeat flex flex-col justify-center items-center "
                         style={{ backgroundImage: `url(${img})` }}
                         aria-label={`Slide ${i}`}
                     >
-                        <h1>Hello World</h1>
+                        <div>
+
+                            <h1 className="text-center">Book Your Airport Taxi Now</h1>
+                            <h1 className="text-center">Safe & Reliable Booking</h1>
+                            <h1 className="text-center">Fly High Ride Premium </h1>
+                        </div>
                     </div>
                 ))}
             </div>
