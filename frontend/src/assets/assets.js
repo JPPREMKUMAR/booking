@@ -27,13 +27,14 @@ import carousel4 from "./carosule4.jpg"
 import carousel5 from "./carousel-1.jpeg"
 import carousel6 from "./carousel6.jpeg"
 import carousel7 from "./carousel7.jpeg"
-
-
+import c1 from "./c1.png"
+import c2 from "./c2.png"
+import c3 from "./c3.png"
 
 export {
     menu_icon, cross_icon,
     carousel1, carousel2, carousel3, carousel4, carousel5, carousel6, carousel7,
-    instagram, facebook, twitter, linkedIn, gmail
+    instagram, facebook, twitter, linkedIn, gmail, c1, c2, c3
     ,
 
     logo, image1, image2, image3, image4, image5, image6, whatsapp, telephone

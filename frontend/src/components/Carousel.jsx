@@ -1,12 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
-import { carousel1, carousel2, carousel3, carousel4, carousel5, carousel6, carousel7 } from "../assets/assets.js"
+import { carousel1, carousel2, carousel3, carousel4, carousel5, carousel6, carousel7, c1, c2, c3 } from "../assets/assets.js"
 import { MainContext } from "../context/MainContext.jsx";
 const images = [
-    carousel6,
-    carousel5,
-    carousel7
-
-
+    c1, c2, c3
 
 ];
 
@@ -37,19 +33,11 @@ const Carousel = () => {
                 {images.map((img, i) => (
                     <div
                         key={i}
-                        className="w-full h-64 md:h-96 flex-shrink-0 bg-center bg-cover bg-no-repeat flex flex-col justify-center items-center "
+                        className="w-full h-64 sm:h-100 flex-shrink-0 bg-center bg-cover bg-no-repeat flex flex-col justify-center items-center cursor-pointer "
                         style={{ backgroundImage: `url(${img})` }}
                         aria-label={`Slide ${i}`}
                     >
-                        <div>
 
-                            <h1 className="text-center text-2xl sm:text-4xl font-bold italic text-gray-400">Book Your Airport Taxi Now</h1>
-                            <h1 className="text-center text-2xl sm:text-4xl font-bold italic text-gray-400">Safe & Reliable Booking</h1>
-                            <h1 className="text-center text-2xl sm:text-4xl font-bold italic text-gray-400">Fly High Ride Premium </h1>
-                            <div className=" sm:my-5 my-2">
-                                <button className="text-white font-bold sm:text-md text:sm sm:px-5 sm:py-2  px-3 py-1 bg-blue-500 rounded-md outline-none cursor-pointer " onClick={onClickBook}>Book Now</button>
-                            </div>
-                        </div>
                     </div>
                 ))}
             </div>
