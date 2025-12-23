@@ -33,11 +33,18 @@ const Carousel = () => {
                 {images.map((img, i) => (
                     <div
                         key={i}
-                        className="w-full h-64 sm:h-100 flex-shrink-0 bg-center bg-cover bg-no-repeat flex flex-col justify-center items-center cursor-pointer "
-                        style={{ backgroundImage: `url(${img})` }}
+                        className="w-full flex-shrink-0 bg-center bg-cover bg-no-repeat flex flex-col justify-center items-center cursor-pointer "
+
                         aria-label={`Slide ${i}`}
                         onClick={onClickBook}
                     >
+                        <img
+                            src={img}
+                            loading="lazy"
+                            className="w-full h-64 sm:h-120"
+
+
+                        />
 
                     </div>
                 ))}
