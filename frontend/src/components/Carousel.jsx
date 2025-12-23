@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
-import { carousel1, carousel2, carousel3, carousel4, carousel5, carousel6 } from "../assets/assets.js"
+import { carousel1, carousel2, carousel3, carousel4, carousel5, carousel6, carousel7 } from "../assets/assets.js"
 import { MainContext } from "../context/MainContext.jsx";
 const images = [
     carousel6,
     carousel5,
-
-    carousel3
+    carousel7
 
 
 
