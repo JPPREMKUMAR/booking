@@ -25,10 +25,11 @@ import carousel2 from "./carousel2.png"
 import carousel3 from "./carosule3.jpg"
 import carousel4 from "./carosule4.jpg"
 import carousel5 from "./carousel-1.jpeg"
+import carousel6 from "./carousel6.jpeg"
 
 export {
     menu_icon, cross_icon,
-    carousel1, carousel2, carousel3, carousel4, carousel5,
+    carousel1, carousel2, carousel3, carousel4, carousel5, carousel6,
     instagram, facebook, twitter, linkedIn, gmail
     ,
 

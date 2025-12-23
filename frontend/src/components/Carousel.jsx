@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
-import { carousel1, carousel2, carousel3, carousel4, carousel5 } from "../assets/assets.js"
+import { carousel1, carousel2, carousel3, carousel4, carousel5, carousel6 } from "../assets/assets.js"
 import { MainContext } from "../context/MainContext.jsx";
 const images = [
+    carousel6,
     carousel5,
 
     carousel1, carousel2, carousel3, carousel4
@@ -46,8 +47,8 @@ const Carousel = () => {
                             <h1 className="text-center text-2xl sm:text-4xl font-bold italic text-gray-400">Book Your Airport Taxi Now</h1>
                             <h1 className="text-center text-2xl sm:text-4xl font-bold italic text-gray-400">Safe & Reliable Booking</h1>
                             <h1 className="text-center text-2xl sm:text-4xl font-bold italic text-gray-400">Fly High Ride Premium </h1>
-                            <div className="text-center my-5">
-                                <button className="text-white font-bold px-5 py-2 bg-blue-500 rounded-md outline-none cursor-pointer " onClick={onClickBook}>Book Now</button>
+                            <div className=" sm:my-5 my-2">
+                                <button className="text-white font-bold sm:text-md text:sm sm:px-5 sm:py-2  px-3 py-1 bg-blue-500 rounded-md outline-none cursor-pointer " onClick={onClickBook}>Book Now</button>
                             </div>
                         </div>
                     </div>
