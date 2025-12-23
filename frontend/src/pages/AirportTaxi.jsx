@@ -40,7 +40,7 @@ const AirportTaxi = () => {
     return (
         <div className="min-h-screen">
 
-            <h1 className="my-10 font-bold text-3xl text-center mb-4 mt-4 sm:text-4xl text-[#FFD700]">AIRPORT TAXI</h1>
+            <h1 className="my-10 font-bold text-3xl text-center mb-4 mt-4 sm:text-4xl text-black  italic ">AIRPORT TAXI</h1>
 
             {
                 isLoading ? <div className="flex justify-center">
