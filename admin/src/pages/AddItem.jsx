@@ -69,6 +69,8 @@ const AddItem = () => {
         formData.append("price", price)
         formData.append("capacity", capacity)
         formData.append("bookingTypeId", bookingTypeId)
+        formData.append("ac", ac)
+        formData.append("driverBata", driverBata)
 
         const response = await axios.post(backendUrl + "/api/vehicle/addItem", formData, { headers: { token } })
         console.log(response)

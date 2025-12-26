@@ -11,7 +11,7 @@ const vehicleSchema = new mongoose.Schema({
     capacity: { type: Number, required: true },
     bookingTypeId: { type: String, required: true },
     ac: { type: String },
-    driverBata: { type: Number }
+    driverBata: { type: String }
 
 
 }, { timestamps: true })

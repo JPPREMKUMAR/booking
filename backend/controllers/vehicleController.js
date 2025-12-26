@@ -6,12 +6,12 @@ export const addVehicle = async (req, res) => {
 
 
     try {
-        const { vehicle, bookingType, price, capacity, bookingTypeId, ac, driverBata } = req.body
+        let { vehicle, bookingType, price, capacity, bookingTypeId, ac, driverBata } = req.body
 
-        if (ac === undefined) {
+        if (ac === '') {
             ac = 0
         }
-        if (driverBata === undefined) {
+        if (driverBata === '') {
             driverBata = 0
         }
         // Upload to Cloudinary
@@ -37,7 +37,7 @@ export const addVehicle = async (req, res) => {
         await newVehicle.save()
 
 
-        //console.log(newVehicle)
+        console.log(newVehicle)
 
         res.json({ success: true, message: "Vehicle Added.", newVehicle: newVehicle })
 
