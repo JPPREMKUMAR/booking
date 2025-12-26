@@ -75,7 +75,6 @@ const Home = () => {
                     <AirportTaxi />
                     <Outstation />
                     <LocalStation />
-                    <Innova />
 
                 </div>
 

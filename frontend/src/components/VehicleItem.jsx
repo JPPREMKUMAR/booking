@@ -55,7 +55,7 @@ const VehicleItem = ({ item }) => {
                 </div>
                 <div className="flex items-center gap-x-3 my-2">
 
-                    <Link to={`/booking/${_id}`} className="sm:bg-blue-400 text-md w-40 bg-blue-600 text-white px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 font-semibold  mb-5 mt-2 cursor-pointer text-center hover:text-gray-800">
+                    <Link to={`/booking/${_id}`} className="sm:bg-blue-400 text-md w-40 bg-blue-600 text-white px-5 py-2 rounded-md text-md sm:text-xl sm:px-6 font-semibold  mb-5 mt-2 cursor-pointer text-center ">
 
                         Book Now
 

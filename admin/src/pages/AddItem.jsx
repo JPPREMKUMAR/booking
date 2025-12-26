@@ -18,8 +18,8 @@ const AddItem = () => {
     const [bookingTypeId, setBookingTypeId] = useState('AIRPORT_TAXI')
     const [price, setPrice] = useState('')
     const [capacity, setCapacity] = useState('')
-    const [ac, setAC] = useState('')
-    const [driverBata, setDriverBata] = useState('')
+    const [ac, setAC] = useState('0')
+    const [driverBata, setDriverBata] = useState('0')
 
 
 
@@ -227,7 +227,7 @@ const AddItem = () => {
                                 </div>
                             </div>
                             {
-                                bookingTypeId === "OUTSTATION_TAXI" ? <div>
+                                <div>
 
                                     <div>
                                         <label htmlFor="ac" className="text-md text-gray-700 font-bold">A/C</label>
@@ -242,7 +242,7 @@ const AddItem = () => {
                                         </div>
                                     </div>
 
-                                </div> : null
+                                </div>
 
                             }
 

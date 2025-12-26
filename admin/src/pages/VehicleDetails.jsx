@@ -77,8 +77,8 @@ const VehicleDetails = () => {
             setPrice(price)
             setCapacity(capacity)
             setPreview(imageUrl)
-            setAc(ac === undefined && '0')
-            setDriverBata(driverBata === undefined && '0')
+            setAc(ac)
+            setDriverBata(driverBata)
             setMainLoading(false)
 
 
