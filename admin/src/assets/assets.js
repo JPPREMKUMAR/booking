@@ -1,14 +1,14 @@
 
 import menu_icon from "./menu.png"
 import cross_icon from "./close.png"
-import logo from "./web_logobg.png"
+
 import image1 from "./1.png"
 import image2 from "./2.png"
 import image3 from "./3.png"
 import image4 from "./4.png"
 import image5 from "./5.png"
 import image6 from "./6.png"
-
+import logo from "./final_website_logo1.png"
 
 import whatsapp from "./whatsapp.png"
 import telephone from "./telephone.png"

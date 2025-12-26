@@ -48,18 +48,18 @@ const Navbar = () => {
     return (
 
 
-        <div className=" w-full  bg-[#0D1B2A]">
+        <div className=" w-full bg-white">
             <div className="flex justify-between  items-center sm:w-full sm:justify-between px-5 py-2 ">
 
                 <div className="sm:w-1/3" onClick={() => navigate("/")} >
-                    <img src={logo} alt="Logo" width={130} height={100} />
+                    <img src={logo} alt="logo" loading="lazy" className="w-[150px] h-[50px]  " />
                 </div>
 
                 <div className='sm:hidden text-center flex items-center w-[30px] h-[30px]  cursor-pointer'>
                     <button type="button" onClick={() => setIsMenu((prev) => !prev)}>
                         {
-                            isMenu ? <RxCross1 className="w-[30px] h-[30px] text-white " />
-                                : <IoMenu className="w-[30px] h-[30px] text-white " />
+                            isMenu ? <RxCross1 className="w-[30px] h-[30px] text-black " />
+                                : <IoMenu className="w-[30px] h-[30px] text-black " />
                         }
 
                     </button>
@@ -67,21 +67,21 @@ const Navbar = () => {
 
                 <div className="hidden  sm:block sm:flex justify-around gap-x-15  items-center w-2/3">
 
-                    <Link to="/" className="text-xl text-white font-semibold " ><p>Home</p></Link>
-                    <Link to="/addItem" className="text-xl text-white font-semibold "><p>Add Vehicle</p></Link>
-                    <Link to="/allVehicles" className="text-xl text-white font-semibold "><p>All Vehicles</p></Link>
+                    <Link to="/" className="text-xl text-black font-semibold " ><p>Home</p></Link>
+                    <Link to="/addItem" className="text-xl text-black font-semibold "><p>Add Vehicle</p></Link>
+                    <Link to="/allVehicles" className="text-xl text-black font-semibold "><p>All Vehicles</p></Link>
 
                     {
                         /*/ 
                     
-                            <Link to="/Categories" className="text-xl text-white font-semibold "><p>Categories</p></Link>
+                            <Link to="/Categories" className="text-xl text-black font-semibold "><p>Categories</p></Link>
                         /*/
                     }
 
 
                     {
                         token === undefined || token === "" ? <Link to="/login" className="text-md font-semibold" onClick={(prev) => setIsMenu(!prev)}>
-                            <button className="bg-blue-500 text-white rounded-md px-8 py-2 ">Login</button>
+                            <button className="bg-blue-500 text-black rounded-md px-8 py-2 ">Login</button>
 
                         </Link> :
                             <button onClick={onClickLogout} className="text-white bg-red-500 rounded-md px-2 py-2 outline-none w-30 font-semibold cursor-pointer">Logout</button>
@@ -99,25 +99,25 @@ const Navbar = () => {
                     isMenu && <div className="sm:hidden flex flex-col gap-y-4  p-4 ">
 
 
-                        <Link to="/" className="text-md text-white font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>Home</p></Link>
-                        <Link to="/addItem" className="text-md text-white font-semibold" onClick={(prev) => setIsMenu(!prev)} ><p>Add Vehicle</p></Link>
-                        <Link to="/allVehicles" className="text-md text-white font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>All Vehicles</p></Link>
+                        <Link to="/" className="text-md text-black font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>Home</p></Link>
+                        <Link to="/addItem" className="text-md text-black font-semibold" onClick={(prev) => setIsMenu(!prev)} ><p>Add Vehicle</p></Link>
+                        <Link to="/allVehicles" className="text-md text-black font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>All Vehicles</p></Link>
                         {
 
                             /*/
                         
-                                <Link to="/Categories" className="text-md text-white font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>Categories</p></Link>
+                                <Link to="/Categories" className="text-md text-black font-semibold" onClick={(prev) => setIsMenu(!prev)}><p>Categories</p></Link>
                         
                             /*/
                         }
                         {
                             token === undefined || token === "" ? <Link to="/login" className="text-md font-semibold cursor-pointer" onClick={(prev) => setIsMenu(!prev)}>
 
-                                <button className="bg-blue-500 text-white rounded-md px-8 py-2 ">
+                                <button className="bg-blue-500 text-black rounded-md px-8 py-2 ">
                                     Login
                                 </button>
                             </Link> :
-                                <button onClick={onClickLogout} className="text-white bg-red-500 rounded-md px-2 py-2 outline-none w-30 font-semibold cursor-pointer">Logout</button>
+                                <button onClick={onClickLogout} className="text-black bg-red-500 rounded-md px-2 py-2 outline-none w-30 font-semibold cursor-pointer">Logout</button>
                         }
 
                     </div>
