@@ -136,9 +136,7 @@ const Bookings = () => {
         const pickUpTimeString = pickUpTime['time']
         //console.log(pickUpTimeString)
 
-        if (token === undefined || token === '') {
-            navigate("/login")
-        }
+
 
 
 

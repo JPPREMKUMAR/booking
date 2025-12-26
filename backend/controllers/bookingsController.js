@@ -22,8 +22,13 @@ export const bookingUser = async (req, res) => {
     try {
 
         const { name, mobile, email, bookingType, vehicle, pickUpPoint, dropPoint, pickUpTime, pickUpDate, price } = req.body
+        const { token } = req.headers
+        let bookingId = ""
+        if (token !== undefined || token !== '') {
+            bookingId = await generateBookingId()
 
-        const bookingId = await generateBookingId()
+        }
+
 
 
         const newBooking = new Bookings({
@@ -72,7 +77,7 @@ export const bookingUser = async (req, res) => {
 
     } catch (e) {
 
-        console.log(e)
+        //console.log(e)
         return res.json({ error: e, success: false })
     }
 }
