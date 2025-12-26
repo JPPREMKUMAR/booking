@@ -154,7 +154,7 @@ const Bookings = () => {
             pickUpTime: pickUpTimeString,
             pickUpDate: newPresentDateString,
             price
-        }, { headers: { token } })
+        }, {})
         console.log(response.data)
         if (response.data.success === true) {
             const { bookingId } = response.data.bookingDetails
