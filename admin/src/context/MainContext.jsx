@@ -41,8 +41,8 @@ const MainContextProvider = (props) => {
 
 
 
-    {/*/
-    
+
+
     const categoriesList = [
         { id: "AIRPORT_TAXI", name: "AIRPORT TAXI" },
         { id: "INNOVA_TAXI", name: "INNOVA TAXI" },
@@ -51,7 +51,6 @@ const MainContextProvider = (props) => {
 
     ]
 
-    /*/}
 
 
 
@@ -94,7 +93,7 @@ const MainContextProvider = (props) => {
 
 
     const value = {
-        backendUrl, token, setToken, navigate, vehiclesNames
+        backendUrl, token, setToken, navigate, vehiclesNames, categoriesList
     }
 
 

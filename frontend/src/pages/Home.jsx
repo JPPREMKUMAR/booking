@@ -12,7 +12,7 @@ import { TailSpin } from "react-loader-spinner"
 import AirportTaxi from "../pages/AirportTaxi"
 import Innova from "../pages/Innova"
 import Outstation from "../pages/Outstation"
-
+import LocalStation from "../pages/LocalStation"
 
 
 
@@ -74,6 +74,7 @@ const Home = () => {
                 <div>
                     <AirportTaxi />
                     <Outstation />
+                    <LocalStation />
                     <Innova />
 
                 </div>
