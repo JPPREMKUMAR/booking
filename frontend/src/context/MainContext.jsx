@@ -337,55 +337,60 @@ export const MainContextProvider = (props) => {
             "id": "AIRPORT_TAXI",
             "vehicleNames": [
                 {
-                    "_id": "6915a647e51337b994b41a0b",
+                    "_id": "694dfd45d399f68437cba3dc",
+                    "vehicleName": "Hatchback",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "694dfd4dd399f68437cba3df",
+                    "vehicleName": "Sedan",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "694dfd58d399f68437cba3e2",
                     "vehicleName": "Prime Sedan",
                     "categoryId": "AIRPORT_TAXI",
                     "__v": 0
                 },
                 {
-                    "_id": "6915a654e51337b994b41a0d",
+                    "_id": "694dfd65d399f68437cba3e7",
                     "vehicleName": "SUV ERTIGA",
                     "categoryId": "AIRPORT_TAXI",
                     "__v": 0
                 },
                 {
-                    "_id": "6915a658e51337b994b41a0f",
+                    "_id": "694dfd6bd399f68437cba3ea",
                     "vehicleName": "INNOVA",
                     "categoryId": "AIRPORT_TAXI",
                     "__v": 0
                 },
                 {
-                    "_id": "6915a65fe51337b994b41a11",
+                    "_id": "694dfd75d399f68437cba3ed",
                     "vehicleName": "INNOVA CRYSTA",
                     "categoryId": "AIRPORT_TAXI",
                     "__v": 0
                 },
                 {
-                    "_id": "6915a668e51337b994b41a13",
+                    "_id": "694dfd81d399f68437cba3f0",
                     "vehicleName": "INNOVA HYCROSS",
                     "categoryId": "AIRPORT_TAXI",
                     "__v": 0
                 },
                 {
-                    "_id": "6915a676e51337b994b41a15",
-                    "vehicleName": "TOYOTA FURTUNER",
+                    "_id": "694dfd99d399f68437cba3f3",
+                    "vehicleName": "TOYOTA FURTUNER (LUXURY VEHICLE )",
                     "categoryId": "AIRPORT_TAXI",
                     "__v": 0
                 },
                 {
-                    "_id": "6915a680e51337b994b41a17",
+                    "_id": "694dfda6d399f68437cba3f6",
                     "vehicleName": "TEMPO TRAVELLER",
                     "categoryId": "AIRPORT_TAXI",
                     "__v": 0
-                },
-                {
-                    "_id": "6915c7f48e05785bd6b7a72e",
-                    "vehicleName": "Hatchback",
-                    "categoryId": "AIRPORT_TAXI",
-                    "__v": 0
                 }
-            ],
-            "__v": 0
+            ]
         },
         {
             "_id": "691584de7e23981516549787",
@@ -431,49 +436,60 @@ export const MainContextProvider = (props) => {
             "id": "OUTSTATION_TAXI",
             "vehicleNames": [
                 {
-                    "_id": "6915a6cce51337b994b41a2a",
+                    "_id": "694dfd45d399f68437cba3dc",
                     "vehicleName": "Hatchback",
-                    "categoryId": "OUTSTATION_TAXI",
+                    "categoryId": "AIRPORT_TAXI",
                     "__v": 0
                 },
                 {
-                    "_id": "6915a6d4e51337b994b41a2e",
+                    "_id": "694dfd4dd399f68437cba3df",
                     "vehicleName": "Sedan",
-                    "categoryId": "OUTSTATION_TAXI",
+                    "categoryId": "AIRPORT_TAXI",
                     "__v": 0
                 },
                 {
-                    "_id": "6915a6dce51337b994b41a32",
+                    "_id": "694dfd58d399f68437cba3e2",
                     "vehicleName": "Prime Sedan",
-                    "categoryId": "OUTSTATION_TAXI",
+                    "categoryId": "AIRPORT_TAXI",
                     "__v": 0
                 },
                 {
-                    "_id": "6915a6e4e51337b994b41a36",
+                    "_id": "694dfd65d399f68437cba3e7",
+                    "vehicleName": "SUV ERTIGA",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "694dfd6bd399f68437cba3ea",
                     "vehicleName": "INNOVA",
-                    "categoryId": "OUTSTATION_TAXI",
+                    "categoryId": "AIRPORT_TAXI",
                     "__v": 0
                 },
                 {
-                    "_id": "6915a6fbe51337b994b41a3e",
+                    "_id": "694dfd75d399f68437cba3ed",
+                    "vehicleName": "INNOVA CRYSTA",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "694dfd81d399f68437cba3f0",
+                    "vehicleName": "INNOVA HYCROSS",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "694dfd99d399f68437cba3f3",
+                    "vehicleName": "TOYOTA FURTUNER (LUXURY VEHICLE )",
+                    "categoryId": "AIRPORT_TAXI",
+                    "__v": 0
+                },
+                {
+                    "_id": "694dfda6d399f68437cba3f6",
                     "vehicleName": "TEMPO TRAVELLER",
-                    "categoryId": "OUTSTATION_TAXI",
-                    "__v": 0
-                },
-                {
-                    "_id": "6915a70ee51337b994b41a42",
-                    "vehicleName": "TEMPO TRAVELLER A/C",
-                    "categoryId": "OUTSTATION_TAXI",
-                    "__v": 0
-                },
-                {
-                    "_id": "6915a71ae51337b994b41a46",
-                    "vehicleName": "21 SEATER MINI BUS",
-                    "categoryId": "OUTSTATION_TAXI",
+                    "categoryId": "AIRPORT_TAXI",
                     "__v": 0
                 }
-            ],
-            "__v": 0
+            ]
         },
         {
             "_id": "691585457e2398151654978b",
@@ -522,8 +538,7 @@ export const MainContextProvider = (props) => {
                     "categoryId": "LOCAL_PACKAGE",
                     "__v": 0
                 }
-            ],
-            "__v": 0
+            ]
         },
         {
             "_id": "6915855d7e2398151654978d",

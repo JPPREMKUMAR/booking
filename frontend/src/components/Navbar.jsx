@@ -84,9 +84,9 @@ const Navbar = () => {
                         <p className="self-center text-lg ">Airport Taxi</p>
                     </Link>
 
-                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/innovaTaxi" className="flex items-center gap-x-3 px-4  cursor-pointer    ">
+                    <Link onClick={() => setIsMenu((prev) => !prev)} to="/localTaxi" className="flex items-center gap-x-3 px-4  cursor-pointer    ">
                         <FaCar className="self-center  text-black" aria-level={`Taxi`} />
-                        <p className="self-center text-lg ">Innova Taxi</p>
+                        <p className="self-center text-lg ">Local Taxi</p>
                     </Link>
 
 
@@ -151,8 +151,8 @@ const Navbar = () => {
                     <Link to="/airportTaxi" className="sm:hidden md:block  px-2 text-sm  text-black   cursor-pointer ">
                         Airport Taxi
                     </Link>
-                    <Link to="/innovaTaxi" className="sm:hidden md:block  px-2 text-sm  text-black   cursor-pointer ">
-                        Innova Taxi
+                    <Link to="/localTaxi" className="sm:hidden md:block  px-2 text-sm  text-black   cursor-pointer ">
+                        Local Taxi
                     </Link>
 
                     <Link to="/outStation" className="sm:hidden md:block  px-2 text-sm  text-black    cursor-pointer ">

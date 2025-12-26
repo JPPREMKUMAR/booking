@@ -45,9 +45,9 @@ const MainContextProvider = (props) => {
 
     const categoriesList = [
         { id: "AIRPORT_TAXI", name: "AIRPORT TAXI" },
-        { id: "INNOVA_TAXI", name: "INNOVA TAXI" },
         { id: "OUTSTATION_TAXI", name: "OUTSTATION TAXI" },
         { id: "LOCAL_PACKAGE", name: "LOCAL PACKAGE" },
+        { id: "LUXURY_CARS", name: "LUXURY CARS" }
 
     ]
 

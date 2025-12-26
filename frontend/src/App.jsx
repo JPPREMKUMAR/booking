@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import Booking from "./pages/Booking"
 import Innova from "./pages/Innova"
+import LocalStation from "./pages/LocalStation"
 import Outstation from "./pages/Outstation"
 import LuxuryCars from "./pages/LuxuryCars"
 import Services from "./pages/Services"
@@ -62,7 +63,7 @@ const App = () => {
                 }
                 <Route path="/booking/:id" element={<Bookings />} />
                 <Route path="/airportTaxi" element={<AirportTaxi />} />
-                <Route path="/innovaTaxi" element={<Innova />} />
+                <Route path="/localTaxi" element={<LocalStation />} />
                 <Route path="/outStation" element={<Outstation />} />
                 <Route path="/luxuryCars" element={<LuxuryCars />} />
                 <Route path="/termsOfServices" element={<Services />} />

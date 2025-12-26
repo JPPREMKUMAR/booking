@@ -2,7 +2,7 @@ import axios from "axios"
 import { useState, useEffect, useContext } from "react"
 import { MainContext } from "../context/MainContext"
 import { TailSpin } from "react-loader-spinner"
-import VehicleItem from "../components/VehicleItem"
+import LuxuryItem from "../components/LuxuryItem"
 
 const LuxuryCars = () => {
 
@@ -60,7 +60,7 @@ const LuxuryCars = () => {
 
                                 {
                                     vehicles.map((item, index) => (
-                                        <VehicleItem key={index} item={item} />
+                                        <LuxuryItem key={index} item={item} />
                                     ))
                                 }
                             </div>
