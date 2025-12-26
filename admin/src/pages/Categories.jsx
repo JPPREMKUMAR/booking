@@ -45,7 +45,7 @@ const Categories = () => {
         const response = await axios.post(backendUrl + `/api/categories/getVNames/${categoryId}`, {}, { headers: { token } })
 
 
-        //console.log(response.data.vehicleNames)
+        console.log(response.data.vehicleNames)
         setVehicleNames(response.data.vehicleNames)
 
 
@@ -90,7 +90,7 @@ const Categories = () => {
             getVehicleNames()
         }
 
-        // console.log(response.data)
+        //console.log(response.data)
     }
 
 
