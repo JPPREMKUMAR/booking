@@ -117,7 +117,7 @@ const AddItem = () => {
 
 
         const response = await axios.post(backendUrl + `/api/categories/getVNames/${bookingTypeId}`, {}, { headers: { token } })
-        //console.log(response.data.vehicleNames)
+        console.log(response.data.vehicleNames)
 
         setVehiclesNames(response.data.vehicleNames)
 
