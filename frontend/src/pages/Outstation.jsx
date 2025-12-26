@@ -18,7 +18,7 @@ const Outstation = () => {
 
 
         const response = await axios.post(backendUrl + "/api/user/getAllVehicles/OUTSTATION_TAXI")
-        //console.log(response.data)
+        console.log(response.data)
         setVehicles(response.data.vehicles)
 
 

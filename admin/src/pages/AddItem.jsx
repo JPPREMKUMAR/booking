@@ -18,6 +18,12 @@ const AddItem = () => {
     const [bookingTypeId, setBookingTypeId] = useState('AIRPORT_TAXI')
     const [price, setPrice] = useState('')
     const [capacity, setCapacity] = useState('')
+    const [ac, setAC] = useState('')
+    const [driverBata, setDriverBata] = useState('')
+
+
+
+
     const [image, setImage] = useState(null)
     const [preview, setPreview] = useState('')
     const [isLoading, setIsLoading] = useState(false)
@@ -94,7 +100,7 @@ const AddItem = () => {
     const getCategoriesList = async () => {
         const response = await axios.post(backendUrl + "/api/categories/getCategories", {}, { headers: { token } })
 
-
+        console.log(response.data.categories)
         setCategoriesList(response.data.categories)
         if (response.data.categories.length > 0) {
             //console.log(response.data.categories[0])
@@ -121,12 +127,15 @@ const AddItem = () => {
 
         setVehiclesNames(response.data.vehicleNames)
 
-        //console.log(response.data.vehicleNames[0].vehicleName)
+        console.log(response.data.vehicleNames[0].vehicleName)
         setVahicle(response.data.vehicleNames[0].vehicleName)
         setMainLoading(false)
 
     }
 
+    useEffect(() => {
+        getCategoriesList()
+    }, [])
 
 
     useEffect(() => {
@@ -145,7 +154,7 @@ const AddItem = () => {
 
 
 
-    console.log(bookingType)
+    console.log(bookingType, bookingTypeId)
 
     const onChangeCategory = (e) => {
         // console.log(e.target.value)
@@ -215,6 +224,27 @@ const AddItem = () => {
                                     <input id="capacity" placeholder='Enter the Capacity' className='px-3 py-2 outline-none font-semibold' value={capacity} onChange={(e) => setCapacity(e.target.value)} required />
                                 </div>
                             </div>
+                            {
+                                bookingTypeId === "OUTSTATION_TAXI" ? <div>
+
+                                    <div>
+                                        <label htmlFor="ac" className="text-md text-gray-700 font-bold">A/C</label>
+                                        <div className='border rounded-sm my-1'>
+                                            <input id="ac" placeholder='Enter the A/C Price' className='px-3 py-2 outline-none font-semibold' value={ac} onChange={(e) => setAC(e.target.value)} required />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="driverBata" className="text-md text-gray-700 font-bold">Driver Bata</label>
+                                        <div className='border rounded-sm my-1'>
+                                            <input id="driverBata" placeholder='Enter the driverBata' className='px-3 py-2 outline-none font-semibold' value={driverBata} onChange={(e) => setDriverBata(e.target.value)} required />
+                                        </div>
+                                    </div>
+
+                                </div> : null
+
+                            }
+
+
                             <div>
                                 <label htmlFor="image" className="text-md text-gray-700 font-bold">Image</label>
                                 <div className='border rounded-sm my-1'>

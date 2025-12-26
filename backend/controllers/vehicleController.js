@@ -6,9 +6,14 @@ export const addVehicle = async (req, res) => {
 
 
     try {
-        const { vehicle, bookingType, price, capacity, bookingTypeId } = req.body
+        const { vehicle, bookingType, price, capacity, bookingTypeId, ac, driverBata } = req.body
 
-
+        if (ac === undefined) {
+            ac = 0
+        }
+        if (driverBata === undefined) {
+            driverBata = 0
+        }
         // Upload to Cloudinary
         const result = await uploadToCloudinary(req.file.buffer);
         //console.log(req.file.path)
@@ -24,7 +29,9 @@ export const addVehicle = async (req, res) => {
             price,
             capacity,
             imageUrl,
-            bookingTypeId
+            bookingTypeId,
+            ac,
+            driverBata
 
         })
         await newVehicle.save()

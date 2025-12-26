@@ -9,7 +9,9 @@ const vehicleSchema = new mongoose.Schema({
     imageUrl: { type: String, required: true },
     status: { type: Boolean, default: true },
     capacity: { type: Number, required: true },
-    bookingTypeId: { type: String, required: true }
+    bookingTypeId: { type: String, required: true },
+    ac: { type: String },
+    driverBata: { type: Number }
 
 
 }, { timestamps: true })
