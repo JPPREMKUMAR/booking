@@ -51,7 +51,7 @@ const LuxuryItem = ({ item }) => {
                 <div className="flex items-center gap-x-2">
                     <p className="text-[#111827]   text-md  sm:text-xl font-semibold">A/C </p>
                     <p className="text-[#111827]  text-md  sm:text-xl font-semibold">₹</p>
-                    <p className="text-[#111827]  text-md  sm:text-xl font-semibold">{ac}</p>
+                    <p className="text-[#111827]  text-md  sm:text-xl font-semibold">{ac} / Km</p>
                 </div>
                 {
                     /*
